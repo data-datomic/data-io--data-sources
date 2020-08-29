@@ -1,0 +1,11 @@
+dist
+cabal-dev
+test.cfg
+*.o
+*.hi
+*.chi
+*.chs.h
+.virthualenv
+/.hpc
+/*.html
+*.tix

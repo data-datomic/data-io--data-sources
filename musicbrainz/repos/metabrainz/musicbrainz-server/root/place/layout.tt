@@ -1,0 +1,10 @@
+[%~ WRAPPER "layout.tt" title=title ? place.name _ " - ${title}" : place.name ~%]
+    <div id="content">
+        [%~ React.embed(c, 'place/PlaceHeader', { place => place, page => page }) ~%]
+        [%~ content ~%]
+    </div>
+
+    [%~ IF !full_width ~%]
+        [%~ React.embed(c, 'layout/components/sidebar/PlaceSidebar', {place => place}) ~%]
+    [%~ END ~%]
+[%~ END ~%]

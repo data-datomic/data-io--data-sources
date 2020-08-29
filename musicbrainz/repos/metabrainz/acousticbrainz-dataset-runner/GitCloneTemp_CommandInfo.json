@@ -1,0 +1,10 @@
+{
+    "commandText": "git clone --progress --verbose https://github.com/metabrainz/acousticbrainz-dataset-runner undefined\\meta--08-29-2020--WCSV35PA6dQUi1bDtfaXT/acousticbrainz-dataset-runner",
+    "repo": "https://github.com/metabrainz/acousticbrainz-dataset-runner",
+    "targetPath": "undefined\\meta--08-29-2020--WCSV35PA6dQUi1bDtfaXT/acousticbrainz-dataset-runner",
+    "startTime": "2020-08-29T07:43:45.839Z",
+    "endTime": "2020-08-29T07:43:46.470Z",
+    "childProcessPid": 10645,
+    "executionErrors": [],
+    "commandLogFilePath": "/Users/brian/dev_space/GitHub-data-datomic/data-io--data-sources/musicbrainz/musicbrainz-importer/repos/workingdir/--metabrainz--acousticbrainz-dataset-runner--10645"
+}

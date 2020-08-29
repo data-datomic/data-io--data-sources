@@ -1,0 +1,13 @@
+[% USE Age %]
+[% WRAPPER 'layout.tt' title=l('CD stub “{title}” by {artist}',
+                               { title => cdstub.title,
+                                 artist => cdstub.artist || l('Various Artists') }) %]
+  <div id="content">
+    [% INCLUDE 'cdstub/header.tt' %]
+    [% content %]
+  </div>
+
+  [%- IF !full_width -%]
+    [%- React.embed(c, 'layout/components/sidebar/CDStubSidebar', {cdstub => cdstub}) -%]
+  [%- END -%]
+[% END %]

@@ -1,0 +1,137 @@
+/*
+ * @flow
+ * Copyright (C) 2018 MetaBrainz Foundation
+ *
+ * This file is part of MusicBrainz, the open internet music database,
+ * and is licensed under the GPL version 2, or (at your option) any
+ * later version: http://www.gnu.org/licenses/gpl-2.0.txt
+ */
+
+import * as React from 'react';
+
+import RatingStars from '../../../../components/RatingStars';
+import loopParity from '../../../../utility/loopParity';
+
+import ArtistRoles from './ArtistRoles';
+import CodeLink from './CodeLink';
+import AttributeList from './AttributeList';
+import EntityLink from './EntityLink';
+import WorkArtists from './WorkArtists';
+
+type WorkListRowProps = {
+  ...SeriesItemNumbersRoleT,
+  +$c: CatalystContextT,
+  +checkboxes?: string,
+  +showAttributes?: boolean,
+  +showIswcs?: boolean,
+  +showRatings?: boolean,
+  +work: WorkT,
+};
+
+type WorkListEntryProps = {
+  ...SeriesItemNumbersRoleT,
+  +$c: CatalystContextT,
+  +checkboxes?: string,
+  +index: number,
+  +score?: number,
+  +showAttributes?: boolean,
+  +showIswcs?: boolean,
+  +showRatings?: boolean,
+  +work: WorkT,
+};
+
+export const WorkListRow = ({
+  $c,
+  checkboxes,
+  seriesItemNumbers,
+  showAttributes,
+  showIswcs,
+  showRatings,
+  work,
+}: WorkListRowProps): React.Element<typeof React.Fragment> => (
+  <>
+    {$c.user && checkboxes ? (
+      <td>
+        <input
+          name={checkboxes}
+          type="checkbox"
+          value={work.id}
+        />
+      </td>
+    ) : null}
+    {seriesItemNumbers ? (
+      <td style={{width: '1em'}}>
+        {seriesItemNumbers[work.id]}
+      </td>
+    ) : null}
+    <td><EntityLink entity={work} /></td>
+    <td>
+      <ArtistRoles relations={work.writers} />
+    </td>
+    <td>
+      <WorkArtists artists={work.artists} />
+    </td>
+    {showIswcs ? (
+      <td>
+        <ul>
+          {work.iswcs.map((iswc, i) => (
+            <li key={i}>
+              <CodeLink code={iswc} />
+            </li>
+          ))}
+        </ul>
+      </td>
+    ) : null}
+    <td>
+      {work.typeName ? lp_attributes(work.typeName, 'work_type') : null}
+    </td>
+    <td>
+      <ul>
+        {work.languages.map(language => (
+          <li
+            data-iso-639-3={language.language.iso_code_3}
+            key={language.language.id}
+          >
+            {l_languages(language.language.name)}
+          </li>
+        ))}
+      </ul>
+    </td>
+    {showAttributes ? (
+      <td>
+        <AttributeList entity={work} />
+      </td>
+    ) : null}
+    {showRatings ? (
+      <td>
+        <RatingStars entity={work} />
+      </td>
+    ) : null}
+  </>
+);
+
+const WorkListEntry = ({
+  $c,
+  checkboxes,
+  index,
+  score,
+  seriesItemNumbers,
+  showAttributes,
+  showIswcs,
+  showRatings,
+  work,
+}: WorkListEntryProps): React.Element<'tr'> => (
+  <tr className={loopParity(index)} data-score={score || null}>
+    <WorkListRow
+      $c={$c}
+      checkboxes={checkboxes}
+      seriesItemNumbers={seriesItemNumbers}
+      showAttributes={showAttributes}
+      showIswcs={showIswcs}
+      showRatings={showRatings}
+      work={work}
+    />
+  </tr>
+);
+
+export default WorkListEntry;

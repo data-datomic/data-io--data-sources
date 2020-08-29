@@ -1,0 +1,51 @@
+[% WRAPPER 'artist/layout.tt' full_width=1 title=l('Split Artist') %]
+  [% script_manifest('edit.js') %]
+
+   [%~ javascript_required() ~%]
+
+   <h2>[% l('Split Into Separate Artists') %]</h2>
+
+   [% IF !in_use %]
+   <p>
+     [% l('There are no recordings, release groups, releases or tracks
+           credited to only {name}. If you are trying to remove {name}, please
+           edit all artist credits at the bottom of the {alias_uri|aliases} tab and
+           remove all existing {rel_uri|relationships} instead, which will allow
+           ModBot to automatically remove this artist in the upcoming days.', {
+              name    => link_artist(artist),
+              rel_uri => c.uri_for_action('/artist/relationships',
+                                          [ artist.gid ] )
+              alias_uri => c.uri_for_action('/artist/aliases',
+                                          [ artist.gid ] )
+          }) %]</strong>
+   </p>
+
+   [% ELSE %]
+
+   <form action="[% c.req.uri %]" method="post">
+     [%- USE r = FormRenderer(form) -%]
+     <div class="half-width">
+       <p>
+         [% l('This form allows you to split {artist} into separate artists.
+               When the edit is accepted, existing artist credits will be
+               updated, and collaboration relationships will be removed',
+               { artist => link_entity(artist) } ) %]
+       </p>
+       <fieldset>
+         <legend>[% l('New Artist Credit') %]</legend>
+         <div id="artist-credit-editor"></div>
+       </fieldset>
+
+       [%- INCLUDE 'forms/edit-note.tt' -%]
+       [%- enter_edit() -%]
+     </div>
+   </form>
+
+    <script type="text/javascript">
+        MB.initializeArtistCredit(
+          [% closing_tag_escape(form.to_encoded_json) %],
+          [% closing_tag_escape(form.field('artist_credit').json) %]
+        );
+    </script>
+   [% END %]
+[% END %]

@@ -1,0 +1,10 @@
+{
+    "commandText": "git clone --progress --verbose https://github.com/metabrainz/discourse-musicbrainz-auth undefined\\meta--08-29-2020--WCSV35PA6dQUi1bDtfaXT/discourse-musicbrainz-auth",
+    "repo": "https://github.com/metabrainz/discourse-musicbrainz-auth",
+    "targetPath": "undefined\\meta--08-29-2020--WCSV35PA6dQUi1bDtfaXT/discourse-musicbrainz-auth",
+    "startTime": "2020-08-29T07:44:02.755Z",
+    "endTime": "2020-08-29T07:44:03.187Z",
+    "childProcessPid": 10882,
+    "executionErrors": [],
+    "commandLogFilePath": "/Users/brian/dev_space/GitHub-data-datomic/data-io--data-sources/musicbrainz/musicbrainz-importer/repos/workingdir/--metabrainz--discourse-musicbrainz-auth--10882"
+}

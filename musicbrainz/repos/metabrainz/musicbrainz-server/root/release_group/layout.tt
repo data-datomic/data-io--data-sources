@@ -1,0 +1,14 @@
+[% main_title = l('Release group “{name}” by {artist}', {
+    artist => artist_credit_plain(rg.artist_credit),
+    name => rg.name
+}) %]
+[%- WRAPPER "layout.tt" title=title ? main_title _ " - ${title}" : main_title -%]
+    <div id="content">
+        [%~ React.embed(c, 'release_group/ReleaseGroupHeader', { releaseGroup => rg, page => page }) ~%]
+        [%- content -%]
+    </div>
+
+    [%- IF !full_width -%]
+        [%~ React.embed(c, 'layout/components/sidebar/ReleaseGroupSidebar', {releaseGroup => rg}) ~%]
+    [%~ END ~%]
+[%- END -%]

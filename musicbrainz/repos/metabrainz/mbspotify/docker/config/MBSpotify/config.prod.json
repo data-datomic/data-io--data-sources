@@ -1,0 +1,5 @@
+{
+  "threshold": "4",
+  "access_keys": "[\"example1\", \"example2\"]",
+  "sentry_dsn_private": ""
+}

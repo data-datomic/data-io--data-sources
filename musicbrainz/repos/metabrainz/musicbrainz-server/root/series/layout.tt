@@ -1,0 +1,10 @@
+[%~ WRAPPER "layout.tt" title=title ? series.name _ " - ${title}" : series.name ~%]
+    <div id="content">
+        [%~ React.embed(c, 'series/SeriesHeader', { series => series, page => page }) ~%]
+        [%~ content ~%]
+    </div>
+
+    [%~ IF !full_width ~%]
+        [%~ React.embed(c, 'layout/components/sidebar/SeriesSidebar', {series => series}) ~%]
+    [%~ END ~%]
+[%~ END ~%]

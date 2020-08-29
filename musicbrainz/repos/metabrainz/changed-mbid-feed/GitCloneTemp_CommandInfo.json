@@ -1,0 +1,10 @@
+{
+    "commandText": "git clone --progress --verbose https://github.com/metabrainz/changed-mbid-feed undefined\\meta--08-29-2020--WCSV35PA6dQUi1bDtfaXT/changed-mbid-feed",
+    "repo": "https://github.com/metabrainz/changed-mbid-feed",
+    "targetPath": "undefined\\meta--08-29-2020--WCSV35PA6dQUi1bDtfaXT/changed-mbid-feed",
+    "startTime": "2020-08-29T07:43:54.625Z",
+    "endTime": "2020-08-29T07:43:55.126Z",
+    "childProcessPid": 10769,
+    "executionErrors": [],
+    "commandLogFilePath": "/Users/brian/dev_space/GitHub-data-datomic/data-io--data-sources/musicbrainz/musicbrainz-importer/repos/workingdir/--metabrainz--changed-mbid-feed--10769"
+}

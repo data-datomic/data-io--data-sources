@@ -1,0 +1,9 @@
+AllowUsers brainz
+ChallengeResponseAuthentication no
+PasswordAuthentication no
+PermitRootLogin no
+Protocol 2
+SyslogFacility AUTHPRIV
+UseDNS no
+UsePAM no
+X11Forwarding no

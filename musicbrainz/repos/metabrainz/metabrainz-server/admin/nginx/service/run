@@ -1,0 +1,15 @@
+#!/bin/bash
+echo starting
+exec 2>&1
+set -e
+cd metabrainz-server
+umask 022
+exec \
+    setuidgid metabrainz carton exec -Imusicbrainz-server/lib  -- \
+        plackup -Ilib \
+            -s FCGI \
+            -E deployment \
+            --port 55901 \
+            --nproc 5 \
+            --pid fcgi.pid \
+            --keep-stderr=1

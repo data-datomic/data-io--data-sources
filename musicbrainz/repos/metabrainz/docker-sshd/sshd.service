@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+SSHD_LISTEN_ADDRESS=${SSHD_LISTEN_ADDRESS:-0.0.0.0}
+SSHD_PORT=${SSHD_PORT:-22}
+
+exec /usr/sbin/sshd \
+    -D \
+    -o "ListenAddress=$SSHD_LISTEN_ADDRESS" \
+    -o "Port=$SSHD_PORT"

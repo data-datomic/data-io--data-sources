@@ -1,0 +1,10 @@
+{
+    "commandText": "git clone --progress --verbose https://github.com/metabrainz/CoverArtArchive undefined\\meta--08-29-2020--WCSV35PA6dQUi1bDtfaXT/CoverArtArchive",
+    "repo": "https://github.com/metabrainz/CoverArtArchive",
+    "targetPath": "undefined\\meta--08-29-2020--WCSV35PA6dQUi1bDtfaXT/CoverArtArchive",
+    "startTime": "2020-08-29T07:43:12.951Z",
+    "endTime": "2020-08-29T07:43:13.369Z",
+    "childProcessPid": 10609,
+    "executionErrors": [],
+    "commandLogFilePath": "/Users/brian/dev_space/GitHub-data-datomic/data-io--data-sources/musicbrainz/musicbrainz-importer/repos/workingdir/--metabrainz--CoverArtArchive--10609"
+}

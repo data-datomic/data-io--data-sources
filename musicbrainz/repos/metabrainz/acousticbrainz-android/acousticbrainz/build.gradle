@@ -1,0 +1,73 @@
+plugins {
+    id 'com.android.library'
+    id 'maven-publish'
+}
+
+android {
+    compileSdkVersion 29
+    ndkVersion "21.2.6472646"
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path "src/main/cpp/CMakeLists.txt"
+            version "3.10.2"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    afterEvaluate {
+        publishing {
+            publications {
+                release(MavenPublication) {
+                    from components.release
+                    groupId = 'org.metabrainz.android'
+                    artifactId = 'acousticbrainz'
+                    version = '0.1.1'
+                    pom {
+                        name = 'AcousticBrainz Android client'
+                        description = 'Android wrapper for Essentia\'s Streaming Extractor Music program'
+                        url = 'https://github.com/metabrainz/acousticbrainz-android'
+                        licenses {
+                            license {
+                                name = 'GNU Affero General Public License v3.0'
+                                url = 'https://www.gnu.org/licenses/agpl-3.0.en.html'
+                            }
+                        }
+                    }
+                }
+            }
+
+            repositories {
+                maven {
+                    url = 'https://maven.pkg.github.com/metabrainz/acousticbrainz-android'
+                    credentials {
+                        Properties properties = new Properties()
+                        properties.load(project.rootProject.file('local.properties').newDataInputStream())
+                        username properties.getProperty('github.username')
+                        password properties.getProperty('github.token')
+                    }
+                }
+            }
+        }
+    }
+}

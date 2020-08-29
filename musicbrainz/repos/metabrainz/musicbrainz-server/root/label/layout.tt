@@ -1,0 +1,10 @@
+[%~ WRAPPER "layout.tt" title=title ? label.name _ " - ${title}" : label.name ~%]
+    <div id="content">
+        [%~ React.embed(c, 'label/LabelHeader', { label => label, page => page }) ~%]
+        [%~ content ~%]
+    </div>
+
+    [%~ IF !full_width ~%]
+        [%~ React.embed(c, 'layout/components/sidebar/LabelSidebar', {label => label}) ~%]
+    [%~ END ~%]
+[%~ END ~%]

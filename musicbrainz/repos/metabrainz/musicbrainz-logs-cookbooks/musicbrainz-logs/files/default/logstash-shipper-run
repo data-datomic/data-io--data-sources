@@ -1,0 +1,3 @@
+#!/bin/sh
+
+java -jar logstash/jar/logstash.jar agent -f logstash/conf/shipper.conf

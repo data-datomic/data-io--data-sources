@@ -1,0 +1,122 @@
+[%- USE JSON.Escape %]
+[% script_manifest('edit.js') %]
+
+<p>[%- l('For more information, check the {doc_doc|documentation}.', {doc_doc => doc_link('Work')}) -%]</p>
+
+<form action="[% c.req.uri %]" method="post" class="edit-work">
+  [%- USE r = FormRenderer(form) -%]
+
+  <div class="half-width">
+    <fieldset>
+      <legend>[%- l('Work Details') -%]</legend>
+      [%- form_row_name_with_guesscase(r) -%]
+      [%- form_row_text_long(r, 'comment', add_colon(l('Disambiguation'))) -%]
+      [%- form_row_select(r, 'type_id', l('Type:')) -%]
+      <div id="work-languages-editor"></div>
+      [%- form_row_text_list(r, 'iswcs', l('ISWCs:'), l('ISWC')) -%]
+    </fieldset>
+
+    <fieldset>
+      <legend>[%- l('Work Attributes') -%]</legend>
+      <table id="work-attributes" class="row-form" data-bind="delegatedHandler: 'click'">
+        <tbody>
+        <!-- ko foreach: attributes -->
+          <tr>
+            <td>
+              <select data-bind="
+                  value: typeID,
+                  options: $parent.attributeTypes,
+                  optionsText: 'text',
+                  optionsValue: 'value',
+                  optionsCaption: '',
+                  attr: { name: 'edit-work.attributes.' + $index() + '.type_id' },
+                  hasFocus: typeHasFocus
+              ">
+              </select>
+            </td>
+            <td>
+              <!-- ko if: allowsFreeText() -->
+              <input type="text" data-bind="
+                  value: attributeValue,
+                  attr: { name: 'edit-work.attributes.' + $index() + '.value' }
+              " />
+              <!-- /ko -->
+              <!-- ko if: !allowsFreeText() && !isGroupingType() -->
+              <select data-bind="
+                  value: attributeValue,
+                  options: allowedValues,
+                  optionsText: 'text',
+                  optionsValue: 'value',
+                  optionsCaption: '',
+                  attr: { name: 'edit-work.attributes.' + $index() + '.value' }
+              ">
+              </select>
+              <!-- /ko -->
+              <!-- ko if: isGroupingType() -->
+                     <p>[% l('This attribute type is only used for grouping, please select a subtype') %]</p>
+              <!-- /ko -->
+            </td>
+            <td>
+              <button type="button" class="icon remove-item" title="[% l('Remove attribute') %]" data-click="remove"></button>
+            </td>
+          </tr>
+          <!-- ko if: errors().length -->
+          <tr>
+            <td></td>
+            <td colspan="2">
+              <ul class="errors" data-bind="foreach: errors" style="margin-left: 0">
+                <li data-bind="text: $data"></li>
+              </ul>
+            </td>
+          </tr>
+          <!-- /ko -->
+        <!-- /ko -->
+          <tr>
+            <td></td>
+            <td colspan="2" class="add-item">
+              [% caption = lp('Add Work Attribute', 'button/menu') %]
+              <button type="button" id="add-work-attribute" class="with-label add-item" title="[% caption | html %]" data-click="newAttribute">
+                [% caption | html %]
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </fieldset>
+
+    [% PROCESS 'forms/relationship-editor.tt' %]
+
+    <fieldset>
+      <legend>[% l('External Links') %]</legend>
+      [% external_links_editor() %]
+    </fieldset>
+
+    [%- INCLUDE 'forms/edit-note.tt' -%]
+    [%- enter_edit() -%]
+
+  </div>
+
+  <div class="documentation">
+    [%- iswc_bubble(link_entity(work)) -%]
+
+    <div class="bubble" id="type-bubble">
+      <span id="type-bubble-default">
+        [%- l('Select any type from the list to see its description. If the work
+               doesn’t seem to match any type, just leave this blank.') -%]
+      </span>
+      [% FOREACH id IN form.field('type_id').options %]
+         [%- id = id.value -%]
+         <span style="display:none" class="type-bubble-description" id="type-bubble-description-[% id %]">
+           <strong>[%- add_colon(l('Description')) -%] </strong>[%- work_types.$id.l_description -%]
+         </span>
+      [% END %]
+    </div>
+  </div>
+
+</form>
+
+[%- guesscase_options() -%]
+
+[%- USE JSON.Escape;
+    script_manifest('work.js', {'data-args' => work_form_json.json})
+-%]

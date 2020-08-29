@@ -1,0 +1,10 @@
+{
+    "commandText": "git clone --progress --verbose https://github.com/metabrainz/newhost-replication-fix undefined\\meta--08-29-2020--WCSV35PA6dQUi1bDtfaXT/newhost-replication-fix",
+    "repo": "https://github.com/metabrainz/newhost-replication-fix",
+    "targetPath": "undefined\\meta--08-29-2020--WCSV35PA6dQUi1bDtfaXT/newhost-replication-fix",
+    "startTime": "2020-08-29T07:48:54.073Z",
+    "endTime": "2020-08-29T07:48:54.627Z",
+    "childProcessPid": 11649,
+    "executionErrors": [],
+    "commandLogFilePath": "/Users/brian/dev_space/GitHub-data-datomic/data-io--data-sources/musicbrainz/musicbrainz-importer/repos/workingdir/--metabrainz--newhost-replication-fix--11649"
+}

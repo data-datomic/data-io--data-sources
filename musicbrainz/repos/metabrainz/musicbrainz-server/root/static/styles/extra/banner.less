@@ -1,0 +1,48 @@
+.banner {
+    margin: @form-margin 0;
+    margin-left: 12px;
+    margin-right: 12px;
+    text-align: center;
+    border: @medium-border 1px solid;
+    background: @effectively-white-bg;
+    padding: @form-margin;
+    position: relative;
+    clear: both;
+
+    @media @wide {
+        border-radius: 6px;
+    }
+
+    p {
+        margin: 0;
+        margin-right: @form-margin + @form-icon-size;
+    }
+
+    .dismiss-banner {
+        position: absolute;
+        top: @form-margin;
+        right: @form-margin;
+    }
+}
+
+.warning-header,
+.server-details,
+.alert,
+.editing-disabled,
+.new-edit-notes {
+    font-weight: bold;
+}
+
+.server-details {
+    color: @text-orange;
+}
+
+.editing-disabled {
+    background: @error-header;
+    color: @text-white;
+    font-size: @large-text;
+
+    a {
+        color: @text-orange;
+    }
+}

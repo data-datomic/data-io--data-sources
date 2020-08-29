@@ -1,0 +1,6 @@
+[%- React.embed(c, 'static/scripts/common/components/Annotation', {
+        annotation => entity.latest_annotation,
+        collapse => 1,
+        entity => entity,
+        numberOfRevisions => number_of_revisions,
+    }) -%]

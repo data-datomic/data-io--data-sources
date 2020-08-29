@@ -1,0 +1,10 @@
+{
+    "commandText": "git clone --progress --verbose https://github.com/metabrainz/mb2wikidatabot undefined\\meta--08-29-2020--WCSV35PA6dQUi1bDtfaXT/mb2wikidatabot",
+    "repo": "https://github.com/metabrainz/mb2wikidatabot",
+    "targetPath": "undefined\\meta--08-29-2020--WCSV35PA6dQUi1bDtfaXT/mb2wikidatabot",
+    "startTime": "2020-08-29T07:44:27.754Z",
+    "endTime": "2020-08-29T07:44:28.304Z",
+    "childProcessPid": 11146,
+    "executionErrors": [],
+    "commandLogFilePath": "/Users/brian/dev_space/GitHub-data-datomic/data-io--data-sources/musicbrainz/musicbrainz-importer/repos/workingdir/--metabrainz--mb2wikidatabot--11146"
+}

@@ -1,0 +1,9 @@
+{
+  "musicbrainz_db": {
+    "name": "musicbrainz_test",
+    "user": "musicbrainz",
+    "password": ""
+  },
+  "s3_prefix": "//archive.org/download",
+  "sentry_dsn": ""
+}

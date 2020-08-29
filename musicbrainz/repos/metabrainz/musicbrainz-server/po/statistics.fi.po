@@ -1,0 +1,2391 @@
+# 
+# Translators:
+# Jaakko Perttilä <email address hidden>, 2014,2018
+# Tukea <email address hidden>, 2016
+# jozo, 2014
+# 68c019e72ca2ecf7f5428dd4599050d2_f003645, 2014
+# 68c019e72ca2ecf7f5428dd4599050d2_f003645, 2014
+# phonebox, 2014
+# phonebox, 2014
+# Timo Martikainen <email address hidden>, 2012-2014
+# Tukea <email address hidden>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: MusicBrainz\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2019-10-08 01:15+0000\n"
+"Last-Translator: Michael Wiencek <email address hidden>\n"
+"Language-Team: Finnish (http://www.transifex.com/musicbrainz/musicbrainz/language/fi/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fi\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: DB:statistics.statistic_event/description:2013-08-05
+msgid ""
+"A new AJAX coverart uploader is released, making it easier to add cover art "
+"to releases."
+msgstr "Uusi AJAX-pohjainen kansitaiteen lähetysohjelma on julkaistu. Se helpottaa kuvien liittämistä julkaisuihin."
+
+#: DB:statistics.statistic_event/description:2015-12-28
+msgid ""
+"A new banner message now notifies users whenever they receive a new edit "
+"note."
+msgstr "Uusi banneriviesti kertoo käyttäjille uusista muokkausmerkinnöistä."
+
+#: DB:statistics.statistic_event/description:2006-08-15
+msgid "A rift in the MusicBrainz community leads to a Great Dispute."
+msgstr "Välirikko MusicBrainz-yhteisössä johtaa Suureen väittelyyn."
+
+#: DB:statistics.statistic_event/description:2014-11-19
+msgid ""
+"AcousticBrainz, which aims to crowd source acoustic information for music, "
+"is announced in cooperation with the Music Technology Group at Universitat "
+"Pompeu Fabra."
+msgstr "AcousticBrainz, joka pyrkii joukkoistamaan äänitunnistamisen musiikista, julkaistaan yhdessä Pompeu Fabran yliopiston musiikkiteknologiaryhmän kanssa."
+
+#: DB:statistics.statistic_event/description:2003-01-21
+msgid ""
+"Added support for improved TRM collision handling in the classic tagger."
+msgstr "Lisätty tuki parannettuun TRM-tunnisteiden päällekkäisyyksien hallintaan vanhassa tunnisteidenhallintasovelluksessa."
+
+#: DB:statistics.statistic_event/title:2005-04-10
+msgid "Advanced relationships"
+msgstr "Edistyneet yhteydet"
+
+#: DB:statistics.statistic_event/description:2005-04-10
+msgid ""
+"Advanced relationships that allow users to connect basic data entities is "
+"relased and unused TRMs pruned from the database. Inline editing is turned "
+"off by default, causing a drop in voting activity."
+msgstr ""
+
+#: DB:statistics.statistic_event/title:2005-05-22
+msgid "Album languages"
+msgstr "Julkaisujen kielet"
+
+#: DB:statistics.statistic_event/description:2005-05-22
+msgid ""
+"Album languages, guess case improvements and revamps edit forms released."
+msgstr ""
+
+#: DB:statistics.statistic_event/title:2004-02-24
+msgid "Amazon Coverart"
+msgstr "Amazonin kansikuvat"
+
+#: DB:statistics.statistic_event/description:2008-09-01
+msgid ""
+"Amazon betas <a href=\"http://soundunwound.com\">SoundUnwound</a> with data "
+"from MusicBrainz."
+msgstr ""
+
+#: DB:statistics.statistic_event/title:2008-09-01
+msgid "Amazon betas SoundUnwound"
+msgstr ""
+
+#: DB:statistics.statistic_event/description:2004-02-24
+msgid "Amazon coverart support released."
+msgstr "Tuki Amazon kansikuville julkaistiin."
+
+#: DB:statistics.statistic_event/description:2006-07-12
+msgid "An improved release editor and a new site design are released."
+msgstr "Parannettu julkaisumuokkain ja uusi sivuston ulkoasu julkaistu. "
+
+#: DB:statistics.statistic_event/description:2004-11-14
+msgid "Annotation support released."
+msgstr "Tuki lisätietokentälle julkaistiin."
+
+#: DB:statistics.statistic_event/title:2004-11-14
+msgid "Annotations"
+msgstr "Lisätietokentät"
+
+#: DB:statistics.statistic_event/title:2003-06-22
+msgid "Artist subscriptions"
+msgstr "Artisti-tilaukset"
+
+#: DB:statistics.statistic_event/description:2005-02-13
+msgid ""
+"Artist subscriptions made public and various smaller user centric "
+"improvements are released."
+msgstr "Artisti-tilaukset tehtiin julkisiksi ja useat pienemmät käyttäjäkohtaiset parannukset julkaistiin. "
+
+#: DB:statistics.statistic_event/description:2003-06-22
+msgid "Artist subscriptions."
+msgstr "Artisti-tilaukset."
+
+#: DB:statistics.statistic_event/title:2008-07-30
+msgid "BBC dynamic artist pages"
+msgstr "BBC:n dynaamiset artistisivut"
+
+#: DB:statistics.statistic_event/description:2008-07-30
+msgid "BBC launches the dynamic artist pages based on MusicBrainz data."
+msgstr "BBC julkaisee MusicBrainzin dataan pohjautuvat dynaamiset artistisivut"
+
+#: DB:statistics.statistic_event/title:2007-06-28
+msgid "BBC partners with MetaBrainz"
+msgstr "BBC:n kumppanuus MetaBrainzin kanssa."
+
+#: DB:statistics.statistic_event/description:2003-03-02
+#: DB:statistics.statistic_event/description:2003-06-30
+#: DB:statistics.statistic_event/description:2003-07-25
+#: DB:statistics.statistic_event/description:2003-09-04
+msgid "Bug fix/cleanup release."
+msgstr "Bugikorjaus/siivous-julkaisu."
+
+#: DB:statistics.statistic_event/title:2003-06-30
+#: DB:statistics.statistic_event/title:2003-07-25
+#: DB:statistics.statistic_event/title:2003-09-04
+msgid "Bug fixes"
+msgstr "Virhekorjauksia"
+
+#: DB:statistics.statistic_event/title:2012-04-30
+msgid "CAA initial release"
+msgstr "alustava CAA-julkaisu"
+
+#: DB:statistics.statistic_event/title:2012-10-10
+msgid "CAA official release"
+msgstr "virallinen CAA-julkaisu"
+
+#: DB:statistics.statistic_event/description:2004-03-09
+msgid "Caching (memcached) and bugs fixed."
+msgstr "Välimuisti (memcached) ja virheenkorjauksia."
+
+#: DB:statistics.statistic_event/title:2004-03-09
+msgid "Caching/bug fixes"
+msgstr "Välimuisti- ja virheenkorjauksia"
+
+#: DB:statistics.statistic_event/title:2003-03-02
+#: DB:statistics.statistic_event/title:2003-06-07
+#: DB:statistics.statistic_event/title:2003-06-15
+msgid "Cleanup"
+msgstr "Siivous"
+
+#: DB:statistics.statistic_event/description:2003-06-07
+#: DB:statistics.statistic_event/description:2003-06-15
+msgid "Cleanup release."
+msgstr "Siivousjulkaisu"
+
+#: DB:statistics.statistic_event/title:2008-11-24
+msgid "Collection, Ratings, CDStubs"
+msgstr "Kokoelmat, arvostelut, CD-tyngät"
+
+#: DB:statistics.statistic_event/description:2008-11-24
+msgid "Collection, Ratings, CDStubs, LastUpdate released."
+msgstr "Kokoelmat, arvostelut, CD-tyngät ja viimeisin päivitys-ominaisuus julkaistiin. "
+
+#: DB:statistics.statistic_event/title:2013-08-05
+msgid "Cover Art Uploader"
+msgstr "Kansikuvalataaja"
+
+#: DB:statistics.statistic_event/title:2003-03-29
+msgid "Dedicated database server"
+msgstr "Tietokanta omalle palvelimelleen. "
+
+#: DB:statistics.statistic_event/description:2004-05-09
+msgid ""
+"Edit display improvements, turned off RDF dumps, new install scripts "
+"released."
+msgstr "Muokkausten näyttämistä parannettiin, RDF-muotoisen tiedon jakaminen lopetettiin, uudet asennusskriptit julkaistiin."
+
+#: DB:statistics.statistic_event/title:2015-12-28
+msgid "Edit note notifications"
+msgstr "Muokkausmerkintöjen ilmoitukset."
+
+#: DB:statistics.statistic_event/title:2003-11-10
+msgid "Edit search"
+msgstr "Muokkausten haku"
+
+#: DB:statistics.statistic_event/description:2007-12-07
+msgid ""
+"Editor ojnkpjg runs a script setting track times from DiscID values, "
+"creating a huge spike in edits."
+msgstr "Käyttäjä ojnkpjg ajaa komentojonon, joka asettaa kappaleiden pituudet DiscID-arvoista, mikä aiheuttaa valtavan nousun muokkausten määrässä."
+
+#: DB:statistics.statistic_event/description:2015-11-30
+msgid ""
+"Edits made by editors to their own release additions within 1 hour of adding"
+" them are now auto-edits, as are \"Add recording\" and \"Remove alias\" "
+"edits."
+msgstr ""
+
+#: DB:statistics.statistic_event/description:2007-10-17
+msgid "Folksonomy tagging, editor subscriptions are released."
+msgstr "Folksonomialuokitukset ja editori-tilaukset julkaistaan"
+
+#: DB:statistics.statistic_event/description:2015-09-04
+msgid ""
+"Former GSoC student Roman Tsukanov begins working for MetaBrainz part-time."
+msgstr ""
+
+#: DB:statistics.statistic_event/description:2004-10-10
+msgid ""
+"FreeDB auto import feature turned off and autoeditor elections released. "
+"Unused TRMs pruned from the database."
+msgstr ""
+
+#: DB:statistics.statistic_event/title:2004-10-10
+msgid "FreeDB off/Autoeditors"
+msgstr ""
+
+#: DB:statistics.statistic_event/title:2006-08-15
+msgid "Great Dispute"
+msgstr "Suuri väittely"
+
+#: DB:statistics.statistic_event/title:2009-06-17
+msgid "Imported CD Baby catalog as CD Stubs"
+msgstr ""
+
+#: DB:statistics.statistic_event/description:2009-06-17
+msgid ""
+"Imported the metadata from the CD Baby catalog into our CD Stubs collection."
+msgstr ""
+
+#: DB:statistics.statistic_event/title:2004-07-24
+msgid "Improve voting"
+msgstr "Äänestystä parannettiin"
+
+#: DB:statistics.statistic_event/title:2003-04-05
+msgid "Improved search"
+msgstr "Parannettu haku"
+
+#: DB:statistics.statistic_event/description:2003-04-05
+msgid "Improved search/cleanup."
+msgstr "Parannettu haku / siivous."
+
+#: DB:statistics.statistic_event/description:2013-02-11
+msgid ""
+"In an effort to reduce the size of the open edit queue and force less "
+"waiting for changes, the length of time edits stay open before expiration is"
+" reduced from 14 to 7 days."
+msgstr ""
+
+#: DB:statistics.statistic_event/description:2011-05-12
+msgid "In preparation for NGS, editing is turned off until release."
+msgstr "NGS-järjestelmään valmistaudutaan, kytkemällä muokkaaminen pois päältä ennen julkaisua."
+
+#: DB:statistics.statistic_event/description:2011-05-02
+msgid ""
+"In preparation for NGS, editors are encouraged to avoid editing until "
+"release unless entirely necessary."
+msgstr "NGS-järjestelmään valmistautuessa editoreja kehotetaan välttämään muokkaamista ja vain välttämättömimmät muokkaukset sallitaan ennen julkaisua."
+
+#: DB:statistics.statistic_event/title:2006-03-05
+msgid "Indexed search/XML WS"
+msgstr ""
+
+#: DB:statistics.statistic_event/description:2006-03-05
+msgid "Indexes search and a new XML based Web Service are released."
+msgstr ""
+
+#: DB:statistics.statistic_event/title:2004-01-17
+msgid "Inline edits"
+msgstr ""
+
+#: DB:statistics.statistic_event/description:2004-01-17
+msgid "Inline edits, new reports, improved data import scripts."
+msgstr ""
+
+#: DB:statistics.statistic_event/title:2004-05-09
+msgid "Install scripts"
+msgstr "Asennusskriptit"
+
+#: DB:statistics.statistic_event/description:2009-12-14
+msgid "Kuno Woudt begins working for MusicBrainz full-time."
+msgstr "Kuno Woudt aloittaa täyspäiväisen työskentelynsä MusicBrainzille."
+
+#: DB:statistics.statistic_event/title:2009-12-14
+msgid "Kuno Woudt hired as full-time developer"
+msgstr "Kuno Woudt palkattiin täyspäiväiseksi kehittäjäksi"
+
+#: DB:statistics.statistic_event/title:2007-04-01
+msgid "Labels/data quality"
+msgstr "Levymerkki/tiedon laatu"
+
+#: DB:statistics.statistic_event/title:2007-11-07
+msgid "Last.fm"
+msgstr "Last.fm"
+
+#: DB:statistics.statistic_event/description:2007-11-07
+msgid "Last.fm signs up with MetaBrainz and starts using MusicBrainz data."
+msgstr "Last.fm:stä tulee MetaBrainzin asiakas ja se alkaa käyttää MusicBrainzin dataa."
+
+#: DB:statistics.statistic_event/description:2003-11-10
+#: DB:statistics.statistic_event/description:2003-12-28
+msgid ""
+"Link to MusicBrainz feature, release events and edit suggestions released."
+msgstr "Linkittäminen MusicBrainz-ominaisuudeksi, julkaisutapahtumat ja muokkausehdotukset julkaistiin."
+
+#: DB:statistics.statistic_event/description:2007-01-20
+msgid "Linkara Musica becomes first commercial customer of MetaBrainz."
+msgstr "Linkara Musicsta tulee ensimmäinen kaupallinen Metabrainzin asiakas."
+
+#: DB:statistics.statistic_event/title:2003-12-28
+msgid "Linking"
+msgstr "Linkittäminen"
+
+#: DB:statistics.statistic_event/title:2005-10-23
+msgid "Menus/Client scripting"
+msgstr ""
+
+#: DB:statistics.statistic_event/description:2008-04-21
+msgid "MetaBrainz accepts three students for Google Summer of Code."
+msgstr "MetaBrainz hyväksyy kolme opiskelijaa Googlen Summer of Code-ohjelmaan."
+
+#: DB:statistics.statistic_event/title:2008-09-23
+msgid "MetaBrainz hires Oliver Charles"
+msgstr "MetaBrainz palkkaa Oliver Charlesin"
+
+#: DB:statistics.statistic_event/title:2005-04-19
+msgid "MetaBrainz launched"
+msgstr "MetaBrainz perustettiin"
+
+#: DB:statistics.statistic_event/title:2007-01-20
+msgid "MetaBrainz signs first customer"
+msgstr "MetaBrainzin ensimmäinen asiakas"
+
+#: DB:statistics.statistic_event/description:2008-04-01
+msgid "MetaWeb comes MusicBrainz data user."
+msgstr "MetaWebistä tulee MusicBrainzin data-käyttäjä"
+
+#: DB:statistics.statistic_event/title:2008-04-01
+msgid "MetaWeb signed"
+msgstr ""
+
+#: DB:statistics.statistic_event/title:2015-11-30
+msgid "More auto-edits"
+msgstr ""
+
+#: DB:statistics.statistic_event/description:2015-11-16
+msgid ""
+"More edit types are made auto-edits for everyone: \"Add relationship\" and "
+"\"Add release\"; and \"Add\", \"Edit\" and \"Remove release label\". "
+"Additionally, the German, French and Dutch translations are available on the"
+" main server."
+msgstr ""
+
+#: DB:statistics.statistic_event/title:2006-02-27
+msgid "MusicBrainz Move"
+msgstr "MusicBrainzin muutto."
+
+#: DB:statistics.statistic_event/description:2010-02-08
+msgid "MusicBrainz Server source code moved to Git from Subversion."
+msgstr "MusicBrainzin palvelimen lähdekoodi muutti Subversionista Git-järjestelmään."
+
+#: DB:statistics.statistic_event/description:2003-03-29
+msgid "MusicBrainz gets its first dedicated database server."
+msgstr ""
+
+#: DB:statistics.statistic_event/description:2016-02-22
+msgid ""
+"MusicBrainz itself gets a new design to better match the rest of the *Brainz"
+" family."
+msgstr ""
+
+#: DB:statistics.statistic_event/description:2006-02-27
+msgid "MusicBrainz moved to Digital West Networks in San Luis Obispo."
+msgstr "MusicBrainz muutti Digital West Networksiin, joka sijaitsee San Luis Obispossa. "
+
+#: DB:statistics.statistic_event/description:2006-03-12
+msgid ""
+"MusicBrainz partners with MusicIP and starts using MusicDNS's PUID acoustic "
+"fingerprints. Picard becomes the official MusicBrainz tagger with PUID "
+"support, which causes edit activity to decrease."
+msgstr ""
+
+#: DB:statistics.statistic_event/title:2006-03-12
+msgid "MusicIP PUID"
+msgstr "MusicIP PUID"
+
+#: DB:statistics.statistic_event/title:2011-05-12
+msgid "NGS No-Editing Phase"
+msgstr "NGS-järjestelmän ei muokkaamista-vaihe."
+
+#: DB:statistics.statistic_event/title:2011-05-02
+msgid "NGS Reduced Editing Phase"
+msgstr "NGS-järjestelmän rajoitettu muokkaaminen-vaihe."
+
+#: DB:statistics.statistic_event/title:2011-05-18
+msgid "NGS Release"
+msgstr "NGS julkaisu"
+
+#: DB:statistics.statistic_event/description:2011-05-18
+msgid "NGS, a MusicBrainz major rewrite, is released!"
+msgstr "NGS, MusicBrainzin suuri uudelleensuunnittelu julkaistaan!"
+
+#: DB:statistics.statistic_event/title:2016-02-22
+msgid "New MusicBrainz design"
+msgstr "Uusi MusicBrainzin ulkoasu"
+
+#: DB:statistics.statistic_event/title:2003-10-13
+msgid "Non album tracks"
+msgstr "Julkaisuihin kuulumattomat kappaleet"
+
+#: DB:statistics.statistic_event/description:2003-10-13
+msgid "Non album tracks are released."
+msgstr "Julkaisuihin kuulumattomat kappaleet ovat tuettu."
+
+#: DB:statistics.statistic_event/description:2008-09-23
+msgid "Oliver Charles becomes employee #1 of MetaBrainz Foundation."
+msgstr "Oliver Charlesista tulee MetaBrainz Foundationin ensimmäinen työntekijä."
+
+#: DB:statistics.statistic_event/description:2010-06-18
+msgid "Oliver Charles begins working for MusicBrainz full-time."
+msgstr "Oliver Charles alkaa työskennellä täyspäiväisesti MusicBrainzille."
+
+#: DB:statistics.statistic_event/title:2010-06-18
+msgid "Oliver Charles joins MusicBrainz full-time"
+msgstr "Oliver Charles palkattu täyspäiväiseksi MusicBrainziin."
+
+#: DB:statistics.statistic_event/title:2012-10-15
+msgid "Relationship Editor"
+msgstr "Yhteyksien muokkain"
+
+#: DB:statistics.statistic_event/title:2009-05-24
+msgid "Release Groups, ISRCs, CDStub searching"
+msgstr "Julkaisuryhmät, ISRC-koodit, CD-tynkä-haku"
+
+#: DB:statistics.statistic_event/title:2003-10-19
+#: DB:statistics.statistic_event/title:2006-07-12
+msgid "Release editor"
+msgstr "Julkaisumuokkain"
+
+#: DB:statistics.statistic_event/description:2003-10-19
+msgid "Release editor and Guess Case released."
+msgstr "Julkaisumuokkain ja kirjoitusasun tunnistus julkaistu."
+
+#: DB:statistics.statistic_event/description:2009-05-24
+msgid ""
+"Release groups, ISRC support, CDStub searching and search fixes released."
+msgstr ""
+
+#: DB:statistics.statistic_event/title:2015-09-04
+msgid "Roman Tsukanov joins the MetaBrainz team"
+msgstr ""
+
+#: DB:statistics.statistic_event/title:2006-01-08
+msgid "SG5 Fixes"
+msgstr "SG5 korjaukset"
+
+#: DB:statistics.statistic_event/title:2006-12-17
+msgid "Search improvements"
+msgstr "Parannuksia hakuun"
+
+#: DB:statistics.statistic_event/title:2015-11-16
+msgid "Several new auto-edit types and translations"
+msgstr ""
+
+#: DB:statistics.statistic_event/title:2008-04-21
+msgid "SoC 2008"
+msgstr "SoC 2008"
+
+#: DB:statistics.statistic_event/description:2006-01-08
+msgid ""
+"Style Guideline 5 workaround introduced and unused TRMs pruned from the "
+"database."
+msgstr ""
+
+#: DB:statistics.statistic_event/description:2007-04-01
+msgid "Support for Labels and data quality are released."
+msgstr ""
+
+#: DB:statistics.statistic_event/title:2003-01-21
+msgid "TRM collisions"
+msgstr ""
+
+#: DB:statistics.statistic_event/title:2007-10-17
+#: ../root/statistics/stats.js:621
+msgid "Tags"
+msgstr "Luokitukset"
+
+#: DB:statistics.statistic_event/title:2014-11-19
+msgid "The AcousticBrainz project goes live"
+msgstr ""
+
+#: DB:statistics.statistic_event/description:2007-06-28
+msgid ""
+"The BBC becomes a MetaBrainz customer and starts using MusicBrainz data."
+msgstr "BBC:stä tulee MetaBrainzin asiakas ja se alkaa käyttää MusicBrainzin dataa."
+
+#: DB:statistics.statistic_event/description:2012-04-30
+msgid "The Cover Art Archive becomes initially available"
+msgstr ""
+
+#: DB:statistics.statistic_event/description:2012-10-10
+msgid "The Cover Art Archive is officially released"
+msgstr ""
+
+#: DB:statistics.statistic_event/title:2014-05-19
+msgid "The CritiqueBrainz project goes live"
+msgstr ""
+
+#: DB:statistics.statistic_event/title:2015-09-17
+msgid "The ListenBrainz project goes live"
+msgstr ""
+
+#: DB:statistics.statistic_event/description:2005-04-19
+msgid ""
+"The MetaBrainz Foundation, the legal home for MusicBrainz is announced to "
+"the public."
+msgstr ""
+
+#: DB:statistics.statistic_event/description:2015-09-17
+msgid ""
+"The alpha version of ListenBrainz, an open source and open data alternative "
+"to Last.fm®, goes live."
+msgstr ""
+
+#: DB:statistics.statistic_event/description:2014-05-19
+msgid "The beta version of CritiqueBrainz is launched."
+msgstr ""
+
+#: DB:statistics.statistic_event/title:2015-05-18
+msgid "The new MetaBrainz website goes live"
+msgstr ""
+
+#: DB:statistics.statistic_event/description:2015-05-18
+msgid ""
+"The new MetaBrainz website, featuring an all-new design and online sign-up "
+"for commercial users, is launched, replacing the one designed in the year "
+"2000!"
+msgstr ""
+
+#: DB:statistics.statistic_event/description:2012-10-15
+msgid ""
+"The relationship editor, for bulk-editing relationships for a release, is "
+"released to production."
+msgstr ""
+
+#: DB:statistics.statistic_event/description:2006-12-17
+msgid "The search features and web service improvements are released."
+msgstr ""
+
+#: DB:statistics.statistic_event/description:2005-10-23
+msgid ""
+"Top menu navigation improved, duplicate artists, album edit all, track time "
+"editing features released."
+msgstr ""
+
+#: DB:statistics.statistic_event/title:2007-12-07
+msgid "Track times set from DiscIDs"
+msgstr ""
+
+#: DB:statistics.statistic_event/title:2005-02-13
+msgid "User improvements"
+msgstr ""
+
+#: DB:statistics.statistic_event/description:2004-07-24
+msgid "Voting logic was improved, web based autoeditor elections released."
+msgstr "Äänestyslogiikkaa parannettiin, verkkopohjainen autoeditorien valintaäänestys julkaistiin."
+
+#: DB:statistics.statistic_event/title:2013-02-11
+msgid "Voting period shortened to 7 days"
+msgstr "Äänestysaika lyhennettiin 7 päivään"
+
+#: DB:statistics.statistic_event/title:2010-02-08
+msgid "mb_server now hosted on Git"
+msgstr ""
+
+#: ../root/statistics/timeline.tt:18
+msgid "Add/remove lines:"
+msgstr "Lisää/poista rivit:"
+
+#: ../root/statistics/timeline.tt:18
+msgid "Check boxes above"
+msgstr ""
+
+#: ../root/statistics/timeline.tt:17
+msgid "Click to deselect"
+msgstr ""
+
+#: ../root/statistics/timeline.tt:14
+msgid "Controls"
+msgstr "Säätimet"
+
+#: ../root/statistics/layout.tt:4 ../root/statistics/Countries.js:36
+#: ../root/statistics/StatisticsLayout.js:51
+msgid "Countries"
+msgstr "Maat"
+
+#: ../root/statistics/layout.tt:4 ../root/statistics/CoverArt.js:69
+#: ../root/statistics/StatisticsLayout.js:61 ../root/statistics/stats.js:17
+msgid "Cover Art"
+msgstr "Kansitaide"
+
+#: ../root/statistics/layout.tt:23 ../root/statistics/layout.tt:34
+#: ../root/statistics/StatisticsLayout.js:97
+#: ../root/statistics/StatisticsLayout.js:110
+msgid "Database Statistics"
+msgstr "Tietokannat tilastot"
+
+#: ../root/statistics/layout.tt:15
+msgid "Database Statistics - {title}"
+msgstr "Tietokannat tilastot - {title}"
+
+#: ../root/statistics/timeline.tt:16
+msgid "Draw a rectangle on either graph"
+msgstr ""
+
+#: ../root/statistics/layout.tt:4 ../root/statistics/Editors.js:97
+#: ../root/statistics/Editors.js:108 ../root/statistics/Index.js:908
+#: ../root/statistics/StatisticsLayout.js:81
+msgid "Editors"
+msgstr "Käyttäjät"
+
+#: ../root/statistics/layout.tt:4 ../root/statistics/Edits.js:32
+#: ../root/statistics/Edits.js:36 ../root/statistics/Edits.js:45
+#: ../root/statistics/Index.js:1032 ../root/statistics/StatisticsLayout.js:71
+#: ../root/statistics/stats.js:184
+msgid "Edits"
+msgstr "Muokkaukset"
+
+#: ../root/statistics/timeline.tt:28
+msgid "Exact Values (items vs. day)"
+msgstr "Tarkat arvot (kohdetta suhteessa päivään)"
+
+#: ../root/statistics/layout.tt:4 ../root/statistics/StatisticsLayout.js:76
+#: ../root/statistics/stats.js:19
+msgid "Formats"
+msgstr "Tallennusformaatit"
+
+#: ../root/statistics/timeline.tt:19
+msgid "Hover and click on vertical lines"
+msgstr ""
+
+#: ../root/statistics/layout.tt:4 ../root/statistics/StatisticsLayout.js:56
+msgid "Languages/Scripts"
+msgstr "Kielet/merkistöt"
+
+#: ../root/statistics/timeline.tt:2
+msgid "Legend"
+msgstr "Selite"
+
+#: ../root/statistics/timeline.tt:6
+msgid "MusicBrainz Events"
+msgstr "MusicBrainzin tapahtumia"
+
+#: ../root/statistics/timeline.tt:19
+msgid "MusicBrainz Events:"
+msgstr "MusicBrainzin tapahtumia:"
+
+#: ../root/statistics/layout.tt:4 ../root/statistics/Index.js:80
+#: ../root/statistics/StatisticsLayout.js:46
+msgid "Overview"
+msgstr "Yleiskatsaus"
+
+#: ../root/statistics/timeline.tt:30
+msgid "Rate of Change (average items/day vs. day)"
+msgstr ""
+
+#: ../root/statistics/timeline.tt:10
+msgid "Rate of Change Graph"
+msgstr "Muutosnopeuksien kuvaaja"
+
+#: ../root/statistics/layout.tt:4 ../root/statistics/Relationships.js:88
+#: ../root/statistics/Relationships.js:92
+#: ../root/statistics/StatisticsLayout.js:66 ../root/statistics/stats.js:23
+#: ../root/statistics/stats.js:33
+msgid "Relationships"
+msgstr "Yhteydet"
+
+#: ../root/statistics/timeline.tt:17
+msgid "Reset:"
+msgstr "Palaa alkutilaan: "
+
+#: ../root/statistics/layout.tt:4 ../root/statistics/StatisticsLayout.js:86
+msgid "Timeline"
+msgstr "Aikajana"
+
+#: ../root/statistics/timeline.tt:25
+msgid "Timeline Graph"
+msgstr "Aikajana"
+
+#: ../root/statistics/timeline.tt:16
+msgid "Zoom:"
+msgstr "Suurenna:"
+
+#: ../root/statistics/Countries.js:38 ../root/statistics/CoverArt.js:71
+#: ../root/statistics/Editors.js:99 ../root/statistics/Edits.js:34
+#: ../root/statistics/Formats.js:43 ../root/statistics/Index.js:82
+#: ../root/statistics/LanguagesScripts.js:53
+#: ../root/statistics/Relationships.js:90
+msgid "Last updated: {date}"
+msgstr "Päivitetty viimeksi: {date}"
+
+#: ../root/statistics/Countries.js:44 ../root/statistics/Editors.js:53
+#: ../root/statistics/Formats.js:50 ../root/statistics/LanguagesScripts.js:66
+#: ../root/statistics/LanguagesScripts.js:131
+msgid "Rank"
+msgstr "Sijoitus"
+
+#: ../root/statistics/Countries.js:46
+msgid "Country"
+msgstr "Maa"
+
+#: ../root/statistics/Countries.js:50 ../root/statistics/Index.js:226
+#: ../root/statistics/Index.js:230 ../root/statistics/stats.js:45
+msgid "Artists"
+msgstr "Artistit"
+
+#: ../root/statistics/Countries.js:54 ../root/statistics/CoverArt.js:100
+#: ../root/statistics/Formats.js:52 ../root/statistics/Index.js:358
+#: ../root/statistics/LanguagesScripts.js:72
+#: ../root/statistics/LanguagesScripts.js:137 ../root/statistics/stats.js:531
+msgid "Releases"
+msgstr "Julkaisut"
+
+#: ../root/statistics/Countries.js:58 ../root/statistics/Index.js:683
+#: ../root/statistics/Index.js:690 ../root/statistics/stats.js:381
+msgid "Labels"
+msgstr "Levymerkit"
+
+#: ../root/statistics/Countries.js:62 ../root/statistics/Formats.js:61
+#: ../root/statistics/LanguagesScripts.js:80
+msgid "Total"
+msgstr "Yhteensä"
+
+#: ../root/statistics/Countries.js:84 ../root/statistics/stats.js:57
+#: ../root/statistics/stats.js:387 ../root/statistics/stats.js:537
+msgid "Unknown Country"
+msgstr "Tuntematon maa"
+
+#: ../root/statistics/CoverArt.js:73
+msgid "Basics"
+msgstr "Perusasiat"
+
+#: ../root/statistics/CoverArt.js:76 ../root/statistics/CoverArt.js:105
+#: ../root/statistics/CoverArt.js:239
+msgid "No cover art statistics available."
+msgstr ""
+
+#: ../root/statistics/CoverArt.js:82 ../root/statistics/CoverArt.js:114
+#: ../root/statistics/CoverArt.js:141 ../root/statistics/CoverArt.js:168
+#: ../root/statistics/CoverArt.js:275
+msgid "Releases with cover art:"
+msgstr "Julkaisut, joissa kansitaidetta:"
+
+#: ../root/statistics/CoverArt.js:93 ../root/statistics/CoverArt.js:248
+msgid "Pieces of cover art:"
+msgstr "Kappaletta kansitaidetta"
+
+#: ../root/statistics/CoverArt.js:111
+msgid "By Release Group Type"
+msgstr "Julkaisunryhmän tyypin mukaisesti"
+
+#: ../root/statistics/CoverArt.js:124 ../root/statistics/CoverArt.js:258
+msgid "No type"
+msgstr "Ei tyyppiä"
+
+#: ../root/statistics/CoverArt.js:138
+msgid "By Release Status"
+msgstr "Julkaisun tilan mukaisesti"
+
+#: ../root/statistics/CoverArt.js:151
+msgid "No status"
+msgstr "Ei tilaa"
+
+#: ../root/statistics/CoverArt.js:165
+msgid "By Release Format"
+msgstr "Julkaisun tallennetyypin mukaisesti"
+
+#: ../root/statistics/CoverArt.js:178
+msgid "No format"
+msgstr "Ei formaattia"
+
+#: ../root/statistics/CoverArt.js:194
+msgid "Release groups"
+msgstr "Julkaisuryhmät"
+
+#: ../root/statistics/CoverArt.js:198
+msgid "Release groups with cover art:"
+msgstr "Julkaisuryhmät, joilla kansitaidetta:"
+
+#: ../root/statistics/CoverArt.js:204
+msgid "manually selected:"
+msgstr "käsin valittu:"
+
+#: ../root/statistics/CoverArt.js:222
+msgid "automatically inferred:"
+msgstr "automaattisesti päätelty:"
+
+#: ../root/statistics/CoverArt.js:236
+msgid "Pieces of cover art"
+msgstr "Kappaletta kansitaidetta"
+
+#: ../root/statistics/CoverArt.js:245
+msgid "By Cover Art Type"
+msgstr "Kansitaiteen tyypin mukaisesti"
+
+#: ../root/statistics/CoverArt.js:272
+msgid "Per release"
+msgstr "Per julkaisu"
+
+#: ../root/statistics/CoverArt.js:284
+msgid "with {num} piece of cover art:"
+msgid_plural "with {num} pieces of cover art:"
+msgstr[0] "joissa {num} kappale kansitaidetta:"
+msgstr[1] "joissa {num} kappaletta kansitaidetta:"
+
+#: ../root/statistics/CoverArt.js:308
+msgid "with 30 or more pieces of cover art:"
+msgstr "joissa 30 tai enemmän kappaletta kansitaidetta:"
+
+#: ../root/statistics/Editors.js:82
+msgid "There is no data to display here."
+msgstr "Ei näytettävissä olevaa tietoa. "
+
+#: ../root/statistics/Editors.js:102
+msgid ""
+"For the vote statistics, only yes or no votes are counted, abstain votes are"
+" not counted."
+msgstr "Äänestystilastoissa vain kyllä ja ei äänet lasketaan, tyhjiä ääniä ei lasketa"
+
+#: ../root/statistics/Editors.js:110
+msgid "Open and applied edits in past week"
+msgstr "Avoimet ja hyväksytyt muokkauset viikon ajalta"
+
+#: ../root/statistics/Editors.js:112 ../root/statistics/Editors.js:118
+msgid "Editor"
+msgstr "Muokkaaja"
+
+#: ../root/statistics/Editors.js:113
+msgid "Most active editors in the past week"
+msgstr "Aktiivisimmat muokkaajat viikon ajalta"
+
+#: ../root/statistics/Editors.js:116
+msgid "Total applied edits"
+msgstr "Yhteensä hyväksyttyjä muokkauksia"
+
+#: ../root/statistics/Editors.js:119
+msgid "Top editors overall"
+msgstr "Aktiivisimmat muokkaajat kaiken kaikkiaan"
+
+#: ../root/statistics/Editors.js:125
+msgid "Voters"
+msgstr "Äänestäjät"
+
+#: ../root/statistics/Editors.js:127
+msgid "Votes in past week"
+msgstr "Ääniä viikon aikana"
+
+#: ../root/statistics/Editors.js:129 ../root/statistics/Editors.js:135
+msgid "Voter"
+msgstr "Äänestäjä"
+
+#: ../root/statistics/Editors.js:130
+msgid "Most active voters in the past week"
+msgstr "Aktiivisimmat äänestäjät viikon ajalta"
+
+#: ../root/statistics/Editors.js:133
+msgid "Total votes"
+msgstr "Yhteensä ääniä"
+
+#: ../root/statistics/Editors.js:136
+msgid "Top voters overall"
+msgstr "Aktiivisimmat äänestäjät kaiken kaikkiaan"
+
+#: ../root/statistics/Edits.js:39
+msgid "No edit statistics available."
+msgstr ""
+
+#: ../root/statistics/Formats.js:40 ../root/statistics/Formats.js:46
+msgid "Release/Medium Formats"
+msgstr "Julkaisu- ja tallenneformaatit"
+
+#: ../root/statistics/Formats.js:51
+msgid "Format"
+msgstr "Tallenteen muoto"
+
+#: ../root/statistics/Formats.js:53
+msgid "% of total releases"
+msgstr "% kaikista julkaisuista"
+
+#: ../root/statistics/Formats.js:54 ../root/statistics/stats.js:393
+msgid "Mediums"
+msgstr "Tallenteet"
+
+#: ../root/statistics/Formats.js:55
+msgid "% of total mediums"
+msgstr "% kaikista tallenteista"
+
+#: ../root/statistics/Formats.js:81
+msgid "Unknown Format"
+msgstr "Tuntematon formaatti"
+
+#: ../root/statistics/Index.js:84
+msgid "Basic metadata"
+msgstr "Perustiedot"
+
+#: ../root/statistics/Index.js:88 ../root/statistics/stats.js:16
+msgid "Core Entities"
+msgstr "Keskeisimmät entiteetit"
+
+#: ../root/statistics/Index.js:91 ../root/statistics/Index.js:233
+msgid "Artists:"
+msgstr "Artistit:"
+
+#: ../root/statistics/Index.js:95 ../root/statistics/Index.js:613
+#: ../root/statistics/Index.js:639
+msgid "Release Groups:"
+msgstr "Julkaisuryhmät:"
+
+#: ../root/statistics/Index.js:99 ../root/statistics/Index.js:361
+#: ../root/statistics/Index.js:383 ../root/statistics/Index.js:409
+#: ../root/statistics/Index.js:435 ../root/statistics/Index.js:469
+#: ../root/statistics/Index.js:518
+msgid "Releases:"
+msgstr "Julkaisut:"
+
+#: ../root/statistics/Index.js:103 ../root/statistics/Index.js:562
+msgid "Mediums:"
+msgstr "Tallenteet:"
+
+#: ../root/statistics/Index.js:107 ../root/statistics/Index.js:671
+msgid "Recordings:"
+msgstr "Äänitteet"
+
+#: ../root/statistics/Index.js:111
+msgid "Tracks:"
+msgstr "Kappaleet:"
+
+#: ../root/statistics/Index.js:115
+msgid "Labels:"
+msgstr "Levymerkit:"
+
+#: ../root/statistics/Index.js:119 ../root/statistics/Index.js:718
+#: ../root/statistics/Index.js:745
+msgid "Works:"
+msgstr "Teokset:"
+
+#: ../root/statistics/Index.js:123
+msgid "URLs:"
+msgstr "URL-osoitteet:"
+
+#: ../root/statistics/Index.js:127 ../root/statistics/Index.js:775
+msgid "Areas:"
+msgstr "Alueet:"
+
+#: ../root/statistics/Index.js:131 ../root/statistics/Index.js:803
+msgid "Places:"
+msgstr "Paikat:"
+
+#: ../root/statistics/Index.js:135 ../root/statistics/Index.js:831
+msgctxt "plural"
+msgid "Series:"
+msgstr "Sarjat:"
+
+#: ../root/statistics/Index.js:139 ../root/statistics/Index.js:853
+msgid "Instruments:"
+msgstr "Soittimet:"
+
+#: ../root/statistics/Index.js:143 ../root/statistics/Index.js:883
+msgid "Events:"
+msgstr ""
+
+#: ../root/statistics/Index.js:147
+msgid "Genres"
+msgstr "Tyylilajit"
+
+#: ../root/statistics/Index.js:153
+msgid "Other Entities"
+msgstr "Muut entiteetit"
+
+#: ../root/statistics/Index.js:156
+msgid "Editors (valid / deleted):"
+msgstr "Käyttäjät (voimassa olevat / poistetut):"
+
+#: ../root/statistics/Index.js:162 ../root/statistics/Relationships.js:107
+msgid "Relationships:"
+msgstr "Yhteydet:"
+
+#: ../root/statistics/Index.js:166
+msgid "CD Stubs (all time / current):"
+msgstr "CD-tyngät (kaikki / nykyiset):"
+
+#: ../root/statistics/Index.js:175
+msgid "Tags (raw / aggregated):"
+msgstr "Luokitukset (käsittelemättömät / koostetut):"
+
+#: ../root/statistics/Index.js:181
+msgid "Ratings (raw / aggregated):"
+msgstr "Arvostelut (käsittelemättömät / koostetut):"
+
+#: ../root/statistics/Index.js:189
+msgid "Identifiers"
+msgstr "Tunnisteet"
+
+#: ../root/statistics/Index.js:192
+msgid "MBIDs:"
+msgstr ""
+
+#: ../root/statistics/Index.js:196
+msgid "ISRCs (all / unique):"
+msgstr "ISRC-koodia (kaikki / uniikit)"
+
+#: ../root/statistics/Index.js:202
+msgid "ISWCs (all / unique):"
+msgstr "ISWC-koodit (kaikki / uniikit):"
+
+#: ../root/statistics/Index.js:208 ../root/statistics/Index.js:513
+msgid "Disc IDs:"
+msgstr "Levyn tunnisteet:"
+
+#: ../root/statistics/Index.js:212
+msgid "Barcodes:"
+msgstr "Viivakoodit:"
+
+#: ../root/statistics/Index.js:216
+msgid "IPIs:"
+msgstr "IPI-koodit:"
+
+#: ../root/statistics/Index.js:220
+msgid "ISNIs:"
+msgstr "ISNI-koodit:"
+
+#: ../root/statistics/Index.js:239
+msgid "of type Person:"
+msgstr "jotka henkilöitä:"
+
+#: ../root/statistics/Index.js:245
+msgid "of type Group:"
+msgstr "jotka ryhmiä:"
+
+#: ../root/statistics/Index.js:251
+msgid "of type Orchestra:"
+msgstr "tyyppiä orkesteri:"
+
+#: ../root/statistics/Index.js:257
+msgid "of type Choir:"
+msgstr "tyyppiä kuoro: "
+
+#: ../root/statistics/Index.js:263
+msgid "of type Character:"
+msgstr "jotka kuvitteellisia hahmoja:"
+
+#: ../root/statistics/Index.js:269
+msgid "of type Other:"
+msgstr "jotka muita:"
+
+#: ../root/statistics/Index.js:275
+msgid "with no type set:"
+msgstr "ei tyyppiä asetettu:"
+
+#: ../root/statistics/Index.js:281
+msgid "with appearances in artist credits:"
+msgstr ""
+
+#: ../root/statistics/Index.js:287
+msgid "with no appearances in artist credits:"
+msgstr ""
+
+#: ../root/statistics/Index.js:292
+msgid "Non-group artists:"
+msgstr "Artistit, jotka eivät ole ryhmiä:"
+
+#: ../root/statistics/Index.js:298
+msgid "Male:"
+msgstr "Mies:"
+
+#: ../root/statistics/Index.js:309
+msgid "Female:"
+msgstr "Nainen:"
+
+#: ../root/statistics/Index.js:320
+msgid "Other gender:"
+msgstr "Muu sukupuoli:"
+
+#: ../root/statistics/Index.js:331
+msgid "Gender not applicable:"
+msgstr ""
+
+#: ../root/statistics/Index.js:342
+msgid "with no gender set:"
+msgstr "ei sukupuolta asetettu:"
+
+#: ../root/statistics/Index.js:354
+msgid "Releases, Data Quality, and Disc IDs"
+msgstr "Julkaisut, tiedon laatu ja levyjen tunnisteet"
+
+#: ../root/statistics/Index.js:367
+msgid "by various artists:"
+msgstr "eri artisteilta:"
+
+#: ../root/statistics/Index.js:373
+msgid "by a single artist:"
+msgstr "yhdeltä artistilta:"
+
+#: ../root/statistics/Index.js:380
+msgid "Release Status"
+msgstr "Julkaisun tila"
+
+#: ../root/statistics/Index.js:399
+msgid "No status set"
+msgstr "Ei tilaa asetettu"
+
+#: ../root/statistics/Index.js:406
+msgid "Release Packaging"
+msgstr "Julkaisun paukkaus"
+
+#: ../root/statistics/Index.js:425
+msgid "No packaging set"
+msgstr "Ei pakkausta asetettu"
+
+#: ../root/statistics/Index.js:432
+msgid "Cover Art Sources"
+msgstr "Kansitaiteiden lähteet"
+
+#: ../root/statistics/Index.js:441
+msgid "CAA:"
+msgstr "CAA:"
+
+#: ../root/statistics/Index.js:447
+msgid "Amazon:"
+msgstr "Amazon:"
+
+#: ../root/statistics/Index.js:453
+msgid "URL Relationships:"
+msgstr "URL yhteydet:"
+
+#: ../root/statistics/Index.js:459
+msgid "No front cover art:"
+msgstr "Ei kansitaidetta:"
+
+#: ../root/statistics/Index.js:466
+msgid "Data Quality"
+msgstr "Tiedon laatu"
+
+#: ../root/statistics/Index.js:475
+msgid "High Data Quality:"
+msgstr "Korkea tiedon laatu:"
+
+#: ../root/statistics/Index.js:481
+msgid "Default Data Quality:"
+msgstr "Normaali tiedon laatu:"
+
+#: ../root/statistics/Index.js:488
+msgid "Normal Data Quality:"
+msgstr "Normaali tiedon laatu:"
+
+#: ../root/statistics/Index.js:495
+msgid "Unknown Data Quality:"
+msgstr "Tuntematon tiedon laatu:"
+
+#: ../root/statistics/Index.js:503
+msgid "Low Data Quality:"
+msgstr "Alhainen tiedon laatu:"
+
+#: ../root/statistics/Index.js:510 ../root/statistics/stats.js:177
+msgid "Disc IDs"
+msgstr "Levyn tunnisteet"
+
+#: ../root/statistics/Index.js:524
+msgid "Releases with no disc IDs:"
+msgstr "Julkaisut, joissa ei ole levyn tunnistetta:"
+
+#: ../root/statistics/Index.js:531
+msgid "Releases with at least one disc ID:"
+msgstr "Julkaisut, joissa ainakin yksi levyn tunniste:"
+
+#: ../root/statistics/Index.js:542 ../root/statistics/Index.js:586
+msgid "with {num} disc ID:"
+msgid_plural "with {num} disc IDs:"
+msgstr[0] "joissa {num} levyn tunniste:"
+msgstr[1] "joissa {num} levyn tunnistetta:"
+
+#: ../root/statistics/Index.js:557 ../root/statistics/Index.js:599
+msgid "with 10 or more disc IDs:"
+msgstr "joissa 10 tai enemmän levyn tunnistetta:"
+
+#: ../root/statistics/Index.js:568
+msgid "Mediums with no disc IDs:"
+msgstr "Tallenteet, joissa ei levyn tunnistetta:"
+
+#: ../root/statistics/Index.js:575
+msgid "Mediums with at least one disc ID:"
+msgstr "Tallenteet, joissa ainakin yksi levyn tunniste:"
+
+#: ../root/statistics/Index.js:606 ../root/statistics/stats.js:609
+msgid "Release Groups"
+msgstr "Julkaisuryhmät"
+
+#: ../root/statistics/Index.js:610
+msgid "Primary Types"
+msgstr "Ensisijaiset tyypit"
+
+#: ../root/statistics/Index.js:636
+msgid "Secondary Types"
+msgstr "Toissijaiset tyypit"
+
+#: ../root/statistics/Index.js:664 ../root/statistics/Index.js:668
+#: ../root/statistics/stats.js:519
+msgid "Recordings"
+msgstr "Äänitteet"
+
+#: ../root/statistics/Index.js:676
+msgid "Videos:"
+msgstr "Videoita:"
+
+#: ../root/statistics/Index.js:687 ../root/statistics/Index.js:715
+#: ../root/statistics/Index.js:772 ../root/statistics/Index.js:800
+#: ../root/statistics/Index.js:828 ../root/statistics/Index.js:850
+#: ../root/statistics/Index.js:880
+msgid "Types"
+msgstr "Tyypit"
+
+#: ../root/statistics/Index.js:704 ../root/statistics/Index.js:732
+#: ../root/statistics/Index.js:761 ../root/statistics/Index.js:789
+#: ../root/statistics/Index.js:817 ../root/statistics/Index.js:869
+#: ../root/statistics/Index.js:897
+msgid "None"
+msgstr "Ei mitään"
+
+#: ../root/statistics/Index.js:711 ../root/statistics/LanguagesScripts.js:76
+#: ../root/statistics/stats.js:731
+msgid "Works"
+msgstr "Teokset"
+
+#: ../root/statistics/Index.js:742
+msgid "Attributes"
+msgstr "Ominaisuudet"
+
+#: ../root/statistics/Index.js:768 ../root/statistics/stats.js:39
+msgid "Areas"
+msgstr "Alueet"
+
+#: ../root/statistics/Index.js:796 ../root/statistics/stats.js:411
+msgid "Places"
+msgstr "Paikat"
+
+#: ../root/statistics/Index.js:824 ../root/statistics/stats.js:615
+msgctxt "plural"
+msgid "Series"
+msgstr "Sarjat"
+
+#: ../root/statistics/Index.js:846 ../root/statistics/stats.js:315
+msgid "Instruments"
+msgstr "Soittimet"
+
+#: ../root/statistics/Index.js:876 ../root/statistics/stats.js:309
+msgid "Events"
+msgstr "Tapahtumat"
+
+#: ../root/statistics/Index.js:904
+msgid "Editors, Edits, and Votes"
+msgstr "Käyttäjät, muokkaukset ja äänet"
+
+#: ../root/statistics/Index.js:911
+msgid "Editors (valid):"
+msgstr "Käyttäjät (voimassa olevat):"
+
+#: ../root/statistics/Index.js:917
+msgid "active ever:"
+msgstr "aktiivisia joskus:"
+
+#: ../root/statistics/Index.js:925
+msgid "who edited and/or voted in the last 7 days:"
+msgstr "jotka muokanneet ja/tai äänestäneet viimeisen 7 päivän aikana:"
+
+#: ../root/statistics/Index.js:934
+msgid "who edited in the last 7 days:"
+msgstr "jotka muokanneet viimeisen 7 päivän aikana:"
+
+#: ../root/statistics/Index.js:942
+msgid "who voted in the last 7 days:"
+msgstr "jotka äänestäneet viimeisen 7 päivän aikana:"
+
+#: ../root/statistics/Index.js:949
+msgid "who edit:"
+msgstr "jotka muokkaavat:"
+
+#: ../root/statistics/Index.js:956
+msgid "who vote:"
+msgstr "jotka äänestävät:"
+
+#: ../root/statistics/Index.js:963
+msgid "who leave edit notes:"
+msgstr "jotka jättävät muokkausmerkintöjä:"
+
+#: ../root/statistics/Index.js:970
+msgid "who use tags:"
+msgstr "jotka luokittelevat:"
+
+#: ../root/statistics/Index.js:977
+msgid "who use ratings:"
+msgstr "jotka arvostelevat:"
+
+#: ../root/statistics/Index.js:986
+msgid "who use subscriptions:"
+msgstr "jotka seuraavat:"
+
+#: ../root/statistics/Index.js:995
+msgid "who use collections:"
+msgstr "jotka käyttävät kokoelmia:"
+
+#: ../root/statistics/Index.js:1005
+msgid "who have registered applications:"
+msgstr "joilla on rekisteröity sovellus:"
+
+#: ../root/statistics/Index.js:1014
+msgid "validated email only:"
+msgstr "jotka ovat vain vahvistaneet sähköposti-osoitteen:"
+
+#: ../root/statistics/Index.js:1020
+msgid "inactive:"
+msgstr "passiivinen:"
+
+#: ../root/statistics/Index.js:1025
+msgid "Editors (deleted):"
+msgstr "Käyttäjät (poistetut):"
+
+#: ../root/statistics/Index.js:1035 ../root/statistics/Index.js:1082
+msgid "Edits:"
+msgstr "Muokkaukset:"
+
+#: ../root/statistics/Index.js:1041
+msgid "Open:"
+msgstr "Avoin:"
+
+#: ../root/statistics/Index.js:1047
+msgid "Applied:"
+msgstr "Hyväksytty:"
+
+#: ../root/statistics/Index.js:1053
+msgid "Voted down:"
+msgstr "Äänestetty kumoon:"
+
+#: ../root/statistics/Index.js:1059
+msgid "Failed (dependency):"
+msgstr "Epäonnistunut (riippuvuus):"
+
+#: ../root/statistics/Index.js:1065
+msgid "Failed (prerequisite):"
+msgstr "Epäonnistunut (edellytys):"
+
+#: ../root/statistics/Index.js:1071
+msgid "Failed (internal error):"
+msgstr "Epäonnistunut (sisäinen virhe):"
+
+#: ../root/statistics/Index.js:1077
+msgid "Cancelled:"
+msgstr "Peruutettu:"
+
+#: ../root/statistics/Index.js:1088 ../root/statistics/Index.js:1140
+msgid "Last 7 days:"
+msgstr "Viimeiset 7 päivää:"
+
+#: ../root/statistics/Index.js:1095 ../root/statistics/Index.js:1147
+msgid "Yesterday:"
+msgstr "Eilinen:"
+
+#: ../root/statistics/Index.js:1102 ../root/statistics/stats.js:694
+msgid "Votes"
+msgstr "Annetut äänet"
+
+#: ../root/statistics/Index.js:1105 ../root/statistics/Index.js:1134
+msgid "Votes:"
+msgstr "Äänet:"
+
+#: ../root/statistics/Index.js:1111
+msgctxt "vote"
+msgid "Approve"
+msgstr "Hyväksy"
+
+#: ../root/statistics/Index.js:1117
+msgctxt "vote"
+msgid "Yes"
+msgstr "Kyllä"
+
+#: ../root/statistics/Index.js:1123
+msgctxt "vote"
+msgid "No"
+msgstr "Ei"
+
+#: ../root/statistics/Index.js:1129
+msgctxt "vote"
+msgid "Abstain"
+msgstr "Tyhjä"
+
+#: ../root/statistics/LanguagesScripts.js:50
+msgid "Languages and Scripts"
+msgstr "Kielet ja merkistöt"
+
+#: ../root/statistics/LanguagesScripts.js:56
+msgid "All other available languages and scripts have 0 releases and works."
+msgstr "Kaikilla muilla käytettävissä olevilla kielillä ja merkistöillä 0 julkaisua ja teosta."
+
+#: ../root/statistics/LanguagesScripts.js:62
+#: ../root/statistics/LanguagesScripts.js:68
+msgid "Languages"
+msgstr "Kielet"
+
+#: ../root/statistics/LanguagesScripts.js:93
+msgid "Unknown language"
+msgstr "Tuntematon kieli"
+
+#: ../root/statistics/LanguagesScripts.js:127
+msgid "Scripts"
+msgstr "Merkistöt"
+
+#: ../root/statistics/LanguagesScripts.js:133
+msgid "Script"
+msgstr "Merkistö"
+
+#: ../root/statistics/LanguagesScripts.js:150
+msgid "Unknown script"
+msgstr "Tuntematon merkistö"
+
+#: ../root/statistics/NoStatistics.js:17 ../root/statistics/NoStatistics.js:18
+msgid "No Statistics"
+msgstr "Ei tilastoja"
+
+#: ../root/statistics/NoStatistics.js:21
+msgid ""
+"Statistics have never been collected for this server. If you are the "
+"administrator for this server, you should run "
+"<code>./admin/CollectStats.pl</code> or import <code>mbdump-"
+"stats.tar.bz2</code>."
+msgstr "Tälle palvelimelle ei ole vielä kerätty statistiikkoja. Jos olet palvelimen ylläpitäjä, sinun tulee joko ajaa <code>./admin/CollectStats.pl</code> tai tuoda <code>mbdump-stats.tar.bz2</code>."
+
+#: ../root/statistics/Relationships.js:95
+msgid "No relationship statistics available."
+msgstr ""
+
+#: ../root/statistics/Relationships.js:102
+msgctxt "relationships"
+msgid "This type only"
+msgstr ""
+
+#: ../root/statistics/Relationships.js:103
+msgctxt "relationships"
+msgid "Including subtypes"
+msgstr ""
+
+#: ../root/statistics/Relationships.js:120
+msgid "{type0}-{type1}"
+msgstr "{type0}-{type1}"
+
+#: ../root/statistics/Relationships.js:126
+msgid "{type0}-{type1} relationships:"
+msgstr "{type0}-{type1} yhteydet:"
+
+#: ../root/statistics/stats.js:14
+msgid "Artist Countries"
+msgstr "Artistien maat"
+
+#: ../root/statistics/stats.js:15
+msgid "Artist Types and Genders"
+msgstr "Artistin tyypit ja sukupuolet"
+
+#: ../root/statistics/stats.js:18
+msgid "Edit Information"
+msgstr "Tietoja muokkauksista"
+
+#: ../root/statistics/stats.js:20
+msgid "Label Countries"
+msgstr "Levymerkkien maat"
+
+#: ../root/statistics/stats.js:21
+msgctxt "stats category"
+msgid "Other"
+msgstr "Muut"
+
+#: ../root/statistics/stats.js:22
+msgid "Ratings and Tags"
+msgstr "Arvostelut ja luokitukset"
+
+#: ../root/statistics/stats.js:24
+msgid "Release Countries"
+msgstr "Julkaisumaat"
+
+#: ../root/statistics/stats.js:25
+msgid "Release Languages"
+msgstr "Julkaisukielet"
+
+#: ../root/statistics/stats.js:26
+msgid "Release Data Quality"
+msgstr "Julkaisun tiedon laatu"
+
+#: ../root/statistics/stats.js:27
+msgid "Release Scripts"
+msgstr "Julkaisumerkistöt"
+
+#: ../root/statistics/stats.js:32
+msgid "Count of all Relationships"
+msgstr "Kaikkien yhteyksien määrä"
+
+#: ../root/statistics/stats.js:38
+msgid "Count of all areas"
+msgstr "Kaikkien alueiden määrä"
+
+#: ../root/statistics/stats.js:44
+msgid "Count of all artists"
+msgstr "Kaikkien artistien määrä"
+
+#: ../root/statistics/stats.js:50
+msgid "Artists with no appearances in artist credits"
+msgstr ""
+
+#: ../root/statistics/stats.js:51
+msgid "Artists not in ACs"
+msgstr ""
+
+#: ../root/statistics/stats.js:56
+msgid "Artists with no country set"
+msgstr "Artisteja ilman asetettua maata"
+
+#: ../root/statistics/stats.js:62
+msgid "Artists with gender set to female"
+msgstr "Artisteja joiden sukupuolena nainen"
+
+#: ../root/statistics/stats.js:63
+msgid "Female Artists"
+msgstr "Naisartisteja"
+
+#: ../root/statistics/stats.js:68
+msgid "Artists with gender set to male"
+msgstr "Artisteja joiden sukupuolena mies"
+
+#: ../root/statistics/stats.js:69
+msgid "Male Artists"
+msgstr "Miesartisteja:"
+
+#: ../root/statistics/stats.js:74
+msgid "Artists with gender set to not applicable"
+msgstr ""
+
+#: ../root/statistics/stats.js:75
+msgid "Gender Not Applicable"
+msgstr ""
+
+#: ../root/statistics/stats.js:80
+msgid "Artists with gender unset (non-group artists)"
+msgstr "Artisteja joiden sukupuolta ei ole valittu (muut kuin ryhmät)"
+
+#: ../root/statistics/stats.js:81
+msgid "Unknown-gender Artists"
+msgstr "Tuntematon sukupuoli artistit"
+
+#: ../root/statistics/stats.js:86
+msgid "Artists with gender set to other"
+msgstr "Artisteja joiden sukupuoleksi valittu muu"
+
+#: ../root/statistics/stats.js:87
+msgid "Other-gender Artists"
+msgstr ""
+
+#: ../root/statistics/stats.js:92
+msgid "Artists with at least one artist credit appearance"
+msgstr ""
+
+#: ../root/statistics/stats.js:93
+msgid "Artists in ACs"
+msgstr ""
+
+#: ../root/statistics/stats.js:98
+msgid "Artists with type set to character"
+msgstr "Artistit joiden tyyppinä kuvitteellinen hahmo"
+
+#: ../root/statistics/stats.js:99
+msgid "Characters"
+msgstr "Kuvitteelliset hahmot"
+
+#: ../root/statistics/stats.js:104
+msgid "Artists with type set to choir"
+msgstr ""
+
+#: ../root/statistics/stats.js:105
+msgid "Choirs"
+msgstr "Kuorot"
+
+#: ../root/statistics/stats.js:110
+msgid "Artists with type set to group"
+msgstr "Artisteja joiden tyyppinä ryhmä"
+
+#: ../root/statistics/stats.js:111
+msgid "Groups"
+msgstr "Ryhmät"
+
+#: ../root/statistics/stats.js:116
+msgid "Artists with type unset"
+msgstr "Artisteja joiden tyyppiä ei määritelty"
+
+#: ../root/statistics/stats.js:117
+msgid "Unknown-type Artists"
+msgstr "Tuntematon tyyppi artistit"
+
+#: ../root/statistics/stats.js:122
+msgid "Artists with type set to orchestra"
+msgstr ""
+
+#: ../root/statistics/stats.js:123
+msgid "Orchestras"
+msgstr "Orkesterit"
+
+#: ../root/statistics/stats.js:128
+msgid "Artists with type set to other"
+msgstr "Artisteja joiden tyyppinä muu"
+
+#: ../root/statistics/stats.js:129
+msgid "Other-type Artists"
+msgstr ""
+
+#: ../root/statistics/stats.js:134
+msgid "Artists with type set to person"
+msgstr "Artisteja joiden tyyppinä henkilö"
+
+#: ../root/statistics/stats.js:135
+msgid "Persons"
+msgstr "Henkilöt"
+
+#: ../root/statistics/stats.js:140
+msgid "Count of all Artist Credits"
+msgstr ""
+
+#: ../root/statistics/stats.js:141
+msgid "Artist Credits"
+msgstr "Artistin tekijänimet"
+
+#: ../root/statistics/stats.js:146
+msgid "Count of all Barcodes"
+msgstr "Kaikkien viivakoodien määrä"
+
+#: ../root/statistics/stats.js:147
+msgid "Barcodes"
+msgstr "Viivakoodit"
+
+#: ../root/statistics/stats.js:152
+msgid "Count of all CDStubs"
+msgstr "Kaikkien CD-tynkien määrä"
+
+#: ../root/statistics/stats.js:153
+msgid "CDStubs (all)"
+msgstr "CD-tyngät (kaikki)"
+
+#: ../root/statistics/stats.js:158
+msgid "Count of all CDStubs ever submitted"
+msgstr "Kaikkien koskaan lisättyjen CD-tynkien määrä"
+
+#: ../root/statistics/stats.js:159
+msgid "CDStubs (submitted)"
+msgstr "CD-tyngät (lähetetyt)"
+
+#: ../root/statistics/stats.js:164
+msgid "Count of all CDStub tracks"
+msgstr "Kaikkien CD-tynkien kappaleiden määrä"
+
+#: ../root/statistics/stats.js:165
+msgid "CDStub tracks"
+msgstr "CD-tynkien kappaleita"
+
+#: ../root/statistics/stats.js:170 ../root/statistics/stats.js:171
+msgid "Pieces of Cover Art"
+msgstr "Kansitaidetta yhteensä"
+
+#: ../root/statistics/stats.js:176
+msgid "Count of all Disc IDs"
+msgstr "Kaikkien levyn tunnisteiden määrä"
+
+#: ../root/statistics/stats.js:182
+msgid "Count of all edits"
+msgstr "Kaikkien muokkausten määrä"
+
+#: ../root/statistics/stats.js:189
+msgid "All edits that have been applied"
+msgstr "Kaikki muokkaukset, jotka on hyväksytty"
+
+#: ../root/statistics/stats.js:190
+msgid "Applied edits"
+msgstr "Hyväksytyt muokkaukset"
+
+#: ../root/statistics/stats.js:195 ../root/statistics/stats.js:196
+msgid "Cancelled edits"
+msgstr "Peruutetut muokkaukset:"
+
+#: ../root/statistics/stats.js:201
+msgid "All edits that have hit an error"
+msgstr "Kaikki muokkaukset, joihin virhe on vaikuttanut"
+
+#: ../root/statistics/stats.js:202
+msgid "Error edits"
+msgstr ""
+
+#: ../root/statistics/stats.js:207
+msgid "Evalnochange edits"
+msgstr ""
+
+#: ../root/statistics/stats.js:208
+msgid "Evalnochange Edits"
+msgstr ""
+
+#: ../root/statistics/stats.js:213
+msgid "All edits that have failed dependency checks"
+msgstr "Kaikki muokkaukset, joiden riippuvuuksien tarkistus epäonnistui"
+
+#: ../root/statistics/stats.js:214
+msgid "Failed edits (dependency)"
+msgstr "Epäonnistuneet muokkaukset (riippuvuus)"
+
+#: ../root/statistics/stats.js:219
+msgid "All edits that have failed prerequisite checks"
+msgstr "Kaikki muokkaukset, joiden ennakkotarkistus epäonnistui"
+
+#: ../root/statistics/stats.js:220
+msgid "Failed edits (prerequisite)"
+msgstr "Epäonnistuneet muokkaukset (edellyt)"
+
+#: ../root/statistics/stats.js:225
+msgid "All edits that have failed by being voted down"
+msgstr "Kaikki muokkaukset, jotka on äänestetty kumoon"
+
+#: ../root/statistics/stats.js:226
+msgid "Failed edits (voted down)"
+msgstr "Epäonnistuneet muokkaukseet (äänestetty kumoon)"
+
+#: ../root/statistics/stats.js:231
+msgid "Count of open edits"
+msgstr "Avointen muokkausten määrä"
+
+#: ../root/statistics/stats.js:232
+msgid "Open Edits"
+msgstr "Avoimet muokkaukset"
+
+#: ../root/statistics/stats.js:237
+msgid "Count of edits per day"
+msgstr "Muokkauksia päivässä yhteensä"
+
+#: ../root/statistics/stats.js:239
+msgid "Edits per day"
+msgstr "Muokkauksia päivässä"
+
+#: ../root/statistics/stats.js:244
+msgid "Count of edits per week"
+msgstr "Muokkauksia viikossa yhteensä"
+
+#: ../root/statistics/stats.js:245
+msgid "Edits per week"
+msgstr "Muokkauksia viikossa"
+
+#: ../root/statistics/stats.js:250
+msgid "Edits about to be cancelled"
+msgstr ""
+
+#: ../root/statistics/stats.js:251
+msgid "To-be-cancelled edits"
+msgstr ""
+
+#: ../root/statistics/stats.js:256
+msgid "Count of all editors"
+msgstr "Kaikkien käyttäjien määrä"
+
+#: ../root/statistics/stats.js:258
+msgid "Editors (all)"
+msgstr "Käyttäjät (kaikki)"
+
+#: ../root/statistics/stats.js:264
+msgid "Count of active editors (editing or voting) during the last week"
+msgstr "Aktiivisia käyttäjiä (muokkaajia tai äänestäjiä) viikon aikana"
+
+#: ../root/statistics/stats.js:266
+msgid "Active Users"
+msgstr "Aktiiviset editorit"
+
+#: ../root/statistics/stats.js:271
+msgid "Count of deleted editors"
+msgstr "Kaikkien poistettujen käyttäjien määrä"
+
+#: ../root/statistics/stats.js:273
+msgid "Editors (deleted)"
+msgstr "Käyttäjät (poistetut)"
+
+#: ../root/statistics/stats.js:279
+msgid "Count of editors who have submitted edits during the last 7 days"
+msgstr "Käyttäjien, jotka muokanneet viimeisen 7 päivän aikana määrä"
+
+#: ../root/statistics/stats.js:281
+msgid "Active Editors"
+msgstr "Aktiiviset editorit"
+
+#: ../root/statistics/stats.js:286
+msgid "Count of non-deleted editors"
+msgstr "Kaikkien ei poistettujen käyttäjien määrä"
+
+#: ../root/statistics/stats.js:288
+msgid "Editors (valid)"
+msgstr "Käyttäjät (voimassa olevat)"
+
+#: ../root/statistics/stats.js:293
+msgid "Count of active editors"
+msgstr "Kaikkien aktiivisten käyttäjien määrä"
+
+#: ../root/statistics/stats.js:295
+msgid "Editors (valid & active ever)"
+msgstr "Käyttäjät (voimassa oleva & aktiivinen joskus)"
+
+#: ../root/statistics/stats.js:301
+msgid "Count of editors who have voted on during the last 7 days"
+msgstr "Käyttäjien, jotka äänestäneet viimeisen 7 päivän aikana määrä"
+
+#: ../root/statistics/stats.js:303
+msgid "Active Voters"
+msgstr "Aktiiviset äänestäjät"
+
+#: ../root/statistics/stats.js:308
+msgid "Count of all events"
+msgstr ""
+
+#: ../root/statistics/stats.js:314
+msgid "Count of all instruments"
+msgstr "Kaikkien soitinten määrä"
+
+#: ../root/statistics/stats.js:320
+msgid "Count of all IPIs"
+msgstr "Kaikkien IPI-koodien määrä"
+
+#: ../root/statistics/stats.js:321
+msgid "IPIs"
+msgstr "IPI-koodit"
+
+#: ../root/statistics/stats.js:326
+msgid "Count of all IPIs for Artists"
+msgstr "Kaikkeni artistien IPI-koodien määrä"
+
+#: ../root/statistics/stats.js:327
+msgid "Artist IPIs"
+msgstr "Artistien IPI-koodit"
+
+#: ../root/statistics/stats.js:332
+msgid "Count of all IPIs for Labels"
+msgstr "Kaikkien levymerkkien IPI-koodien määrä"
+
+#: ../root/statistics/stats.js:333
+msgid "Label IPIs"
+msgstr "Levymerkkien IPI-koodit"
+
+#: ../root/statistics/stats.js:338
+msgid "Count of all ISNIs"
+msgstr "Kaikkien ISNI-koodia määrä"
+
+#: ../root/statistics/stats.js:339
+msgid "ISNIs"
+msgstr "ISNI-koodit"
+
+#: ../root/statistics/stats.js:344
+msgid "Count of all ISNIs for Artists"
+msgstr "Kaikkien artistien ISNI-koodien määrä"
+
+#: ../root/statistics/stats.js:345
+msgid "Artist ISNIs"
+msgstr "Artistin ISNI-koodit"
+
+#: ../root/statistics/stats.js:350
+msgid "Count of all ISNIs for Labels"
+msgstr "Kaikkien levymerkkien ISNI-koodien määrä"
+
+#: ../root/statistics/stats.js:351
+msgid "Label ISNIs"
+msgstr "Levymerkin ISNI-koodit"
+
+#: ../root/statistics/stats.js:356 ../root/statistics/stats.js:362
+msgid "Count of all ISRCs"
+msgstr "Kaikkien ISRC-koodien määrä"
+
+#: ../root/statistics/stats.js:357
+msgid "ISRCs"
+msgstr "ISRC-koodit"
+
+#: ../root/statistics/stats.js:363
+msgid "ISRCs (all)"
+msgstr "ISRC-koodit (kaikki)"
+
+#: ../root/statistics/stats.js:368 ../root/statistics/stats.js:374
+msgid "Count of all ISWCs"
+msgstr "Kaikkien ISWC-koodien määrä"
+
+#: ../root/statistics/stats.js:369
+msgid "ISWCs"
+msgstr "ISWC-koodit"
+
+#: ../root/statistics/stats.js:375
+msgid "ISWCs (all)"
+msgstr "ISWC-koodit (kaikki)"
+
+#: ../root/statistics/stats.js:380
+msgid "Count of all labels"
+msgstr "Kaikkien levymerkkien määrä"
+
+#: ../root/statistics/stats.js:386
+msgid "Labels with no country set"
+msgstr "Levymerkit ilman määritettyä maata"
+
+#: ../root/statistics/stats.js:392
+msgid "Count of all mediums"
+msgstr "Kaikkien tallennemedioiden määrä"
+
+#: ../root/statistics/stats.js:398
+msgid "Mediums with no format set"
+msgstr "Tallenteet, joille ei ole asetettu tallennusformaattia"
+
+#: ../root/statistics/stats.js:399
+msgid "Unknown Format (medium)"
+msgstr "Tuntematon formaatti (media)"
+
+#: ../root/statistics/stats.js:404
+msgid "Count of all Mediums with Disc IDs"
+msgstr "Kaikkien tallenteiden, joilla levyn tunniste määrä"
+
+#: ../root/statistics/stats.js:405
+msgid "Mediums with Disc IDs"
+msgstr "Tallenteet, joissa ei levyn tunnistetta"
+
+#: ../root/statistics/stats.js:410
+msgid "Count of all places"
+msgstr "Kaikkien paikkojen määrä"
+
+#: ../root/statistics/stats.js:416
+msgid "Count of all Releases at Default Data Quality"
+msgstr ""
+
+#: ../root/statistics/stats.js:417
+msgid "Default Data Quality"
+msgstr "Normaali tiedon laatu"
+
+#: ../root/statistics/stats.js:422
+msgid "Count of all Releases at High Data Quality"
+msgstr ""
+
+#: ../root/statistics/stats.js:423
+msgid "High Data Quality"
+msgstr "Korkea tiedon laatu"
+
+#: ../root/statistics/stats.js:428
+msgid "Count of all Releases at Low Data Quality"
+msgstr ""
+
+#: ../root/statistics/stats.js:429
+msgid "Low Data Quality"
+msgstr "Alhainen tiedon laatu"
+
+#: ../root/statistics/stats.js:434
+msgid "Count of all Releases at Normal Data Quality"
+msgstr ""
+
+#: ../root/statistics/stats.js:435
+msgid "Normal Data Quality"
+msgstr "Normaali tiedon laatu"
+
+#: ../root/statistics/stats.js:440
+msgid "Count of all Releases at Unknown Data Quality"
+msgstr ""
+
+#: ../root/statistics/stats.js:441
+msgid "Unknown Data Quality"
+msgstr "Tuntematon tiedon laatu"
+
+#: ../root/statistics/stats.js:446
+msgid "Count of all Ratings"
+msgstr "Kaikkien arvostelujen määrä"
+
+#: ../root/statistics/stats.js:447
+msgid "Ratings"
+msgstr "Arvostelut"
+
+#: ../root/statistics/stats.js:452
+msgid "Count of all Artist Ratings"
+msgstr "Kaikkien artistien arvostelujen määrä"
+
+#: ../root/statistics/stats.js:453
+msgid "Artist Ratings"
+msgstr "Artistien arvostelut"
+
+#: ../root/statistics/stats.js:458
+msgid "Count of all Label Ratings"
+msgstr "Kaikkien levymerkkien arvostelujen määrä"
+
+#: ../root/statistics/stats.js:459
+msgid "Label Ratings"
+msgstr ""
+
+#: ../root/statistics/stats.js:464
+msgid "Count of all Ratings (raw)"
+msgstr "Kaikkien arvostelujen määrä (käsittelemätön)"
+
+#: ../root/statistics/stats.js:465
+msgid "Ratings (raw)"
+msgstr "Arvostelut (käsittelemätön)"
+
+#: ../root/statistics/stats.js:470
+msgid "Count of all Artist Ratings (raw)"
+msgstr "Kaikkien artistien arvostelujen määrä (käsittelemätön) "
+
+#: ../root/statistics/stats.js:471
+msgid "Artist Ratings (raw)"
+msgstr "Artistien arvostelut (käsittelemätön)"
+
+#: ../root/statistics/stats.js:476
+msgid "Count of all Label Ratings (raw)"
+msgstr "Kaikkien levymerkkien arvostelujen määrä (käsittelemätön)"
+
+#: ../root/statistics/stats.js:477
+msgid "Label Ratings (raw)"
+msgstr "Levymerkkien arvostelut (käsittelemätön)"
+
+#: ../root/statistics/stats.js:482
+msgid "Count of all Recording Ratings (raw)"
+msgstr "Kaikkien äänitteiden arvostelujen määrä (käsittelemätön)"
+
+#: ../root/statistics/stats.js:483
+msgid "Recording Ratings (raw)"
+msgstr "Äänitteiden arvostelut (käsittelemätön)"
+
+#: ../root/statistics/stats.js:488
+msgid "Count of all Release Group Ratings (raw)"
+msgstr "Kaikkien julkaisuryhmien arvostelujen määrä (käsittelemätön)"
+
+#: ../root/statistics/stats.js:489
+msgid "Release Group Ratings (raw)"
+msgstr "Julkaisuryhmien arvostelut (käsittelemätön)"
+
+#: ../root/statistics/stats.js:494
+msgid "Count of all Work Ratings (raw)"
+msgstr "Kaikkien teoksien arvostelujen määrä (käsittelemätön)"
+
+#: ../root/statistics/stats.js:495
+msgid "Work Ratings (raw)"
+msgstr "Teoksien arvostelut (käsittelemätön)"
+
+#: ../root/statistics/stats.js:500
+msgid "Count of all Recording Ratings"
+msgstr "Kaikkien äänitteiden arvostelujen määrä"
+
+#: ../root/statistics/stats.js:501
+msgid "Recording Ratings"
+msgstr "Äänitteiden arvostelut"
+
+#: ../root/statistics/stats.js:506
+msgid "Count of all Release Group Ratings"
+msgstr ""
+
+#: ../root/statistics/stats.js:507
+msgid "Release Group Ratings"
+msgstr "Julkaisuryhmän arvostelut"
+
+#: ../root/statistics/stats.js:512
+msgid "Count of all Work Ratings"
+msgstr "Kaikkien teoksien arvostelujen määrä"
+
+#: ../root/statistics/stats.js:513
+msgid "Work Ratings"
+msgstr "Teosten arvostelut"
+
+#: ../root/statistics/stats.js:518
+msgid "Count of all recordings"
+msgstr "Kaikkien äänitteiden määrä"
+
+#: ../root/statistics/stats.js:524
+msgid "Count of all Recordings with ISRCs"
+msgstr "Kaikkien äänitteiden, joilla on ISRC-tunnuksia määrä"
+
+#: ../root/statistics/stats.js:525
+msgid "Recordings with ISRCs"
+msgstr ""
+
+#: ../root/statistics/stats.js:530
+msgid "Count of all releases"
+msgstr "Kaikkien julkaisujen määrä"
+
+#: ../root/statistics/stats.js:536
+msgid "Releases with no country set"
+msgstr "Julkaisut, joissa maata ei valittu"
+
+#: ../root/statistics/stats.js:542 ../root/statistics/stats.js:543
+#: ../root/statistics/stats.js:560
+msgid "Releases with Amazon Cover Art"
+msgstr "Julkaisut, joille löytää kansitaide Amazonista"
+
+#: ../root/statistics/stats.js:548 ../root/statistics/stats.js:549
+msgid "Releases with CAA Cover Art"
+msgstr "Kansitaiteelliset julkaisut"
+
+#: ../root/statistics/stats.js:554 ../root/statistics/stats.js:555
+msgid "Releases with No Cover Art"
+msgstr "Julkaisut joilla ei kansitaidetta"
+
+#: ../root/statistics/stats.js:561
+msgid "Releases with Cover Art from Relationships"
+msgstr "Julkaisut, joilta löydyy kansitaide-yhteyksiä"
+
+#: ../root/statistics/stats.js:566
+msgid "Releases with a no-format medium"
+msgstr "Julkaisut, joiden formaatti on tuntematon"
+
+#: ../root/statistics/stats.js:567
+msgid "Unknown Format (release)"
+msgstr "Tuntematon formaatti (julkaisu)"
+
+#: ../root/statistics/stats.js:572 ../root/statistics/stats.js:573
+msgid "Releases with Cover Art"
+msgstr "Julkaisut, joissa kansitaidetta"
+
+#: ../root/statistics/stats.js:578
+msgid "Count of all Releases with Disc IDs"
+msgstr "Kaikkien julkaisujen, joilla levyn tunniste, määrä"
+
+#: ../root/statistics/stats.js:579
+msgid "Releases with Disc IDs"
+msgstr "Julkaisuja, joilla Disc ID"
+
+#: ../root/statistics/stats.js:584
+msgid "Releases with no language set"
+msgstr "Julkaisut, joissa ei ole kieltä asetttuna"
+
+#: ../root/statistics/stats.js:585
+msgid "Unknown Language"
+msgstr "Tuntematon kieli"
+
+#: ../root/statistics/stats.js:590
+msgid "Count of all Releases not V.A."
+msgstr "Kaikkien julkaisujen, jotka eivät ole eri artistien, määrä"
+
+#: ../root/statistics/stats.js:591
+msgid "Releases not VA"
+msgstr "Julkaisut (ei eri esittäjiä)"
+
+#: ../root/statistics/stats.js:596
+msgid "Releases with no script set"
+msgstr "Julkaisut, joissa ei ole merkistöä asetettuna"
+
+#: ../root/statistics/stats.js:597
+msgid "Unknown Script"
+msgstr "Tuntematon merkistö"
+
+#: ../root/statistics/stats.js:602
+msgid "Count of all Releases by Various Artists"
+msgstr "Kaikkien eri esittäjien julkaisujen määrä"
+
+#: ../root/statistics/stats.js:603
+msgid "Releases (VA)"
+msgstr "Julkaisut (eri esittäjiä)"
+
+#: ../root/statistics/stats.js:608
+msgid "Count of all release groups"
+msgstr "Kaikkien julkaisuryhmien määrä"
+
+#: ../root/statistics/stats.js:614
+msgid "Count of all series"
+msgstr "Kaikkien sarjojen määrä"
+
+#: ../root/statistics/stats.js:620
+msgid "Count of all Tags"
+msgstr "Kaikki luokituksien määrä"
+
+#: ../root/statistics/stats.js:626
+msgid "Count of all Tags (raw)"
+msgstr "Kaikkien luokituksien määrä (käsittelemätön)"
+
+#: ../root/statistics/stats.js:627
+msgid "Tags (raw)"
+msgstr "Luokitukset (käsittelemätön)"
+
+#: ../root/statistics/stats.js:632
+msgid "Count of all Area Tags (raw)"
+msgstr ""
+
+#: ../root/statistics/stats.js:633
+msgid "Area Tags (raw)"
+msgstr ""
+
+#: ../root/statistics/stats.js:638
+msgid "Count of all Artist Tags (raw)"
+msgstr "Kaikkien artistien luokittelujen määrä (käsittelemätön)"
+
+#: ../root/statistics/stats.js:639
+msgid "Artist Tags (raw)"
+msgstr "Artistien luokitukset (käsittelemätön)"
+
+#: ../root/statistics/stats.js:644
+msgid "Count of all Instrument Tags (raw)"
+msgstr ""
+
+#: ../root/statistics/stats.js:645
+msgid "Instrument Tags (raw)"
+msgstr ""
+
+#: ../root/statistics/stats.js:650
+msgid "Count of all Label Tags (raw)"
+msgstr "Kaikkien levymerkkien luokittelujen määrä (käsittelemätön)"
+
+#: ../root/statistics/stats.js:651
+msgid "Label Tags (raw)"
+msgstr "Levymerkkien luokitukset (käsittelemätön)"
+
+#: ../root/statistics/stats.js:656
+msgid "Count of all Recording Tags (raw)"
+msgstr "Kaikkien äänitteiden luokittelujen määrä (käsittelemätön)"
+
+#: ../root/statistics/stats.js:657
+msgid "Recording Tags (raw)"
+msgstr "Äänitteiden luokittelut (käsittelemätön)"
+
+#: ../root/statistics/stats.js:662
+msgid "Count of all Release Tags (raw)"
+msgstr "Kaikkien julkaisujen luokittelujen määrä (käsittelemätön)"
+
+#: ../root/statistics/stats.js:663
+msgid "Release Tags (raw)"
+msgstr "Julkaisujen luokitukset (käsittelemätön)"
+
+#: ../root/statistics/stats.js:668
+msgid "Count of all Release Group Tags (raw)"
+msgstr "Kaikkien julkaisuryhmien luokittelujen määrä (käsittelemätön)"
+
+#: ../root/statistics/stats.js:669
+msgid "Release Group Tags (raw)"
+msgstr "Julkaisuryhmien luokittelut (käsittelemätön)"
+
+#: ../root/statistics/stats.js:674
+msgid "Count of all Series Tags (raw)"
+msgstr ""
+
+#: ../root/statistics/stats.js:675
+msgid "Series Tags (raw)"
+msgstr ""
+
+#: ../root/statistics/stats.js:680
+msgid "Count of all Work Tags (raw)"
+msgstr "Kaikkien teoksien luokittelujen määrä (käsittelemätön)"
+
+#: ../root/statistics/stats.js:681
+msgid "Work Tags (raw)"
+msgstr "Teoksien arvostelut (käsittelemätön)"
+
+#: ../root/statistics/stats.js:686
+msgid "Count of all Tracks"
+msgstr "Kaikkien kappaleiden määrä"
+
+#: ../root/statistics/stats.js:687
+msgid "Tracks"
+msgstr "Kappaleet"
+
+#: ../root/statistics/stats.js:692
+msgid "Count of all votes"
+msgstr "Kaikkien äänien määrä"
+
+#: ../root/statistics/stats.js:699
+msgid "Count of all Abstain votes"
+msgstr ""
+
+#: ../root/statistics/stats.js:700
+msgid "Abstentions"
+msgstr ""
+
+#: ../root/statistics/stats.js:705
+msgid "Count of all No votes"
+msgstr "Kaikkien Ei äänien määrä"
+
+#: ../root/statistics/stats.js:706
+msgid "No Votes"
+msgstr "Ei-äänet"
+
+#: ../root/statistics/stats.js:711
+msgid "Count of votes per day"
+msgstr "Ääniä päivässä yhteensä"
+
+#: ../root/statistics/stats.js:713
+msgid "Votes per day"
+msgstr "Päiväkohtaiset äänet"
+
+#: ../root/statistics/stats.js:718
+msgid "Count of votes per week"
+msgstr "Ääniä viikossa yhteensä"
+
+#: ../root/statistics/stats.js:719
+msgid "Votes per week"
+msgstr "Viikkokohtaiset äänet"
+
+#: ../root/statistics/stats.js:724
+msgid "Count of all Yes votes"
+msgstr "Kaikkien Kyllä äänien määrä"
+
+#: ../root/statistics/stats.js:725
+msgid "Yes Votes"
+msgstr "Kyllä-äänet"
+
+#: ../root/statistics/stats.js:730
+msgid "Count of all works"
+msgstr "Kaikkien teoksien määrä"
+
+#: ../root/statistics/stats.js:733
+msgid "/day"
+msgstr "/päivä"
+
+#: ../root/statistics/stats.js:742
+msgid "Count of all Releases with {n} Disc IDs"
+msgstr "Kaikkien julkaisujen, joilla {n} levyn tunnistetta määrä"
+
+#: ../root/statistics/stats.js:744
+msgid "Releases with 1 Disc ID"
+msgid_plural "Releases with {n} Disc IDs"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../root/statistics/stats.js:754
+msgid "Count of all Mediums with {n} Disc IDs"
+msgstr "Kaikkien tallenteiden, joilla {n} levyn tunnistetta määrä"
+
+#: ../root/statistics/stats.js:756
+msgid "Mediums with 1 Disc ID"
+msgid_plural "Mediums with {n} Disc IDs"
+msgstr[0] "Tallenteet, joissa {n} levyn tunnistetta"
+msgstr[1] "Tallenteet, joissa {n} levyn tunnistetta"
+
+#: ../root/statistics/stats.js:766
+msgid "Count of all Recordings with {n} Releases"
+msgstr "Kaikkien äänitteiden, jotka liittyy {n} julkaisuun määrä"
+
+#: ../root/statistics/stats.js:768
+msgid "Recordings with 1 Release"
+msgid_plural "Recordings with {n} Releases"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../root/statistics/stats.js:778
+msgid "Count of all Release Groups with {n} Releases"
+msgstr ""
+
+#: ../root/statistics/stats.js:780
+msgid "Release Groups with 1 Release"
+msgid_plural "Release Groups with {n} Releases"
+msgstr[0] "Julkaisuryhmät joissa {n} julkaisu"
+msgstr[1] "Julkaisuryhmät joissa {n} julkaisua"
+
+#: ../root/statistics/stats.js:822
+msgid "{country} artists"
+msgstr "{country} artistit"
+
+#: ../root/statistics/stats.js:829
+msgid "{country} labels"
+msgstr "{country} levymerkit"
+
+#: ../root/statistics/stats.js:836
+msgid "{country} releases"
+msgstr "{country} julkaisut"
+
+#: ../root/statistics/stats.js:848
+msgid "{name} releases"
+msgstr "{name} julkaisut"
+
+#: ../root/statistics/stats.js:855
+msgid "{name} mediums"
+msgstr "{name} tallenteet"
+
+#: ../root/statistics/stats.js:867
+msgid "{language} releases"
+msgstr "{language} julkaisut"
+
+#: ../root/statistics/stats.js:874
+msgid "l_{first}_{second} Relationships"
+msgstr "l_{first}_{second} yhteydet"
+
+#: ../root/statistics/stats.js:895
+msgid "{script} releases"
+msgstr "{script} julkaisut"

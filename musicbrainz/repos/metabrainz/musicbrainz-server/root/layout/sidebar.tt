@@ -1,0 +1,5 @@
+[% IF !full_width %]
+    <div id="sidebar">
+        [% content %]
+    </div>
+[% END %]

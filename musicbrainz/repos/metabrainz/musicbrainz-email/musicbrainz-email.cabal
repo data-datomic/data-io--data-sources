@@ -1,0 +1,114 @@
+name: musicbrainz-email
+category: MusicBrainz
+version: 1.0.0.0
+synopsis: Send an email to all MusicBrainz editors
+homepage: http://github.com/metabrainz/musicbrainz-email
+license: GPL-3
+license-file: LICENSE
+author: Oliver Charles
+maintainer: ollie@ocharles.org.uk
+build-type: Simple
+cabal-version: >=1.8
+data-files: templates/*.tpl
+
+library
+  hs-source-dirs: src
+  exposed-modules:
+    MusicBrainz.Email
+    MusicBrainz.Messaging
+  build-depends:
+    aeson >= 0.9.0.1 && < 0.10,
+    amqp >= 0.13.0 && < 0.14,
+    base >= 4.5 && < 4.9,
+    ghc-prim,
+    mime-mail >= 0.4.11 && < 0.5,
+    optparse-applicative >= 0.12.0.0 && < 0.13,
+    text >= 1.2.1 && < 1.3
+  ghc-options: -Wall -fwarn-tabs -funbox-strict-fields -O2
+               -fno-warn-orphans -fno-warn-unused-do-bind
+               -Werror
+
+executable musicbrainz-emailer
+  hs-source-dirs: mailer
+  main-is: Main.hs
+  build-depends:
+    aeson >= 0.9.0.1 && < 0.10,
+    amqp >= 0.13.0 && < 0.14,
+    base >= 4.5 && < 4.9,
+    blaze-builder >= 0.4 && < 0.5,
+    bytestring >= 0.10.6.0 && < 0.11,
+    either >= 4.4.1 && < 4.5,
+    errors >= 2.0.1 && < 2.1,
+    heist >= 0.14.1.1 && < 0.15,
+    HTTP >= 4000.2.8 && < 4000.3,
+    lens >= 4.13 && < 4.14,
+    map-syntax >= 0.2 && < 0.3,
+    mime-mail >= 0.4.11 && < 0.5,
+    musicbrainz-email == 1.0.0.0,
+    mtl >= 2.2.1 && < 2.3,
+    network,
+    network-metrics >= 0.4 && < 0.5,
+    optparse-applicative >= 0.12.0.0 && < 0.13,
+    text >= 1.2.1 && < 1.3,
+    time >= 1.5.0 && < 1.6,
+    transformers >= 0.4.2 && < 0.5,
+    xmlhtml >= 0.2.1 && < 0.3
+  ghc-options: -Wall -fwarn-tabs -funbox-strict-fields -O2
+               -fno-warn-orphans -fno-warn-unused-do-bind
+               -Werror
+
+executable enqueue-mail
+  hs-source-dirs: enqueue
+  main-is: Main.hs
+  build-depends:
+    aeson >= 0.9.0.1 && < 0.10,
+    amqp >= 0.13.0 && < 0.14,
+    base >= 4.5 && < 4.9,
+    mime-mail >= 0.4.11 && < 0.5,
+    mtl >= 2.2.1 && < 2.3,
+    musicbrainz-email == 1.0.0.0,
+    optparse-applicative >= 0.12.0.0 && < 0.13,
+    postgresql-simple >= 0.2,
+    transformers >= 0.4.2 && < 0.5
+  ghc-options: -Wall -fwarn-tabs -funbox-strict-fields -O2
+               -fno-warn-orphans -fno-warn-unused-do-bind
+               -Werror
+
+test-suite tests
+  type: exitcode-stdio-1.0
+  main-is: Tests.hs
+  hs-source-dirs:
+    test
+    mailer
+    enqueue
+  build-depends:
+    aeson >= 0.9.0.1 && < 0.10,
+    amqp >= 0.13.0 && < 0.14,
+    base >= 4.5 && < 4.9,
+    blaze-builder >= 0.4 && < 0.5,
+    bytestring >= 0.10.6.0 && < 0.11,
+    configurator,
+    either >= 4.4.1 && < 4.5,
+    errors >= 2.0.1 && < 2.1,
+    heist >= 0.14.1.1 && < 0.15,
+    HUnit >= 1.2,
+    HTTP >= 4000.2.8 && < 4000.3,
+    ghc-prim,
+    lens >= 4.13 && < 4.14,
+    map-syntax >= 0.2 && < 0.3,
+    mime-mail >= 0.4.11 && < 0.5,
+    mtl >= 2.2.1 && < 2.3,
+    musicbrainz-email == 1.0.0.0,
+    postgresql-simple >= 0.2,
+    smallcheck >= 1.0.1,
+    stm,
+    test-framework >= 0.8,
+    test-framework-hunit >= 0.3,
+    test-framework-smallcheck >= 0.1,
+    text >= 1.2.1 && < 1.3,
+    time >= 1.5.0 && < 1.6,
+    transformers >= 0.4.2 && < 0.5,
+    xmlhtml >= 0.2.1 && < 0.3
+  ghc-options: -Wall -fwarn-tabs -funbox-strict-fields -O2
+               -fno-warn-orphans -fno-warn-unused-do-bind
+               -Werror

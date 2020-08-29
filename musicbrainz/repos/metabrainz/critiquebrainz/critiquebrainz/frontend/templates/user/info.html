@@ -1,0 +1,57 @@
+{% extends 'user/base.html' %}
+
+{% block title %}{{ user.display_name }} - {{ _('Info') }} - CritiqueBrainz{% endblock %}
+
+{% block profile_content %}
+  {% if user.musicbrainz_username %}
+    <div>
+      <img src="{{ get_static_path('favicons/musicbrainz-16.svg') }}" />
+      <b><a href="https://musicbrainz.org/user/{{ user.musicbrainz_username }}">See profile on MusicBrainz</a></b>
+    </div>
+  {% endif %}
+
+  <div class="row">
+
+    <div class="col-md-7">
+      <h4>{{ _('General information') }}</h4>
+      <dl class="dl-horizontal">
+        <dt>{{ _('Member since') }}</dt><dd>{{ user.created | date }}</dd>
+        <dt>{{ _('User type') }}</dt><dd>{{ user.user_type.label }}</dd>
+        <dt>{{ _('Karma') }}</dt><dd>{{ user.karma }}</dd>
+        {% if current_user.is_authenticated and current_user == user %}
+          <dt>{{ _('Email') }}</dt><dd>{{ current_user.email }} (visible to just you) </dd>
+        {% endif %}
+      </dl>
+      {% if current_user.is_authenticated and current_user == user %}
+        <h4>{{ _('Limits') }}</h4>
+        <dl class="dl-horizontal">
+          <dt>{{ _('Reviews/day') }}</dt><dd>{{ current_user.user_type.reviews_per_day }}</dd>
+          <dt>{{ _('Votes/day') }}</dt><dd>{{ current_user.user_type.votes_per_day }}</dd>
+        </dl>
+      {% endif %}
+    </div>
+
+    <div class="col-md-4">
+      <h4>{{ _('Statistics') }}</h4>
+      <h5>{{ _('Reviews') }}</h5>
+      <dl class="dl-horizontal">
+        <dt>{{ _('Today') }}</dt><dd>{{ user.stats.reviews_today }}</dd>
+        <dt>{{ _('Last 7 days') }}</dt><dd>{{ user.stats.reviews_last_7_days }}</dd>
+        <dt>{{ _('This month') }}</dt><dd>{{ user.stats.reviews_this_month }}</dd>
+      </dl>
+      <h5>{{ _('Votes') }}</h5>
+      <dl class="dl-horizontal">
+        <dt>{{ _('Today') }}</dt><dd>{{ user.stats.votes_today }}</dd>
+        <dt>{{ _('Last 7 days') }}</dt><dd>{{ user.stats.votes_last_7_days }}</dd>
+        <dt>{{ _('This month') }}</dt><dd>{{ user.stats.votes_this_month }}</dd>
+      </dl>
+      <h5>{{ _('Comments') }}</h5>
+      <dl class="dl-horizontal">
+        <dt>{{ _('Today') }}</dt><dd>{{ user.stats.comments_today }}</dd>
+        <dt>{{ _('Last 7 days') }}</dt><dd>{{ user.stats.comments_last_7_days }}</dd>
+        <dt>{{ _('This month') }}</dt><dd>{{ user.stats.comments_this_month }}</dd>
+      </dl>
+    </div>
+
+  </div>
+{% endblock %}

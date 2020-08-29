@@ -1,0 +1,25 @@
+sudo: required
+
+env:
+ - CABALVER=1.18 GHCVER=7.6.3
+ - CABALVER=1.18 GHCVER=7.8.4
+ - CABALVER=1.22 GHCVER=7.10.2
+
+services:
+  - postgresql
+  - rabbitmq
+
+addons:
+  apt:
+    packages:
+    - postgresql-contrib-9.1
+  postgresql: "9.1"
+
+before_install:
+ - travis_retry sudo add-apt-repository -y ppa:hvr/ghc
+ - travis_retry sudo apt-get update
+ - travis_retry sudo apt-get install cabal-install-$CABALVER ghc-$GHCVER
+ - export PATH=/opt/ghc/$GHCVER/bin:/opt/cabal/$CABALVER/bin:$PATH
+
+script:
+  - ./travis.sh

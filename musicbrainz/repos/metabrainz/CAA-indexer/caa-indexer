@@ -1,0 +1,117 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+
+use CoverArtArchive::Indexer;
+use CoverArtArchive::Indexer::Context;
+use CoverArtArchive::IAS3Request;
+use File::Basename qw( dirname );
+use File::Spec::Functions qw( catfile file_name_is_absolute rel2abs );
+use Getopt::Long;
+use Log::Contextual::SimpleLogger;
+use Log::Contextual qw( :log ),
+   -logger => Log::Contextual::SimpleLogger->new({ levels_upto => 'trace' });
+use Moose::Util qw( ensure_all_roles );
+use Net::Amazon::S3::HTTPRequest;
+use Pod::Usage;
+use Try::Tiny;
+
+Net::Amazon::S3::HTTPRequest->meta->make_mutable;
+ensure_all_roles('Net::Amazon::S3::HTTPRequest', 'CoverArtArchive::IAS3Request');
+
+my $verbose = 0;
+my $db_name;
+my $db_user;
+my $db_host;
+my $db_port;
+my $db_pass;
+my $opt_help;
+my $access_key;
+my $secret_access_key;
+my $config_file = catfile(dirname(__FILE__), 'config.ini');
+
+GetOptions ("user=s" => \$db_user,
+            "db=s"   => \$db_name,
+            "verbose"  => \$verbose,
+            "help|?" => \$opt_help,
+            "public=s" => \$access_key,
+            "private=s" => \$secret_access_key,
+            "host=s" => \$db_host,
+            "config=s" => \$config_file,
+        )
+    or pod2usage();
+pod2usage(-verbose => 2) if $opt_help;
+
+$config_file = rel2abs($config_file)
+    unless file_name_is_absolute($config_file);
+
+log_warn{ "Could not find a config file (wanted $config_file), supply command line arguments or provide a config.ini file" }
+    unless -f $config_file;
+
+my %opts;
+$opts{config} = $config_file;
+$opts{database}{database} = $db_name if defined $db_name;
+$opts{database}{user} = $db_user if defined $db_user;
+$opts{database}{host} = $db_host if defined $db_host;
+$opts{database}{port} = $db_port if defined $db_port;
+$opts{database}{password} = $db_pass if defined $db_pass;
+$opts{caa}{public_key} = $access_key if defined $access_key;
+$opts{caa}{private_key} = $secret_access_key if defined $secret_access_key;
+
+CoverArtArchive::Indexer->new(
+    c => CoverArtArchive::Indexer::Context->new(
+        opts_config => \%opts,
+    )
+)->run;
+
+__END__
+
+=head1 NAME
+
+caa-indexer [option...]
+
+=head1 OPTIONS
+
+=over 4
+
+=item --verbose
+
+Run in verbose mode, showing detailed logging.
+
+=item --db
+
+The name of the database to connect to poll for Cover Art Archive events.
+
+=item --user
+
+The user name to use when connecting to the database.
+
+=item --public
+
+Your Internet Archive public key
+
+=item --private
+
+Your Internet Archive private key
+
+=item --host
+
+The PostgreSQL database host to connect to
+
+=item --config
+
+Path to the configuration file (default: config.ini)
+
+=back
+
+=head1 DESCRIPTION
+
+The main database has a queue that holds events about releases that have cover
+art. If a release that has cover art is in some way updated, such as the name
+changing, an event is produced. This project is a consumer of that queue, and
+runs as a daemon. When it receieves events, it looks up the information
+necessary to produce an index file, and sticks it on the Internet Archive's
+backend servers.
+
+=cut

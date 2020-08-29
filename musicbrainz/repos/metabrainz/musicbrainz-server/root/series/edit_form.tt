@@ -1,0 +1,53 @@
+[% script_manifest('edit.js') %]
+
+<p>[%- l('For more information, check the {doc_doc|documentation} and {doc_styleguide|style guidelines}.', {doc_doc => doc_link('Series'), doc_styleguide => doc_link('Style/Series')}) -%]</p>
+
+<form action="[% c.req.uri %]" method="post" class="edit-series">
+    [%- USE r = FormRenderer(form) -%]
+
+    <div class="half-width">
+      <fieldset>
+        <legend>[% l('Series Details') %]</legend>
+        [%- form_row_name_with_guesscase(r) -%]
+        [%- duplicate_entities_section() -%]
+        [%- form_row_text_long(r, 'comment', add_colon(l('Disambiguation'))) -%]
+        [%- disambiguation_error() -%]
+        [%- form_row_select(r, 'type_id', l('Type:')) -%]
+        [%- form_row_select(r, 'ordering_type_id', l('Ordering Type:')) -%]
+      </fieldset>
+
+      [% PROCESS 'forms/relationship-editor.tt' %]
+
+      <fieldset>
+        <legend>[% l('External Links') %]</legend>
+        [% external_links_editor() %]
+      </fieldset>
+
+      [% INCLUDE 'forms/edit-note.tt' %]
+
+      [% enter_edit() %]
+  </div>
+
+  <div class="documentation">
+    <div class="bubble" id="series-type-bubble" data-bind="bubble: typeBubble">
+      <p data-bind="text: target() &amp;&amp; target().type() ? target().type().description : ''"></p>
+    </div>
+
+    <div class="bubble" id="ordering-type-bubble" data-bind="bubble: orderingTypeBubble">
+      <p data-bind="text: target() ? target().orderingTypeDescription() : ''"></p>
+    </div>
+  </div>
+
+</form>
+
+[%- guesscase_options() -%]
+
+<script>
+$(function () {
+  [%- USE JSON.Escape -%]
+  MB.seriesTypesByID = [% series_types.json %];
+  MB.orderingTypesByID = [% series_ordering_types.json %];
+});
+</script>
+
+[% script_manifest('series.js') %]

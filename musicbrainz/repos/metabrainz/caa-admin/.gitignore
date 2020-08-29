@@ -1,0 +1,8 @@
+dist
+cabal-dev
+state
+*.o
+*.hi
+*.chi
+*.chs.h
+.virthualenv

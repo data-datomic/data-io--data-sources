@@ -1,0 +1,40 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# C extensions
+*.so
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# PyBuilder
+target/
+
+# Unit test / coverage reports
+htmlcov
+.coverage
+
+# Logs
+*.log
+pip-log.txt
+pip-delete-this-directory.txt
+
+## AcousticBrainz
+
+# Pytest
+.pytest_cache
+
+# Configuration
+config.py
+hl_extractor/profile.conf
+hl_extractor/profile.conf.in
+
+# Node.js
+node_modules
+
+# Other stuff
+*.swp

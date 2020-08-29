@@ -1,0 +1,10 @@
+{
+    "commandText": "git clone --progress --verbose https://github.com/metabrainz/brainzutils-python undefined\\meta--08-29-2020--WCSV35PA6dQUi1bDtfaXT/brainzutils-python",
+    "repo": "https://github.com/metabrainz/brainzutils-python",
+    "targetPath": "undefined\\meta--08-29-2020--WCSV35PA6dQUi1bDtfaXT/brainzutils-python",
+    "startTime": "2020-08-29T07:43:53.474Z",
+    "endTime": "2020-08-29T07:43:54.105Z",
+    "childProcessPid": 10745,
+    "executionErrors": [],
+    "commandLogFilePath": "/Users/brian/dev_space/GitHub-data-datomic/data-io--data-sources/musicbrainz/musicbrainz-importer/repos/workingdir/--metabrainz--brainzutils-python--10745"
+}

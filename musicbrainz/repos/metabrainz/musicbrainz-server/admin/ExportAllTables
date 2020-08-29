@@ -1,0 +1,376 @@
+#!/usr/bin/env perl
+
+use warnings;
+# vi: set ts=4 sw=4 :
+#____________________________________________________________________________
+#
+#   MusicBrainz -- the open internet music database
+#
+#   Copyright (C) 1998 Robert Kaye
+#
+#   This program is free software; you can redistribute it and/or modify
+#   it under the terms of the GNU General Public License as published by
+#   the Free Software Foundation; either version 2 of the License, or
+#   (at your option) any later version.
+#
+#   This program is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#   along with this program; if not, write to the Free Software
+#   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+#   $Id$
+#____________________________________________________________________________
+
+use FindBin;
+use lib "$FindBin::Bin/../lib";
+
+use strict;
+use DBDefs;
+use integer;
+
+use File::Spec::Functions qw( catfile );
+use MusicBrainz::Script::DatabaseDump;
+use MusicBrainz::Server::Constants qw(
+    $EDITOR_SANITISED_COLUMNS
+    @FULL_TABLE_LIST
+    @CORE_TABLE_LIST
+    @DERIVED_TABLE_LIST
+    @STATS_TABLE_LIST
+    @EDITOR_TABLE_LIST
+    @EDIT_TABLE_LIST
+    @PRIVATE_TABLE_LIST
+    @CDSTUBS_TABLE_LIST
+    @CAA_TABLE_LIST
+    @EAA_TABLE_LIST
+    @WIKIDOCS_TABLE_LIST
+    @DOCUMENTATION_TABLE_LIST
+);
+
+use Getopt::Long;
+
+################################################################################
+
+my $database = 'READWRITE';
+
+my @tables = @FULL_TABLE_LIST;
+
+my @replication_tables = qw(
+    dbmirror_pending
+    dbmirror_pendingdata
+);
+
+my @groups = (
+    \@CORE_TABLE_LIST,
+    \@DERIVED_TABLE_LIST,
+    \@STATS_TABLE_LIST,
+    \@EDITOR_TABLE_LIST,
+    \@EDIT_TABLE_LIST,
+    \@PRIVATE_TABLE_LIST,
+    \@CDSTUBS_TABLE_LIST,
+    \@CAA_TABLE_LIST,
+    \@WIKIDOCS_TABLE_LIST,
+    \@DOCUMENTATION_TABLE_LIST,
+);
+
+################################################################################
+
+my $fHelp;
+my $OutputDir = ".";
+my $tmp_dir = "/tmp";
+my $fCompress = 1;
+my $fKeepFiles = 0;
+my $fDoFullExport = 1;
+my $fDoReplication = 0;
+my $fCheckCompleteness = 0;
+my $fCallback;
+my @tablelist;
+
+GetOptions(
+    "output-dir|d=s"            => \$OutputDir,
+    "tmp-dir|t=s"               => \$tmp_dir,
+    "compress|c!"               => \$fCompress,
+    "keep-files|k!"             => \$fKeepFiles,
+    "database=s"                => \$database,
+    "table=s"                   => \@tablelist,
+    "replication-callback=s"    => \$fCallback,
+    "with-replication"          => sub { $fDoReplication = 1 },
+    "without-replication"       => sub { $fDoReplication = 0 },
+    "with-full-export"          => sub { $fDoFullExport = 1 },
+    "without-full-export"       => sub { $fDoFullExport = 0 },
+    "check-completeness"        => sub { $fCheckCompleteness = 1 },
+    "help"                      => \$fHelp,
+);
+
+sub usage
+{
+    print <<EOF;
+Usage: ExportAllTables [options]
+
+        --help            show this help
+    -d, --output-dir DIR  place the final archive files in DIR (default: ".")
+    -t, --tmp-dir DIR     use DIR for temporary storage (default: /tmp)
+    -c, --[no]compress    [don't] create .tar.bz2 archives after exporting
+    -k, --keep-files      don't delete the exported files from the tmp directory
+        --database        database to connect to (default: READWRITE)
+        --table TABLE     process only these tables
+        --with[out]-replication  Do [not] produce a replication packet
+        --with[out]-full-export  Do [not] export full tables
+        --check-completeness     Check that all tables from DB schema are exported
+
+Certain combinations of options are pointless:
+ * specifying --without-replication and --without-full-export
+ * specifying tables (via --table) and --without-full-export
+ * specifying --nocompress and omitting --keep-files
+
+If you specify --table TABLE, you won't get a complete consistent snapshot
+of the database, of course.
+
+GPG encryption of private data requires you pass a recipient to encrypt data
+for. This value is taken from DBDefs and can take any value that gpg(1) can
+take for `--recipient`. The user running ExportAllTables must have a GPG
+keyring setup that is aware of this recipient. GPG signing works similarly.
+
+Encryption uses DBDefs->GPG_ENCRYPT_KEY and signing uses DBDefs->GPG_SIGN_KEY.
+
+EOF
+}
+
+usage(), exit if $fHelp;
+usage(), exit 1 if @ARGV;
+usage(), exit 1 if not $fCompress and not $fKeepFiles;
+usage(), exit 1 if not $fDoFullExport and not $fDoReplication;
+usage(), exit 1 if not $fDoFullExport and @tablelist;
+check_tables_completeness(), exit if $fCheckCompleteness;
+
+$SIG{'INT'} = sub { exit 3 };
+
+use MusicBrainz::Server::Context;
+
+# Log in to the main DB
+my $c = MusicBrainz::Server::Context->create_script_context(database => $database);
+my $sql = $c->sql;
+my $dbh = $c->dbh;
+
+# Obtains locks and writes the TIMESTAMP and SCHEMA_SEQUENCE files.
+my $mbdump = MusicBrainz::Script::DatabaseDump->new(
+    c => $c,
+    keep_files => $fKeepFiles,
+    output_dir => $OutputDir,
+    tmp_dir => $tmp_dir,
+);
+
+@tables = @tablelist if @tablelist;
+@tables = () if not $fDoFullExport;
+
+# Sanitise various things for public consumption
+if (grep { $_ eq "editor_sanitised" } @tables)
+{
+    $sql->do("SELECT $EDITOR_SANITISED_COLUMNS
+              INTO TEMPORARY editor_sanitised
+              FROM editor");
+}
+
+for my $table (@tables)
+{
+    $mbdump->dump_table($table);
+}
+
+# Get the replication control data
+
+my $iReplicationSequence = $sql->select_single_value(
+    'SELECT current_replication_sequence FROM replication_control'
+);
+
+if ($fDoReplication)
+{
+    # Is there any replication data to dump?
+    my $fAnyReplicationData = 0;
+    for my $table (@replication_tables)
+    {
+        $fAnyReplicationData = 1
+            if $sql->select_single_value("SELECT COUNT(*) FROM $table") > 0;
+    }
+
+    if ($fAnyReplicationData or not $iReplicationSequence)
+    {
+        # Are we starting replication for the first time?
+        if (not defined $iReplicationSequence)
+        {
+                # If we're currently not at a replication point, then let's turn this
+                # one into sequence #0.
+                $iReplicationSequence = 0;
+
+                # In this case we may as well ditch any pending
+                # replication data; no-one can ever load and apply packet #0, so it
+                # will effectively just be there for cosmetic reasons.
+                empty_replication_tables();
+        } else {
+                # Otherwise, we're moving on to the next replication sequence
+                # number.
+                ++$iReplicationSequence;
+        }
+
+        # Set the replication sequence number.  This should (I think) be
+        # the final transaction included in each packet.
+        $iReplicationSequence ||= 0;
+
+        $sql->do(
+                "UPDATE replication_control
+                SET current_replication_sequence = ?,
+                last_replication_date = NOW()",
+                $iReplicationSequence,
+        );
+
+        print localtime() . " : Producing replication packet #$iReplicationSequence\n";
+
+        # Dump 'em
+        $mbdump->dump_table($_) for @replication_tables;
+
+        # Remove the rows we just dumped
+        empty_replication_tables();
+
+        $mbdump->write_file("REPLICATION_SEQUENCE", "$iReplicationSequence\n");
+    } elsif (defined $iReplicationSequence and not $fAnyReplicationData) {
+        print localtime() . " : No changes since the last replication point (#$iReplicationSequence)\n";
+        $mbdump->write_file("REPLICATION_SEQUENCE", "$iReplicationSequence\n");
+    } else {
+        print localtime() . " : No replication data dumped - not producing a replication packet\n";
+        $mbdump->write_file("REPLICATION_SEQUENCE", "");
+    }
+} else {
+    $mbdump->write_file("REPLICATION_SEQUENCE", "");
+}
+
+# Dump this /after/ we've possibly updated the current_replication_sequence
+# Dump this table only if we're dumping everything (i.e., @tablelist is empty) or if it's explicitly requested.
+$mbdump->dump_table("replication_control") if (scalar @tablelist == 0 || grep { $_ eq 'replication_control' } @tablelist);
+
+$mbdump->end_dump;
+
+optimise_replication_tables() if $fDoReplication;
+
+# Now we have all the files; disconnect from the database.
+# This also drops the _sanitised temporary tables.
+undef $sql;
+undef $c;
+
+use File::Copy qw( copy );
+
+if ($fCompress and $fDoReplication)
+{
+    my $tarfile = "replication-$iReplicationSequence.tar.bz2";
+
+    if (grep { $mbdump->row_counts->{$_} } @replication_tables)
+    {
+        $mbdump->copy_readme() or die $!;
+        # Go for the "most restrictive" license
+        copy("$FindBin::Bin/COPYING-CCShareAlike",
+             catfile($mbdump->export_dir, 'COPYING')) or die $!;
+        $mbdump->make_tar($tarfile, @replication_tables);
+    }
+    if ($fCallback) {
+        system $fCallback;
+    }
+}
+
+if ($fCompress and $fDoFullExport)
+{
+    $mbdump->copy_readme() or die $!;
+    $mbdump->copy_file("$FindBin::Bin/COPYING-PublicDomain", 'COPYING') or die $!;
+    $mbdump->make_tar("mbdump.tar.bz2", @CORE_TABLE_LIST);
+
+    $mbdump->copy_readme() or die $!;
+    $mbdump->copy_file("$FindBin::Bin/COPYING-CCShareAlike", 'COPYING') or die $!;
+    $mbdump->make_tar("mbdump-derived.tar.bz2", @DERIVED_TABLE_LIST);
+    $mbdump->make_tar("mbdump-editor.tar.bz2", @EDITOR_TABLE_LIST);
+    $mbdump->make_tar("mbdump-edit.tar.bz2", @EDIT_TABLE_LIST);
+    $mbdump->make_tar("mbdump-stats.tar.bz2", @STATS_TABLE_LIST);
+    $mbdump->make_tar("mbdump-private.tar.bz2", @PRIVATE_TABLE_LIST);
+    $mbdump->make_tar("mbdump-cdstubs.tar.bz2", @CDSTUBS_TABLE_LIST);
+    $mbdump->make_tar("mbdump-cover-art-archive.tar.bz2", @CAA_TABLE_LIST);
+    $mbdump->make_tar("mbdump-event-art-archive.tar.bz2", @EAA_TABLE_LIST);
+    $mbdump->make_tar("mbdump-wikidocs.tar.bz2", @WIKIDOCS_TABLE_LIST);
+    $mbdump->make_tar("mbdump-documentation.tar.bz2", @DOCUMENTATION_TABLE_LIST);
+
+    $mbdump->write_checksum_files;
+
+    my $encrypt_for = DBDefs->GPG_ENCRYPT_KEY;
+    if ($encrypt_for) {
+        system "gpg --recipient '$encrypt_for' --encrypt $OutputDir/mbdump-private.tar.bz2";
+        system "rm $OutputDir/mbdump-private.tar.bz2";
+    }
+}
+
+# Tar files all created safely... we can erase the tmpdir on exit
+system "/bin/sync"; $? == 0 or die "sync failed (rc=$?)";
+$mbdump->erase_files_on_exit(1);
+
+exit;
+
+################################################################################
+
+sub empty_replication_tables
+{
+    $sql->do("DELETE FROM dbmirror_pendingdata");
+    $sql->do("DELETE FROM dbmirror_pending");
+    # As soon as we commit, the replication data is gone from the DB, so we must
+    # be sure that we have a safe copy.
+    $mbdump->erase_files_on_exit(0);
+}
+
+sub optimise_replication_tables
+{
+    print localtime() . " : Optimising replication tables\n";
+    $sql->auto_commit;
+    $sql->do("VACUUM ANALYZE dbmirror_pendingdata");
+    $sql->auto_commit;
+    $sql->do("VACUUM ANALYZE dbmirror_pending");
+}
+
+sub parse_create_tables
+{
+    my ($dir, $schema, $tables) = @_;
+
+    open FILE, "<$FindBin::Bin/../admin/sql/$dir/CreateTables.sql";
+    my $create_tables_sql = do { local $/; <FILE> };
+    close FILE;
+    while ($create_tables_sql =~ m/CREATE TABLE\s+([a-z0-9_]+)\s+\(\s*(.*?)\s*\);/gsi) {
+        my $table = $schema ? "$schema.$1" : $1;
+        push @$tables, $table;
+    }
+}
+
+sub check_tables_completeness
+{
+    my @create_tables;
+
+    parse_create_tables('', '', \@create_tables);
+    parse_create_tables('caa', 'cover_art_archive', \@create_tables);
+    parse_create_tables('documentation', 'documentation', \@create_tables);
+    parse_create_tables('wikidocs', 'wikidocs', \@create_tables);
+    parse_create_tables('statistics', 'statistics', \@create_tables);
+
+    my %exported_tables = map { $_ => 1 } @tables;
+    my @not_exported_tables = grep { not exists $exported_tables{$_} } @create_tables;
+    printf "Table not exported: %s\n", $_
+        for sort @not_exported_tables;
+
+    my @no_group_tables;
+    foreach my $table (@tables) {
+        my $included = 0;
+        foreach my $group (@groups) {
+            if (grep {$_ eq $table} @$group) {
+                $included = 1;
+            }
+        }
+        push @no_group_tables, $table if not $included;
+    }
+    printf "Table exported but not included in any tar: %s\n", $_
+        for sort @no_group_tables;
+}
+
+# eof ExportAllTables

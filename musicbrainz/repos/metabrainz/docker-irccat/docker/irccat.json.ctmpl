@@ -1,0 +1,1 @@
+{{ tree "docker-server-configs/services/irccat.json" | explode | toJSONPretty | regexReplaceAll "(\"channels\"): (\"[^\"]*\")," "$1: [$2]," | regexReplaceAll "(\"channels\": .+);" "$1\", \"" }}

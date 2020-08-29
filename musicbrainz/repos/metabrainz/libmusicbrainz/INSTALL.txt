@@ -1,0 +1,72 @@
+================================================
+ Installation of the MusicBrainz Client Library
+================================================
+
+The instructions in this file should help you to build and install the
+MusicBrainz client library from source on your system.
+
+Dependencies
+============
+
+Before you start, make sure you have installed following libraries:
+
+ * Neon -- HTTP client library
+   http://www.webdav.org/neon/
+
+Building
+========
+
+Once you have installed all dependencies, you can compile the
+library:
+
+   cmake .
+   make
+
+And to install the built library run (as root):
+
+   make install
+
+Cross Compiling
+===============
+
+Cross compiling is a little more involved due to the automatic generation
+of the C interface source files. Your cross compilation environment will
+need appropriate headers and libraries for any dependencies.
+
+First set up a toolchain file as specified here:
+
+	http://www.cmake.org/Wiki/CMake_Cross_Compiling#The_toolchain_file
+
+Then build natively to generate the appropriate make-c-interface file
+
+mkdir build-native
+cd build-native
+cmake ..
+make
+
+Finally, cross compile, telling cmake where to find your toolchain and the
+make-c-interface binary:
+
+mkdir build-cross
+cd build-cross
+cmake -DCMAKE_TOOLCHAIN_FILE=~/powerpc-cross \
+	-DIMPORT_EXECUTABLES=../build-native/ImportExecutables.cmake ..
+make
+
+CMake Options
+=============
+
+By default, the library will be installed to /usr/local. You can change this
+using the CMAKE_INSTALL_PREFIX option, for example:
+
+   cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr .
+
+To disable debug messages, change the build type:
+
+   cmake -DCMAKE_BUILD_TYPE=Release .
+
+For overview of all available options use:
+
+   cmake -L .
+
+or use a GUI. See http://www.cmake.org/HTML/RunningCMake.html for more details.

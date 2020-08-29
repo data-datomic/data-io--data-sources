@@ -1,0 +1,3 @@
+include ':acousticbrainz'
+include ':app'
+rootProject.name = "EssentiaAndroid"

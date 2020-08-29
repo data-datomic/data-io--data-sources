@@ -1,0 +1,46 @@
+{{- define "KEY" -}}
+    {{ key (printf "docker-server-configs/SIR/%s.config.json/%s" (or (env "DEPLOY_ENV") "beta") .) }}
+{{- end -}}
+
+
+[sir]
+import_threads = {{template "KEY" "import_threads"}}
+query_batch_size = {{template "KEY" "query_batch_size"}}
+wscompat = {{template "KEY" "wscompat"}}
+process_delay = {{template "KEY" "process_delay"}}
+live_index_batch_size = {{template "KEY" "live_index_batch_size"}}
+index_limit = {{template "KEY" "index_limit"}}
+
+[database]
+{{- with $pg_primary_service_name := or (env "PG_SERVICE_PRIMARY") "pgbouncer-master"}}
+{{- with $pg_secondary_service_name := or (env "PG_SERVICE_SECONDARY") "pgbouncer-slave"}}
+{{- with or (service $pg_primary_service_name) (service $pg_secondary_service_name)}}
+{{- with index . 0}}
+dbname = {{template "KEY" "db/musicbrainz_db"}}
+host = {{.Address}}
+password = {{template "KEY" "db/password"}}
+port = {{.Port}}
+user = {{template "KEY" "db/user"}}
+{{- end}}
+{{- end}}
+{{- end}}
+{{- end}}
+
+[solr]
+uri = {{template "KEY" "solr/uri"}}
+batch_size = {{template "KEY" "solr/batch_size"}}
+
+{{- if service "rabbitmq"}}
+[rabbitmq]
+{{- with index (service "rabbitmq") 0}}
+host = {{.Address}}:{{.Port}}
+user = {{template "KEY" "rabbitmq/user"}}
+password = {{template "KEY" "rabbitmq/password"}}
+vhost = {{template "KEY" "rabbitmq/vhost"}}
+prefetch_count = {{template "KEY" "rabbitmq/prefetch_count"}}
+timeout = {{template "KEY" "rabbitmq/timeout"}}
+{{- end}}
+{{- end}}
+
+[sentry]
+dsn = {{template "KEY" "sentry_dsn"}}

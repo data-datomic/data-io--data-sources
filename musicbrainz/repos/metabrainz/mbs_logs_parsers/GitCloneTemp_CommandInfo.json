@@ -1,0 +1,10 @@
+{
+    "commandText": "git clone --progress --verbose https://github.com/metabrainz/mbs_logs_parsers undefined\\meta--08-29-2020--WCSV35PA6dQUi1bDtfaXT/mbs_logs_parsers",
+    "repo": "https://github.com/metabrainz/mbs_logs_parsers",
+    "targetPath": "undefined\\meta--08-29-2020--WCSV35PA6dQUi1bDtfaXT/mbs_logs_parsers",
+    "startTime": "2020-08-29T07:44:28.304Z",
+    "endTime": "2020-08-29T07:44:28.821Z",
+    "childProcessPid": 11153,
+    "executionErrors": [],
+    "commandLogFilePath": "/Users/brian/dev_space/GitHub-data-datomic/data-io--data-sources/musicbrainz/musicbrainz-importer/repos/workingdir/--metabrainz--mbs_logs_parsers--11153"
+}

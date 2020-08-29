@@ -1,0 +1,14 @@
+{
+  "DBDefs": {
+    "CATALYST_DEBUG": "0",
+    "DB_SCHEMA_SEQUENCE": "25",
+    "DB_STAGING_TESTING_FEATURES": "1",
+    "DEVELOPMENT_SERVER": "1",
+    "FORK_RENDERER": "0",
+    "MB_LANGUAGES": "en de fr nl",
+    "REPLICATION_TYPE": "RT_STANDALONE",
+    "STAT_TTL": "0",
+    "WEB_SERVER": "localhost",
+    "WEB_SERVER_USED_IN_EMAIL": "localhost"
+  }
+}

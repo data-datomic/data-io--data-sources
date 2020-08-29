@@ -1,0 +1,28 @@
+.blankheader,
+.areaheader, .artistheader, .releaseheader, .rgheader,
+.recordingheader, .labelheader, .placeheader, .eventheader,
+.workheader, .collectionheader, .seriesheader, .instrumentheader {
+    padding-left: 38px;
+    background: 0 0px no-repeat;
+    background-size: 32px;
+}
+
+.blankheader      { background-image: data-uri('../images/entity/blank.svg') }
+.artistheader     { background-image: data-uri('../images/entity/artist.svg');
+                    &.choir-icon      { background-image: data-uri('../images/entity/choir.svg') }
+                    &.group-icon      { background-image: data-uri('../images/entity/group.svg') }
+                    &.orchestra-icon  { background-image: data-uri('../images/entity/orchestra.svg') }
+                    &.person-icon     { background-image: data-uri('../images/entity/person.svg') }
+                    &.character-icon  { background-image: data-uri('../images/entity/character.svg') }
+                  }
+.releaseheader    { background-image: data-uri('../images/entity/release.svg') }
+.rgheader         { background-image: data-uri('../images/entity/release_group.svg') }
+.recordingheader  { background-image: data-uri('../images/entity/recording.svg') }
+.placeheader      { background-image: data-uri('../images/entity/place.svg') }
+.labelheader      { background-image: data-uri('../images/entity/label.svg') }
+.workheader       { background-image: data-uri('../images/entity/work.svg') }
+.areaheader       { background-image: data-uri('../images/entity/area.svg') }
+.seriesheader     { background-image: data-uri('../images/entity/series.svg') }
+.instrumentheader { background-image: data-uri('../images/entity/instrument.svg') }
+.eventheader      { background-image: data-uri('../images/entity/event.svg') }
+.collectionheader { background-image: data-uri('../images/entity/blank.svg') }

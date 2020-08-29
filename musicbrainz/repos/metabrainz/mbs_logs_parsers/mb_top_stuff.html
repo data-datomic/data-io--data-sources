@@ -1,0 +1,108 @@
+<html>
+  <head>
+    <title>MB Website Top Stuff</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous">
+    </script>
+    <script
+      src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js">
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"
+      crossorigin="anonymous">
+    <style type="text/css">
+    body {
+        font-family: "Bitstream Vera Sans",Verdana,Arial,sans-serif;
+        font-size: 12px;
+    }
+    #page { padding: 2%}
+    h2 {
+    border-bottom: 2px solid #ba478f;
+    color: #eb743b;
+    margin: 0;
+    padding: 5px 0;
+    margin-bottom: 0.5em;
+    }
+    hr {
+    margin-top: 0.5em;
+    margin-bottom: 2em;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
+    dl {
+    margin: auto;
+    padding: 0.5em;
+    }
+    dt, dd {
+      display: inline;
+    }
+    dt {
+      color: #eb743b;
+    }
+    dt::after {
+      content: ":";
+    }
+    dd {
+      margin-left: 0.3em;
+      margin-right: 1.5em;
+    }
+    #footer {
+      text-align: center;
+      font-size: 10px;
+    }
+    </style>
+  </head>
+  <body>
+    <h1>MB Website Top Stuff</h1>
+    <div id="page">
+    <script>
+      var jsonsource = 'https://musicbrainz.org/tops/mb_website.json';
+      //jsonsource = 'out.json';
+      $.ajax({
+      url: jsonsource,
+      dataType: "json",
+      success: function (data) {
+        $.each(data, function (name, tops) {
+          if (name == '_stats') {
+            $('#footer').append('<dl id="stats">');
+            $.each(tops, function (key, value) {
+              $('#stats').append('<dt>' + key + '</dt><dd>' + value + '</dd>')
+            })
+          }
+          if (/^_/.test(name)) return;
+          var title = name;
+          var id = $.escapeSelector(title.replace(/\s/g, ''));
+          $('<h2 id="' + id + '_h2">').text(title).appendTo('#page');
+
+          var paging = (tops.records.length > 10);
+          var lengthMenu = [-1];
+          var lengthChange = false;
+          if (tops.topn > 10) {
+            lengthMenu = [10, tops.topn];
+            lengthChange = true;
+          }
+          $('<table id="' + id + '" class="display cell-border compact">').appendTo('#page').DataTable({
+            lengthMenu: lengthMenu,
+            lengthChange: lengthChange,
+            paging: paging,
+            order: [[ 2, 'desc' ], [1, 'desc']],
+            data: tops.records,
+            columns: [
+              {data: 'key', title: 'Key', type: 'string'},
+              {data: 'value', title: 'Value', type: 'num', className: "dt-right"},
+              {data: 'percent', title: '%', type: 'num', className: "dt-right"},
+            ],
+          });
+          $('<div class="tablefoot">Matched hits: ' + tops.total + '</div><hr />').appendTo('#page');
+        });
+      }});
+    </script>
+  </div>
+  <div id="footer"></div>
+  </body>
+</html>

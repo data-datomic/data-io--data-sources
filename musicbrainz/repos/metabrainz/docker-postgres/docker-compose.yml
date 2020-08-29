@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  postgres-master:
+    environment:
+      - "constraint:type==db"
+      - "constraint:subtype==master"
+      - SERVICE_5432_NAME=postgres-master
+      - SERVICE_6899_NAME=pgbouncer-master
+      - SERVICE_TAGS=beta,prod
+    ports:
+      - "5432"
+      - "6899"
+    image: metabrainz/postgres-master
+    restart: always
+    volumes:
+      - postgres-master-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-master-data:
+    driver: local

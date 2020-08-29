@@ -1,0 +1,10 @@
+{
+    "commandText": "git clone --progress --verbose https://github.com/metabrainz/python-quickbooks undefined\\meta--08-29-2020--WCSV35PA6dQUi1bDtfaXT/python-quickbooks",
+    "repo": "https://github.com/metabrainz/python-quickbooks",
+    "targetPath": "undefined\\meta--08-29-2020--WCSV35PA6dQUi1bDtfaXT/python-quickbooks",
+    "startTime": "2020-08-29T07:49:41.097Z",
+    "endTime": "2020-08-29T07:49:41.986Z",
+    "childProcessPid": 11777,
+    "executionErrors": [],
+    "commandLogFilePath": "/Users/brian/dev_space/GitHub-data-datomic/data-io--data-sources/musicbrainz/musicbrainz-importer/repos/workingdir/--metabrainz--python-quickbooks--11777"
+}

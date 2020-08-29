@@ -1,0 +1,20 @@
+#!/bin/sh
+
+dedup_args=""
+which consul-template-dedup-prefix > /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    cat <<EOF > /etc/consul-template-dedup.conf
+deduplicate {
+    enabled = true
+    prefix = "$(consul-template-dedup-prefix)"
+}
+EOF
+    dedup_args='-config /etc/consul-template-dedup.conf'
+fi
+
+exec consul-template \
+    -consul-addr="${CONSUL_HOST:-127.0.0.1}:${CONSUL_PORT:-8500}" \
+    -kill-signal=SIGTERM \
+    -syslog \
+    $dedup_args \
+    "$@"

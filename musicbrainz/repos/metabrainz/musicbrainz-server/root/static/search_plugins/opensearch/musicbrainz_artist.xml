@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+                       xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+  <!-- Created on Tue, 11 Sep 2007 22:47:34 GMT -->
+  <ShortName>MusicBrainz: Artist</ShortName>
+  <Description>Indexed search for an artist on MusicBrainz.org</Description>
+  <Url type="text/html" method="get" template="https://musicbrainz.org/search?type=artist&amp;query={searchTerms}"/>
+  <Developer>https://metabrainz.org/contact</Developer>
+  <Image width="16" height="16">https://musicbrainz.org/static/images/entity/artist.png</Image>
+  <InputEncoding>UTF-8</InputEncoding>
+  <moz:SearchForm>https://musicbrainz.org/search</moz:SearchForm>
+  <moz:UpdateUrl>https://musicbrainz.org/static/search_plugins/opensearch/musicbrainz_artist.xml</moz:UpdateUrl>
+  <moz:IconUpdateUrl>https://musicbrainz.org/static/images/entity/artist.png</moz:IconUpdateUrl>
+  <moz:UpdateInterval>14</moz:UpdateInterval>
+</OpenSearchDescription>

@@ -1,0 +1,114 @@
+#!/usr/bin/env lua
+
+-- Turn port on/off in MusicBrainz Docker Compose configuration file
+--
+-- Copyright (C) 2018 MetaBrainz Foundation
+--
+-- This file is part of MusicBrainz, the open internet music database,
+-- and is licensed under the GPL version 2, or (at your option) any
+-- later version: http://www.gnu.org/licenses/gpl-2.0.txt
+
+-- Define globals
+
+musicbrainz_docker_path = "/home/vagrant/musicbrainz/musicbrainz-docker"
+file_path = musicbrainz_docker_path .. "/docker-compose.yml"
+service_ports = {
+   ["db"]            = {"5432:5432"},
+   ["musicbrainz"]   = {"5000:5000"},
+   ["redis"]         = {"6379:6379"},
+   ["search"]        = {"8080:8080"},
+}
+
+-- Read and check arguments
+
+usage = 'Usage: ' .. arg[0] .. ' <db|musicbrainz|redis|search> <on|off>'
+
+if select('#', ...) ~= 2 then
+   print('Error: wrong number of arguments')
+   print(usage)
+   os.exit(64)
+end
+
+service = select('1', ...)
+has_service = false
+for k, v in pairs(service_ports) do
+   if k == service then
+      has_service = true
+      break
+   end
+end
+if not has_service then
+   print('Error: no such service: ' .. service)
+   print(usage)
+   os.exit(64)
+end
+
+position = select('2', ...)
+if position ~= 'on' and position ~= 'off' then
+   print('Error: neither on nor off: ' .. position)
+   print(usage)
+   os.exit(64)
+end
+
+-- Load configuration from file
+
+file = io.open(file_path, "r")
+text = file:read("*a")
+file:close()
+lyaml = require("lyaml")
+conf_table = lyaml.load(text, { all = true })
+
+-- Function from https://stackoverflow.com/a/30696488
+
+function get(Obj, Field, ...)
+    if Obj == nil or Field == nil then
+        return Obj
+    else
+        return get(Obj[Field], ...)
+    end
+end
+
+-- Turn ports on/off in configuration
+
+ports = get(conf_table, 1, 'services', service, 'ports')
+if position == 'on' then
+   if ports ~= nil then
+      print('Error: service port is already on: ' .. service)
+      os.exit(1)
+   else
+      conf_table[1]['services'][service]['ports'] = service_ports[service]
+   end
+else
+   if ports == nil then
+      print('Error: service port is already off: ' .. service)
+      os.exit(1)
+   else
+      conf_table[1]['services'][service]['ports'] = nil
+   end
+end
+
+-- Override configuration file
+
+conf_yaml = lyaml.dump(conf_table)
+file = io.open(file_path, "w+")
+file:write(conf_yaml)
+file:close()
+
+-- Recreate container
+
+is_happy_end, end_cause, code = os.execute(
+   'set -e' .. '\n' ..
+   'cd ' .. musicbrainz_docker_path .. '\n' ..
+   'docker-compose up -d --no-recreate ' .. service
+)
+
+if not is_happy_end then
+   if end_cause == 'exit' then
+      os.exit(code)
+   else
+      print('Ended by signal ' .. code)
+      os.exit(1)
+   end
+end
+
+-- vi: et sts=3 sw=3 ts=3

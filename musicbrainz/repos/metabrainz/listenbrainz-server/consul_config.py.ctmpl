@@ -1,0 +1,168 @@
+{{- define "KEY" -}}
+    {{ key (printf "docker-server-configs/LB/config.%s.json/%s" (env "DEPLOY_ENV") .) }}
+{{- end -}}
+
+{{- define "KEY_ARRAY" -}}
+    {{- range $index, $element := (key (printf "docker-server-configs/LB/config.%s.json/%s" (env "DEPLOY_ENV") .) | parseJSON) -}}
+        "{{.}}",
+    {{- end -}}
+{{- end -}}
+
+DEBUG = False
+
+SECRET_KEY = '''{{template "KEY" "secret_key"}}'''
+
+{{if service "pgbouncer-master"}}
+{{with index (service "pgbouncer-master") 0}}
+SQLALCHEMY_DATABASE_URI = "postgresql://listenbrainz:listenbrainz@{{.Address}}:{{.Port}}/listenbrainz"
+MESSYBRAINZ_SQLALCHEMY_DATABASE_URI = "postgresql://messybrainz:messybrainz@{{.Address}}:{{.Port}}/messybrainz"
+POSTGRES_ADMIN_URI="postgresql://postgres@{{.Address}}:{{.Port}}/template1"
+{{end}}
+{{end}}
+
+
+{{if service "pgbouncer-slave"}}
+{{with index (service "pgbouncer-slave") 0}}
+MB_DATABASE_URI = 'postgresql://musicbrainz_ro@{{.Address}}:{{.Port}}/musicbrainz_db'
+{{end}}
+{{else if service "pgbouncer-master"}}
+{{with index (service "pgbouncer-master") 0}}
+MB_DATABASE_URI = 'postgresql://musicbrainz_ro@{{.Address}}:{{.Port}}/musicbrainz_db'
+{{end}}
+{{end}}
+
+{{if service "timescale-listenbrainz"}}
+{{with index (service "timescale-listenbrainz") 0}}
+#SQLALCHEMY_DATABASE_URI = "postgresql://listenbrainz:listenbrainz@{{.Address}}:{{.Port}}/listenbrainz"
+#MESSYBRAINZ_SQLALCHEMY_DATABASE_URI = "postgresql://messybrainz:messybrainz@{{.Address}}:{{.Port}}/messybrainz"
+POSTGRES_ADMIN_URI="postgresql://postgres:postgres@{{.Address}}:{{.Port}}/template1"
+POSTGRES_ADMIN_LB_URI="postgresql://postgres:postgres@{{.Address}}:{{.Port}}/listenbrainz"
+
+SQLALCHEMY_TIMESCALE_URI = "postgresql://listenbrainz_ts:listenbrainz_ts@{{.Address}}:{{.Port}}/listenbrainz_ts"
+TIMESCALE_ADMIN_URI="postgresql://postgres:postgres@{{.Address}}:{{.Port}}/template1"
+TIMESCALE_ADMIN_LB_URI="postgresql://postgres:postgres@{{.Address}}:{{.Port}}/listenbrainz_ts"
+{{end}}
+{{end}}
+
+{{if service "pgbouncer-williams"}}
+{{with index (service "pgbouncer-williams") 0}}
+DB_CONNECT_MAPPING = "dbname=musicbrainz_json_dump user=musicbrainz host={{.Address}} port={{.Port}} password=musicbrainz"
+{{end}}
+{{end}}
+
+# Not currently used
+MAX_POSTGRES_LISTEN_HISTORY = "-1"
+PG_QUERY_TIMEOUT = "3000"
+PG_ASYNC_LISTEN_COMMIT = False
+
+{{if service "listenbrainz-redis"}}
+{{with index (service "listenbrainz-redis") 0}}
+REDIS_HOST = "{{.Address}}"
+REDIS_PORT = {{.Port}}
+REDIS_NAMESPACE = "listenbrainz"
+{{end}}
+{{end}}
+
+{{if service "listenbrainz-influxdb"}}
+{{with index (service "listenbrainz-influxdb") 0}}
+INFLUX_HOST    = "{{.Address}}"
+INFLUX_PORT    = {{.Port}}
+INFLUX_DB_NAME  = "listenbrainz"
+{{end}}
+{{end}}
+
+{{if service "rabbitmq"}}
+{{with index (service "rabbitmq") 0}}
+RABBITMQ_HOST = "{{.Address}}"
+RABBITMQ_PORT = {{.Port}}
+{{end}}
+{{end}}
+RABBITMQ_USERNAME = '''{{template "KEY" "rabbitmq_user"}}'''
+RABBITMQ_PASSWORD = '''{{template "KEY" "rabbitmq_pass"}}'''
+RABBITMQ_VHOST = '''{{template "KEY" "rabbitmq_vhost"}}'''
+MAXIMUM_RABBITMQ_CONNECTIONS = 20
+
+
+INCOMING_EXCHANGE = '''{{template "KEY" "incoming_exchange"}}'''
+INCOMING_QUEUE = '''{{template "KEY" "incoming_queue"}}'''
+UNIQUE_EXCHANGE = '''{{template "KEY" "unique_exchange"}}'''
+UNIQUE_QUEUE = '''{{template "KEY" "unique_queue"}}'''
+FOLLOW_LIST_QUEUE = '''{{template "KEY" "follow_list_queue"}}'''
+PLAYING_NOW_EXCHANGE = '''{{template "KEY" "playing_now_exchange"}}'''
+PLAYING_NOW_QUEUE = '''{{template "KEY" "playing_now_queue"}}'''
+
+SPARK_RESULT_EXCHANGE = '''{{template "KEY" "spark_result_exchange"}}'''
+SPARK_RESULT_QUEUE = '''{{template "KEY" "spark_result_queue"}}'''
+SPARK_REQUEST_EXCHANGE = '''{{template "KEY" "spark_request_exchange"}}'''
+SPARK_REQUEST_QUEUE = '''{{template "KEY" "spark_request_queue"}}'''
+
+
+MUSICBRAINZ_CLIENT_ID = '''{{template "KEY" "musicbrainz/client_id"}}'''
+MUSICBRAINZ_CLIENT_SECRET = '''{{template "KEY" "musicbrainz/client_secret"}}'''
+
+LASTFM_API_URL = '''{{template "KEY" "lastfm_api_url"}}'''
+LASTFM_API_KEY = '''{{template "KEY" "lastfm_api_key"}}'''
+
+# Default is fine for now
+PLAYING_NOW_MAX_DURATION = 10 * 60
+
+# Set to True if Less should be compiled in browser. Set to False if styling is pre-compiled.
+COMPILE_LESS = False
+
+# MAX file size to be allowed for the lastfm-backup import, default is infinite
+# Size is in bytes
+MAX_CONTENT_LENGTH = 16 * 1024 * 1024  # 16MB
+
+# Specify the upload folder where all the lastfm-backup will be stored
+# The path must be absolute path
+UPLOAD_FOLDER = '''{{template "KEY" "upload_folder"}}'''
+
+
+API_URL = '''{{template "KEY" "api_url"}}'''
+LASTFM_PROXY_URL = '''{{template "KEY" "lastfm_proxy_url"}}'''
+SERVER_ROOT_URL = '''{{template "KEY" "server_root_url"}}'''
+MUSICBRAINZ_OAUTH_URL = 'https://musicbrainz.org/oauth2/userinfo'
+LISTENBRAINZ_LABS_API_URL = 'https://labs.api.listenbrainz.org'
+
+# Sentry config
+LOG_SENTRY = {
+    'dsn': '''{{template "KEY" "sentry/dsn_private"}}''',
+    'environment': '''{{template "KEY" "sentry/environment"}}''',
+}
+SENTRY_DSN_PUBLIC = '''{{template "KEY" "sentry/dsn_public"}}'''
+
+
+# Stats
+STATS_ENTITY_LIMIT = 100 # the number of entities to calculate at max with BQ
+STATS_CALCULATION_LOGIN_TIME = 30 # users must have logged in to LB in the past 30 days for stats to be calculated
+STATS_CALCULATION_INTERVAL = 7 # stats are calculated every 7 days
+
+
+MUSICBRAINZ_IMPORT_DRY_RUN = True
+
+ADMINS = [
+    {{template "KEY_ARRAY" "admins"}}
+]
+
+# SPOTIFY
+SPOTIFY_CLIENT_ID = '''{{template "KEY" "spotify/client_id"}}'''
+SPOTIFY_CLIENT_SECRET = '''{{template "KEY" "spotify/client_secret"}}'''
+SPOTIFY_CALLBACK_URL = '''{{template "KEY" "spotify/callback"}}'''
+
+SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+TESTING = False
+
+{{if service "listenbrainz-org.exim-relay"}}
+{{with index (service "listenbrainz-org.exim-relay") 0}}
+SMTP_SERVER = '''{{.Address}}'''
+SMTP_PORT = {{.Port}}
+{{end}}
+{{end}}
+
+MAIL_FROM_DOMAIN = '''{{template "KEY" "mail_from_domain"}}'''
+WEBSOCKETS_SERVER_URL = '''{{template "KEY" "websockets_server_url"}}'''
+
+SESSION_REMEMBER_ME_DURATION = 365
+
+LISTEN_DUMP_TEMP_DIR_ROOT = '''{{template "KEY" "listen_dump_temp_dir"}}'''

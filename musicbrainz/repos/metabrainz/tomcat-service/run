@@ -1,0 +1,10 @@
+#!/bin/bash
+
+ulimit -n 51200
+exec 2>&1
+export PATH=/usr/local/java/bin:$PATH
+export CATALINA_OPTS="-Xms8196m -Xmx8196m"
+echo $$ > /var/run/tomcat.pid
+chmod +r /var/run/tomcat.pid
+cd tomcat/bin
+exec setuidgid tomcat ./catalina.sh run

@@ -1,0 +1,57 @@
+<ul class="r">
+  <li><a href="http://musicbrainz.org">MusicBrainz</a></li>
+</ul>
+
+<ul>
+  <li>
+    [% l('<a>About</a>', { link => '#' }) %]
+    <ul>
+      <li>[% l('{link|Customers}', { link => doc_link('Customers') }) %]</li>
+      <li>[% l('{link|Sponsors}', { link => doc_link('Sponsors') }) %]</li>
+      <li>[% l('{link|Press Releases}', { link => doc_link('Press_Releases') }) %]</li>
+      <li>[% l('{link|White Papers}', { link => doc_link('White_Papers') }) %]</li>
+      <li>[% l('{link|Privacy Policy}', { link => doc_link('Privacy_Policy') }) %]</li>
+    </ul>
+  </li>
+  <li>
+    <a href="http://blog.musicbrainz.org/category/metabrainz/">Blog</a>
+  </li>
+  <li>
+    [% l('{link|Finances}', { link => doc_link('Finances') }) %]
+    <ul>
+      <li>
+        <a href="[% c.uri_for_action('/donations/by_date') %]">
+          [% l('Donations') %]
+        </a>
+      </li>
+      <li>
+        <a href="[% c.uri_for_action('/donations/by_amount') %]">
+          [% l('Highest Donors') %]
+        </a>
+      </li>
+      <li>
+        [% l('{link|Historical Finances}', { link => doc_link('Historical_Finances') }) %]
+      </li>
+    </ul>
+  </li>
+  <li>
+    [% l('{link|Annual Report}', { link => doc_link('Annual_Report') }) %]
+    <ul>
+      <li>[% l('{link|Annual Report 2013}', { link => doc_link('Annual_Report/2013') }) %]</li>
+      <li>[% l('{link|Annual Report 2012}', { link => doc_link('Annual_Report/2012') }) %]</li>
+      <li>[% l('{link|Annual Report 2011}', { link => doc_link('Annual_Report/2011') }) %]</li>
+      <li>[% l('{link|Annual Report 2010}', { link => doc_link('Annual_Report/2010') }) %]</li>
+      <li>[% l('{link|Annual Report 2009}', { link => doc_link('Annual_Report/2009') }) %]</li>
+      <li>[% l('{link|Annual Report 2008}', { link => doc_link('Annual_Report/2008') }) %]</li>
+      <li>[% l('{link|Annual Report 2007}', { link => doc_link('Annual_Report/2007') }) %]</li>
+      <li>[% l('{link|Annual Report 2006}', { link => doc_link('Annual_Report/2006') }) %]</li>
+    </ul>
+  </li>
+
+  <li>
+    <a href="[% c.uri_for_action('/donate/index') %]">Donate</a>
+  </li>
+  <li>
+    [% l('{link|Contact}', { link => doc_link('Contact') }) %]
+  </li>
+</ul>

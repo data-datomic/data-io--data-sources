@@ -1,0 +1,33 @@
+FROM metabrainz/python:3.8
+
+RUN apt-get update \
+     && apt-get install -y --no-install-recommends \
+                        build-essential \
+                        ca-certificates \
+                        cron \
+                        git \
+                        libpq-dev \
+                        libffi-dev \
+                        libssl-dev \
+                        libxml2-dev \
+                        libxslt1-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Node
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - \
+   && apt-get install -y nodejs \
+   && rm -rf /var/lib/apt/lists/*
+
+RUN mkdir /code
+WORKDIR /code
+
+# Python dependencies
+COPY requirements.txt /code/
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . /code/
+
+# Compile translations
+RUN pybabel compile -d critiquebrainz/frontend/translations
+
+CMD python3 manage.py runserver -h 0.0.0.0 -p 80 -d

@@ -1,0 +1,6 @@
+{
+  "name": "Auto abbrify words",
+  "about_url": "https://github.com/metabrainz/discourse-abbrify-words",
+  "license_url": "https://github.com/metabrainz/discourse-abbrify-words/blob/master/LICENSE",
+  "component": true
+}

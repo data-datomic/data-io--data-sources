@@ -1,0 +1,392 @@
+{% extends 'base.html' %}
+{% set active_page = "downloads" %}
+{% set page_title = _("Downloads") %}
+{% block content %}
+    <div class="container">
+        <p>
+          {{ _("Picard is available for all major platforms. Just download and start the installer. It's that easy.") }}
+        </p>
+        <ul id="downloads">
+          <li class="download-item" id="windows">
+            <h3>
+            <i class="fa fa-windows fa-2x"></i>
+            {{ _("Picard for <strong>Windows</strong>") }}
+            </h3>
+
+            <div class="table-responsive download-table">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>{{ _("Picard Version") }}</th>
+                    <th>{{ _("MD5 Hash") }}</th>
+                    <th>{{ _("Size") }}</th>
+                    <th>{{ _("Link") }}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{stable.tag}} <em>{{ _('64-bit installer') }}</em></td>
+                    <td>{{stable.win_hash}}</td>
+                    <td>{{stable.win_size}} MB</td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
+                          <i class="fa fa-download"></i>&emsp;{{ _('Download') }}
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="https://musicbrainz.osuosl.org/pub/musicbrainz/picard/picard-setup-{{stable.tag}}.exe">{{ _('US Mirror') }}</a></li>
+                          <li><a href="ftp://ftp.eu.metabrainz.org/pub/musicbrainz/picard/picard-setup-{{stable.tag}}.exe">{{ _('EU Mirror') }}</a></li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>{{stable.tag}} <em>{{ _('64-bit portable') }}</em></td>
+                    <td>{{stable.win_portable_hash}}</td>
+                    <td>{{stable.win_portable_size}} MB</td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
+                          <i class="fa fa-download"></i>&emsp;{{ _('Download') }}
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a
+                              href="https://musicbrainz.osuosl.org/pub/musicbrainz/picard/MusicBrainz-Picard-{{stable.tag}}.exe">{{ _('US Mirror') }}</a>
+                          </li>
+                          <li><a
+                              href="ftp://ftp.eu.metabrainz.org/pub/musicbrainz/picard/MusicBrainz-Picard-{{stable.tag}}.exe">{{ _('EU Mirror') }}</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="3">
+                      {{stable.tag}} <em>{{ _('Windows 10 app') }}</em>
+                    </td>
+                    <td>
+                      <a class="btn btn-primary btn-sm"
+                        href="https://www.microsoft.com/store/apps/9NJ9Q3JR29L2">
+                        <i class="fa fa-windows"></i>&emsp;{{ _('Windows Store') }}
+                      </a>
+                    </td>
+                  </tr>
+                  {% if show_beta %}
+                  <tr>
+                    <td>{{beta.tag}} <em>{{ _('beta release, 64-bit installer') }}</em></td>
+                    <td>{{beta.win_hash}}</td>
+                    <td>{{beta.win_size}} MB</td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
+                          <i class="fa fa-download"></i>&emsp;{{ _('Download') }}
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a
+                              href="https://musicbrainz.osuosl.org/pub/musicbrainz/picard/picard-setup-{{beta.tag}}.exe">{{ _('US Mirror') }}</a>
+                          </li>
+                          <li><a
+                              href="ftp://ftp.eu.metabrainz.org/pub/musicbrainz/picard/picard-setup-{{beta.tag}}.exe">{{ _('EU Mirror') }}</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>{{beta.tag}} <em>{{ _('beta release, 64-bit portable') }}</em></td>
+                    <td>{{beta.win_portable_hash}}</td>
+                    <td>{{beta.win_portable_size}} MB</td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
+                          <i class="fa fa-download"></i>&emsp;{{ _('Download') }}
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a
+                              href="https://musicbrainz.osuosl.org/pub/musicbrainz/picard/MusicBrainz-Picard-{{beta.tag}}.exe">{{ _('US Mirror') }}</a>
+                          </li>
+                          <li><a
+                              href="ftp://ftp.eu.metabrainz.org/pub/musicbrainz/picard/MusicBrainz-Picard-{{beta.tag}}.exe">{{ _('EU Mirror') }}</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                  {% endif %}
+                </tbody>
+              </table>
+            </div>
+          </li>
+
+          <li class="download-item" id="mac">
+            <h3>
+            <i class="fa fa-apple fa-2x"></i>
+            {{ _('Picard for <strong>macOS</strong>') }}
+            </h3>
+
+            <div class="table-responsive download-table">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>{{ _("Picard Version") }}</th>
+                    <th>{{ _("MD5 Hash") }}</th>
+                    <th>{{ _("Size") }}</th>
+                    <th>{{ _("Link") }}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{stable.tag}} <em>{{ _('macOS 10.12+ (x86_64)') }}</em></td>
+                    <td>{{stable.mac_hash}}</td>
+                    <td>{{stable.mac_size}} MB</td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
+                          <i class="fa fa-download"></i>&emsp;{{ _('Download') }}
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="https://musicbrainz.osuosl.org/pub/musicbrainz/picard/MusicBrainz-Picard-{{stable.tag}}.dmg">{{ _('US Mirror') }}</a></li>
+                          <li><a href="ftp://ftp.eu.metabrainz.org/pub/musicbrainz/picard/MusicBrainz-Picard-{{stable.tag}}.dmg">{{ _('EU Mirror') }}</a></li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2.1.3 <em>{{ _('macOS 10.10+ (x86_64)') }}</em></td>
+                    <td>4d781ca512c48fe4c3c00a432e80ed96</td>
+                    <td>22 MB</td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
+                          <i class="fa fa-download"></i>&emsp;{{ _('Download') }}
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="https://musicbrainz.osuosl.org/pub/musicbrainz/picard/MusicBrainz.Picard.2.1.3.dmg">{{ _('US Mirror') }}</a></li>
+                          <li><a href="ftp://ftp.eu.metabrainz.org/pub/musicbrainz/picard/MusicBrainz.Picard.2.1.3.dmg">{{ _('EU Mirror') }}</a></li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                  {% if show_beta %}
+                  <tr>
+                    <td>{{beta.tag}} <em>{{ _('beta release, macOS 10.12+ (x86_64)') }}</em></td>
+                    <td>{{beta.mac_hash}}</td>
+                    <td>{{beta.mac_size}} MB</td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
+                          <i class="fa fa-download"></i>&emsp;{{ _('Download') }}
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a
+                              href="https://musicbrainz.osuosl.org/pub/musicbrainz/picard/MusicBrainz-Picard-{{beta.tag}}.dmg">{{ _('US Mirror') }}</a>
+                          </li>
+                          <li><a
+                              href="ftp://ftp.eu.metabrainz.org/pub/musicbrainz/picard/MusicBrainz-Picard-{{beta.tag}}.dmg">{{ _('EU Mirror') }}</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                  {% endif %}
+                </tbody>
+              </table>
+            </div>
+          </li>
+
+          <li class="download-item" id="linux">
+            <h3>
+            <i class="fa fa-linux fa-2x"></i>
+            {{ _("Picard for <strong>Linux</strong>") }}
+            </h3>
+
+            <div class="table-responsive download-table">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>{{ _("Distribution") }}</th>
+                    <th>{{ _("Link") }}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{ _("All distributions") }} (Flatpak)</td>
+                    <td>
+                      <a href="{{ url_for('docs.show_install_linux') }}">Instructions</a>
+                      &middot;
+                      <a href="https://flathub.org/apps/details/org.musicbrainz.Picard">Flathub</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Arch Linux</td>
+                    <td>
+                      <a href="https://www.archlinux.org/packages/community/x86_64/picard/">Community</a>
+                      &middot;
+                      <a href="https://aur.archlinux.org/packages/picard-git/">AUR</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Debian</td>
+                    <td>
+                      <a href="https://packages.debian.org/stable/sound/picard">Stable</a>
+                      &middot;
+                      <a href="https://packages.debian.org/testing/sound/picard">Testing</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Fedora</td>
+                    <td>
+                      <a href="https://apps.fedoraproject.org/packages/picard">latest package</a>
+                      (<a href="{{ config['DOCS_BASE_URL'] }}/en/faq/faq_file_formats.html#index-3">{{ _("read the FAQ") }}</a>)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Gentoo</td>
+                    <td>
+                      <a href="https://packages.gentoo.org/package/media-sound/picard">media-sound/picard</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>OpenSUSE</td>
+                    <td>
+                      <a href="https://software.opensuse.org/package/picard">latest package</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Ubuntu</td>
+                    <td>
+                      <a href="https://launchpad.net/~musicbrainz-developers/+archive/stable">MusicBrainz Stable PPA</a>
+                      &middot;
+                      <a href="https://launchpad.net/~musicbrainz-developers/+archive/daily">MusicBrainz Daily PPA (Unstable)</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>{{ _("In addition to what is listed above Picard is available in the official repositories of most Linux distributions.") }}</p>
+            </div>
+          </li>
+
+          <li class="download-item" id="other">
+            <h3>
+            <i class="fa fa-desktop fa-2x"></i>
+            {{ _("Picard for <strong>other operating systems</strong>") }}
+            </h3>
+
+            <div class="table-responsive download-table">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>{{ _("Operating system") }}</th>
+                    <th>{{ _("Link") }}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Haiku</td>
+                    <td>
+                      <a href="https://depot.haiku-os.org/picard">64-bit</a>
+                      &middot;
+                      <a href="https://depot.haiku-os.org/picard_x86">32-bit</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>FreeBSD</td>
+                    <td>
+                      <a href="https://www.freshports.org/audio/picard">audio/picard</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>OpenBSD</td>
+                    <td>
+                      <a href="http://openports.se/audio/picard">audio/picard</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </li>
+
+          <a name="source"></a>
+          <li class="download-item">
+            <h3>
+            <i class="fa fa-code fa-2x"></i>
+            {{ _("Picard <strong>Source Code</strong>") }}
+            </h3>
+
+            <div class="table-responsive download-table">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>{{ _("Picard Version") }}</th>
+                    <th>{{ _("MD5 Hash") }}</th>
+                    <th>{{ _("Size") }}</th>
+                    <th>{{ _("Link") }}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{stable.tag}}</td>
+                    <td>{{stable.linux_hash}}</td>
+                    <td>{{stable.linux_size}} MB</td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
+                          <i class="fa fa-download"></i>&emsp;{{ _('Download') }}
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="https://musicbrainz.osuosl.org/pub/musicbrainz/picard/picard-{{stable.tag}}.tar.gz">{{ _('US Mirror (tar)') }}</a></li>
+                          <li><a href="https://musicbrainz.osuosl.org/pub/musicbrainz/picard/picard-{{stable.tag}}.zip">{{ _('US Mirror (zip)') }}</a></li>
+                          <li><a href="ftp://ftp.eu.metabrainz.org/pub/musicbrainz/picard/picard-{{stable.tag}}.tar.gz">{{ _('EU Mirror (tar)') }}</a></li>
+                          <li><a href="ftp://ftp.eu.metabrainz.org/pub/musicbrainz/picard/picard-{{stable.tag}}.zip">{{ _('EU Mirror (zip)') }}</a></li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                  {% if show_beta %}
+                  <tr>
+                    <td>{{beta.tag}} <em>{{ _('beta release') }}</em></td>
+                    <td>{{beta.linux_hash}}</td>
+                    <td>{{beta.linux_size}} MB</td>
+                    <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
+                          <i class="fa fa-download"></i>&emsp;{{ _('Download') }}
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a
+                              href="https://musicbrainz.osuosl.org/pub/musicbrainz/picard/picard-{{beta.tag}}.tar.gz">{{ _('US Mirror (tar)') }}</a>
+                          </li>
+                          <li><a
+                              href="https://musicbrainz.osuosl.org/pub/musicbrainz/picard/picard-{{beta.tag}}.zip">{{ _('US Mirror (zip)') }}</a>
+                          </li>
+                          <li><a
+                              href="ftp://ftp.eu.metabrainz.org/pub/musicbrainz/picard/picard-{{beta.tag}}.tar.gz">{{ _('EU Mirror (tar)') }}</a>
+                          </li>
+                          <li><a
+                              href="ftp://ftp.eu.metabrainz.org/pub/musicbrainz/picard/picard-{{beta.tag}}.zip">{{ _('EU Mirror (zip)') }}</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                  {% endif %}
+               </tbody>
+              </table>
+              <p>You can also view the latest Picard source code on <a href="https://github.com/musicbrainz/picard">Github</a>. See <a href="{{ url_for('docs.show_pages', page='development') }}">{{ _("Development") }}</a> on how you can start contributing to the Picard source code.</p>
+            </div>
+          </li>
+        </ul>
+        {% autoescape false %}
+        <p>{{ _("This page lists the most recent downloads. If you're looking for older versions of Picard, {url|browse our FTP server}.")|expand({'url': 'https://musicbrainz.osuosl.org/pub/musicbrainz/picard/?C=M;O=D'}) }}</p>
+        {% endautoescape %}
+    </div><!-- /.container -->
+{% endblock %}

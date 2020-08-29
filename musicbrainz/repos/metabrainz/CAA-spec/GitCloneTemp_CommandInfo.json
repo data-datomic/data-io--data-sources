@@ -1,0 +1,10 @@
+{
+    "commandText": "git clone --progress --verbose https://github.com/metabrainz/CAA-spec undefined\\meta--08-29-2020--WCSV35PA6dQUi1bDtfaXT/CAA-spec",
+    "repo": "https://github.com/metabrainz/CAA-spec",
+    "targetPath": "undefined\\meta--08-29-2020--WCSV35PA6dQUi1bDtfaXT/CAA-spec",
+    "startTime": "2020-08-29T07:43:12.479Z",
+    "endTime": "2020-08-29T07:43:12.951Z",
+    "childProcessPid": 10593,
+    "executionErrors": [],
+    "commandLogFilePath": "/Users/brian/dev_space/GitHub-data-datomic/data-io--data-sources/musicbrainz/musicbrainz-importer/repos/workingdir/--metabrainz--CAA-spec--10593"
+}

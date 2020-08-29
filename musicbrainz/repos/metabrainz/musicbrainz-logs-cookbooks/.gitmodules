@@ -1,0 +1,9 @@
+[submodule "ark"]
+	path = ark
+	url = https://github.com/opscode-cookbooks/ark.git
+[submodule "ulimit"]
+	path = ulimit
+	url = https://github.com/bmhatfield/chef-ulimit.git
+[submodule "tar"]
+	path = tar
+	url = git@github.com:cramerdev/tar-cookbook.git

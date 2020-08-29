@@ -1,0 +1,11 @@
+rsyncd:
+    build: .
+    ports:
+        - "873:873"
+    volumes:
+        - "/tmp:/data:ro"
+    environment:
+        - BWLIMIT=256
+        - VOLUME_NAME=musicbrainz
+        - COMMENT=public archive
+        - VOLUME=/data/root/pub/musicbrainz

@@ -1,0 +1,13 @@
+[%~ title_args = { artist => artist_credit_plain(recording.artist_credit), name => recording.name } ~%]
+
+[%~ main_title = recording.video ? l('Video “{name}” by {artist}', title_args) : l('Recording “{name}” by {artist}', title_args) ~%]
+[%~ WRAPPER "layout.tt" title=title ? main_title _ " - ${title}" : main_title ~%]
+    <div id="content">
+        [%~ React.embed(c, 'recording/RecordingHeader', { recording => recording, page => page }) ~%]
+        [%~ content ~%]
+    </div>
+
+    [%~ IF !full_width ~%]
+        [%~ React.embed(c, 'layout/components/sidebar/RecordingSidebar', {recording => recording}) ~%]
+    [%~ END ~%]
+[%~ END ~%]

@@ -1,0 +1,207 @@
+<div class="changes" data-bind="with: rootField.release">
+  <div class="warning field-error" data-bind="showErrorRightAway: needsRecordings">
+    <p><strong>[% l('Note:') %]</strong> [%- l('All tracks require an associated recording. Click “Edit” to select a recording for each track. Choose “Add a new recording” if an appropriate one doesn’t exist yet.') -%]</p>
+
+    <p data-bind="ifnot: _.isEmpty(tracksWithUnsetPreviousRecordings())">
+      <button type="button" class="styled-button" data-click="reuseUnsetPreviousRecordings">
+        [%~ l('Reuse previous recordings') | html ~%]
+      </button>
+    </p>
+  </div>
+
+  <div class="half-width" data-bind="affectsBubble: $root.recordingBubble">
+
+  <div data-bind="loop: { items: mediums, id: 'uniqueID' }">
+    <fieldset>
+      <legend data-bind="text: formattedName()"></legend>
+
+      <table id="track-recording-assignation" data-bind="if: loaded">
+        <thead>
+          <tr>
+            <th></th>
+            <th colspan="2" style="text-align: left">[% l('track') %]</th>
+            <th colspan="2" style="text-align: left">[% l('recording') %]</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody data-bind="loop: { items: tracks, id: 'uniqueID' }">
+          <tr class="track" data-bind="css: { even: position() % 2 === 0 }">
+
+            <td rowspan="2" class="position" data-bind="text: position"></td>
+
+            <td class="name"><bdi data-bind="text: name"></bdi></td>
+            [%#
+                For tracks, formattedLength is an observable, hence the
+                function invocation. For recordings, it's a string. This is
+                because track lengths are directly editable from the UI, and
+                recording lengths are not.
+             %]
+            <td class="length" data-bind="text: '(' + (formattedLength() || '?:??') + ')'"></td>
+
+            <!-- ko if: hasExistingRecording() -->
+              <td class="name" data-bind="html: recording().html({ target: '_blank' })"></td>
+              <td class="length" data-bind="text: '(' + (recording().formattedLength || '?:??') + ')'"></td>
+            <!-- /ko -->
+
+            <!-- ko if: hasNewRecording -->
+              <td class="name add-new">[% l('(add a new recording)') %]</td>
+              <td class="length"></td>
+            <!-- /ko -->
+
+            <!-- ko if: needsRecording() -->
+              <td class="name"></td>
+              <td class="length"></td>
+            <!-- /ko -->
+
+            <td rowspan="2" class="buttons">
+              <button class="edit-track-recording" type="button" data-bind="controlsBubble: $root.recordingBubble, css: { negative: needsRecording() }">[% l('Edit') | html_entity %]</button>
+            </td>
+          </tr>
+
+          <tr class="artist" data-bind="css: { even: position() % 2 === 0 }">
+            <td colspan="2" data-bind="with: renderArtistCredit(artistCredit)">
+              [% l('by') %] <span data-bind="html: $data"></span>
+            </td>
+            <td colspan="2">
+              <!-- ko if: isCompleteArtistCredit(recording().artistCredit) -->
+                [% l('by') %] <span data-bind="html: renderArtistCredit(recording().artistCredit)"></span>
+              <!-- /ko -->
+            </td>
+          </tr>
+
+          <tr data-bind="if: titleDiffersFromRecording() || artistDiffersFromRecording(), css: { even: position() % 2 === 0 }">
+            <td></td>
+            <td colspan="5" class="checkbox">
+              <label data-bind="if: titleDiffersFromRecording()">
+                <input class="update-recording-title" type="checkbox" data-bind="checked: updateRecordingTitle, disable: $root.copyTrackTitlesToRecordings" />
+                [% l('Update the recording title to match the track title.') %]
+              </label>
+              <br />
+              <label data-bind="if: artistDiffersFromRecording()">
+                <input class="update-recording-artist" type="checkbox" data-bind="checked: updateRecordingArtist, disable: $root.copyTrackArtistsToRecordings" />
+                [% l('Update the recording artist credit to match the track artist credit.') %]
+              </label>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- ko ifnot: loaded -->
+      <div class="edit-recording">
+        <div class="buttons">
+          <button type="button" data-bind="disable: loading" data-click="loadTracks">
+            [% l('Edit') | html_entity %]
+          </button>
+        </div>
+
+        <span style="display: inline-block; ">
+          [% l('Click Edit to edit the recording associations for this disc.') %]
+        </span>
+
+        <!-- ko if: loading -->
+          <div class="recordings-loading">
+            <span class="loading-message">
+              [% l('Now loading recording associations...') %]
+            </span>
+          </div>
+        <!-- /ko -->
+      </div>
+      <!-- /ko -->
+    </fieldset>
+  </div>
+
+  </div>
+
+  <!-- ko if: hasTracks() -->
+    <fieldset>
+      <p>
+        [% l('If the {recording_doc|recording titles/artists} listed above are incorrect, you can check the boxes below to replace them with the track titles/artists for this release.', {recording_doc => doc_link('Recording')}) %]
+      </p>
+      <p>
+        [% l('<strong>Note:</strong> In classical music, {csg_recording_artist|recording artists} should almost always be different from {csg_track_artist|track artists}, so don’t use the “copy artist credits” option while editing a classical release unless you’re very sure it’s a good idea!', {csg_recording_artist => doc_link('Style/Classical/Recording/Artist'), csg_track_artist => doc_link('Style/Classical/Track/Artist')}) %]
+      </p>
+      <legend>[% l('Options') %]</legend>
+      <p>
+        <label>
+          <input id="update-all-recording-titles" type="checkbox" data-bind="checked: $root.copyTrackTitlesToRecordings" />
+          [% l('Copy all track titles to associated recordings.') %]
+        </label>
+      </p>
+      <p>
+        <label>
+          <input id="update-all-recording-artists" type="checkbox" data-bind="checked: $root.copyTrackArtistsToRecordings" />
+          [% l('Copy all track artist credits to associated recordings.') %]
+        </label>
+      </p>
+    </fieldset>
+  <!-- /ko -->
+
+  <div class="documentation">
+
+    <div class="bubble" id="recording-assoc-bubble" data-bind="bubble: $root.recordingBubble">
+      <p>[% l('Each track in the MusicBrainz database has to be linked to a recording, choose the appropriate recording or look for it in the database.') %]</p>
+
+      <p>[% l('If we do not have a recording for this track in the database yet, please select "Add a new recording" below.') %]</p>
+
+      <p data-bind="with: target">
+        [% l('Search:') %]
+        <span class="autocomplete">
+          [% React.embed(c, 'static/scripts/common/components/SearchIcon') %]
+          <input type="text" class="name" data-bind="autocomplete: { entity: 'recording', currentSelection: recording, lookupHook: $root.recordingAssociation.autocompleteHook($data) }" />
+        </span>
+      </p>
+
+      <table data-bind="with: target">
+        <tbody>
+          <!-- ko if: loadingSuggestedRecordings -->
+          <tr>
+            <td colspan="4" style="padding-bottom: 1em; vertical-align: top;" class="loading-message">
+              [% l('Looking for suggested recordings...') %]
+            </td>
+          </tr>
+          <!-- /ko -->
+          <!-- ko if: suggestedRecordings().length -->
+          <tr>
+            <td colspan="4">
+              <h3 style="margin-bottom: 1em;">[% l('Suggested recordings:') %]</h3>
+            </td>
+          </tr>
+          <!-- /ko -->
+          <!-- ko foreach: suggestedRecordings -->
+          <tr>
+            <td class="select">
+              <input name="recording-selection" type="radio" data-bind="attr: { value: gid }, checked: String($parent.recordingGID())" data-change="recording" />
+            </td>
+            <td class="recording" data-bind="html: html({ target: '_blank' })"></td>
+            <td class="artist" data-bind="html: renderArtistCredit(artistCredit)"></td>
+            <td class="length" data-bind="text: formattedLength"></td>
+          </tr>
+          <!-- ko if: $data.appearsOn && appearsOn.results.length > 0 -->
+          <tr>
+            <td></td>
+            <td colspan="3" class="appears-on">
+              [%- l('appears on:') %]
+              <span class="appears" data-bind="html: _.invokeMap(appearsOn.results, 'html', { target: '_blank' }).join(', ')"></span>
+            </td>
+          </tr>
+          <!-- /ko -->
+          <!-- /ko -->
+
+          <tr>
+            <td>
+              <input name="recording-selection" value="" type="radio" id="add-new-recording" data-bind="checked: hasNewRecording, checkedValue: true" />
+            </td>
+            <td colspan="3">
+              <label for="add-new-recording">
+                [% l('Add a new recording') %]
+              </label>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      [% track_bubble_buttons %]
+    </div>
+  </div>
+</div>

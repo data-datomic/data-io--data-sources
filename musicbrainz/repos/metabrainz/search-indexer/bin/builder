@@ -1,0 +1,26 @@
+#!/bin/sh
+
+SEARCH_HOME=/home/search
+
+SEARCH_JAVA_HOME=/usr/local/java
+SEARCH_JAVA_OPTS_INDEXER="-Xmx512M"
+SEARCH_DB_HOST="totoro.localdomain"
+SEARCH_DB_NAME="musicbrainz_db_20110516"
+SEARCH_DB_USER="musicbrainz_user"
+
+#FIXME: passing password on a command-line is not secure
+SEARCH_DB_PASSWORD="musicbrainz"
+
+SEARCH_CONFIG="$HOME/mb_search_server.conf"
+[ -e "$SEARCH_CONFIG" ] && . "$SEARCH_CONFIG"
+
+
+export JAVA_HOME=$SEARCH_JAVA_HOME
+exec $JAVA_HOME/bin/java \
+	$SEARCH_JAVA_OPTS_INDEXER \
+	-jar "$JAR" \
+	--db-host "$SEARCH_DB_HOST" \
+	--db-name "$SEARCH_DB_NAME" \
+	--db-user "$SEARCH_DB_USER" \
+	--db-password "$SEARCH_DB_PASSWORD" \
+	"$@"

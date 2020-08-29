@@ -1,0 +1,19 @@
+# Docker Compose file for testing
+version: "2"
+services:
+
+  db:
+    build:
+      context: ./pg_custom/
+      dockerfile: Dockerfile
+    environment:
+      POSTGRES_USER: mbspotify
+      POSTGRES_PASSWORD: mbspotify
+      POSTGRES_DB: mbspotify
+
+  web_test:
+    build:
+      context: ..
+      dockerfile: ./docker/Dockerfile.test
+    depends_on:
+      - db

@@ -1,0 +1,44 @@
+{% extends 'review/modify/base.html' %}
+
+{% set entity = review.entity_id | entity_details(type=entity_type) %}
+{% if entity_type == 'release_group' %}
+  {% set entity_title = entity['title'] | default(_('[Unknown release group]')) %}
+{% elif entity_type == 'event' %}
+  {% set entity_title = entity['name'] | default(_('[Unknown event]')) %}
+{% elif entity_type == 'place' %}
+  {% set entity_title = entity['name'] | default(_('[Unknown place]')) %}
+{% endif %}
+
+{% block title %}
+  {{ _('Edit review of "%(entity)s"', entity=entity_title) }} - CritiqueBrainz
+{% endblock %}
+
+{% block header %}
+  <h2>{{ _('Editing review') }}</h2>
+{% endblock %}
+
+{% block more_info %}
+  <dt>{{ _('Created on') }}</dt><dd>{{ review.created | date }}</dd>
+  {% if not review.is_draft %}
+    <dt>{{ _('Votes (+/-)') }}</dt><dd>{{ review.votes_positive_count }}/{{ review.votes_negative_count }}</dd>
+  {% endif %}
+  <dt>{{ _('Status') }}</dt>
+  <dd>
+    {% if review.is_draft %}
+      <span class="label label-default">{{ _('Draft') }}</span>
+    {% else %}
+      <span class="label label-primary">{{ _('Published') }}</span>
+    {% endif %}
+  </dd>
+{% endblock %}
+
+{% block buttons %}
+  {% if review.is_draft %}
+    <button id="btn-publish" class="btn btn-primary">{{ _('Publish') }}</button>
+    <button id="btn-draft" class="btn btn-default">{{ _('Save draft') }}</button>
+  {% else %}
+    <button id="btn-publish" class="btn btn-primary">{{ _('Update') }}</button>
+  {% endif %}
+  <a class="btn btn-link" href="{{ url_for('review.entity', id=review.id) }}">{{ _('Discard changes') }}</a>
+  <a class="btn btn-danger btn-sm pull-right" href="{{ url_for('review.delete', id=review.id) }}">{{ _('Delete this review') }}</a>
+{% endblock %}

@@ -1,0 +1,18 @@
+<div class="control-group required {% if field_class %} {{ field_class }}{% endif %}{% if field.errors %} error{% endif %}">
+
+    <label class="control-label" for="id_{{ field.html_name }}">
+        {% if label %}{{ label }}{% else %}{{ field.label }}{% endif %}
+        {% if not field.field.required and not hide_optional %}<br><small class="muted">optional</small>{% endif %}</label>
+
+    <div class="controls">
+        {{ field }}
+        {% if help_text %}
+            <span class="help-inline">{{ help_text }}</span>
+        {% elif field.help_text %}
+            <span class="help-inline">{{ field.help_text }}</span>
+        {% endif %}
+        {% for error in field.errors %}
+            <p class="help-block">{{ error }}</p>
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,13 @@
+# Docker Compose file for testing
+version: "2"
+services:
+
+  web_test:
+    build:
+      context: ..
+      dockerfile: ./docker/Dockerfile.test
+    depends_on:
+      - mbs_db_test
+
+  mbs_db_test:
+    image: metabrainz/musicbrainz-test-database:schema-change-2017-q2

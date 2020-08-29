@@ -1,0 +1,232 @@
+package DBDefs;
+use strict;
+use warnings;
+
+use base 'DBDefs::Default';
+
+use MusicBrainz::Server::DatabaseConnectionFactory;
+use MusicBrainz::Server::Replication ':replication_type';
+
+<% if @dbdefs['gpg_sign_key'] -%>
+    sub GPG_SIGN_KEY { '<%= @dbdefs['gpg_sign_key'] %>' }
+<%- end -%>
+
+<% if @dbdefs['gpg_encrypt_key'] -%>
+    sub GPG_ENCRYPT_KEY { '<%= @dbdefs['gpg_encrypt_key'] %>' }
+<%- end -%>
+
+<% if @dbdefs['recaptcha_public_key'] -%>
+    sub RECAPTCHA_PUBLIC_KEY { '<%= @dbdefs['recaptcha_public_key'] %>' }
+<%- end -%>
+
+<% if @dbdefs['recaptcha_private_key'] -%>
+    sub RECAPTCHA_PRIVATE_KEY { '<%= @dbdefs['recaptcha_private_key'] %>' }
+<%- end -%>
+
+<% if @dbdefs['google_analytics_code'] -%>
+    sub GOOGLE_ANALYTICS_CODE { '<%= @dbdefs['google_analytics_code'] %>' }
+<%- end -%>
+
+<% if @dbdefs['google_custom_search'] -%>
+    sub GOOGLE_CUSTOM_SEARCH { '<%= @dbdefs['google_custom_search'] %>' }
+<%- end -%>
+
+<% if @dbdefs[ 'cover_art_archive_access_key' ] -%>
+    sub COVER_ART_ARCHIVE_ACCESS_KEY { '<%= @dbdefs['cover_art_archive_access_key'] %>' }
+<%- end -%>
+
+<% if @dbdefs['cover_art_archive_secret_key'] -%>
+    sub COVER_ART_ARCHIVE_SECRET_KEY { '<%= @dbdefs['cover_art_archive_secret_key'] %>' }
+<%- end -%>
+
+<% if @dbdefs['mapbox_access_token'] -%>
+    sub MAPBOX_ACCESS_TOKEN { '<%= @dbdefs['mapbox_access_token'] %>' }
+<%- end -%>
+
+<% if @dbdefs['beta_redirect_hostname'] -%>
+    sub BETA_REDIRECT_HOSTNAME { '<%= @dbdefs['beta_redirect_hostname'] %>' }
+<%- end -%>
+
+<% if @dbdefs['is_beta'] -%>
+sub IS_BETA { 1 }
+<%- end -%>
+
+<% if @dbdefs['databases'] %>
+MusicBrainz::Server::DatabaseConnectionFactory->register_databases(
+<% @dbdefs['databases'].each do |database, config| %>
+     <%= database %> => {
+       database => '<%= @dbdefs[:databases][database][:database] %>',
+       <% if @dbdefs[:databases][database][:username] %>
+         username => '<%= @dbdefs[:databases][database][:username] %>',
+       <% end %>
+       <% if @dbdefs[:databases][database][:schema] %>
+         schema => '<%= @dbdefs[:databases][database][:schema] %>',
+       <% end %>
+       <% if @dbdefs[:databases][database][:host] %>
+         host => '<%= @dbdefs[:databases][database][:host] %>',
+       <% end %>
+       <% if @dbdefs[:databases][database][:port] %>
+         port => <%= @dbdefs[:databases][database][:port] %>
+       <% end %>
+     },
+<% end %>
+);
+<% end %>
+
+<% if @dbdefs['db_schema_sequence'] -%>
+    sub DB_SCHEMA_SEQUENCE { <%= @dbdefs['db_schema_sequence'] %> }
+<%- end -%>
+
+<% if @dbdefs['replication_type'] -%>
+    sub REPLICATION_TYPE { <%= @dbdefs['replication_type'].to_s.upcase %> }
+<%- end -%>
+
+<% if @dbdefs['replication_access_token'] -%>
+    sub REPLICATION_ACCESS_TOKEN { '<%= @dbdefs['replication_access_token'] %>' }
+<%- end -%>
+
+<% if @dbdefs['web_server'] -%>
+    sub WEB_SERVER { '<%= @dbdefs['web_server'] %>' }
+<%- end -%>
+
+<% if @dbdefs['web_server_ssl'] -%>
+    sub WEB_SERVER_SSL { '<%= @dbdefs['web_server_ssl'] %>' }
+<%- end -%>
+
+<% if @dbdefs['web_server_used_in_email'] -%>
+    sub WEB_SERVER_USED_IN_EMAIL { '<%= @dbdefs['web_server_used_in_email'] %>' }
+<%- end -%>
+
+<% if @dbdefs['lucene_server'] -%>
+    sub LUCENE_SERVER { '<%= @dbdefs['lucene_server'] %>' }
+<%- end -%>
+
+<% if @dbdefs['lucene_x_accel_redirect'] -%>
+    sub LUCENE_X_ACCEL_REDIRECT { '<%= @dbdefs['lucene_x_accel_redirect'] %>' }
+<%- end -%>
+
+<% if @dbdefs['smtp_secret_checksum'] -%>
+    sub SMTP_SECRET_CHECKSUM { '<%= @dbdefs['smtp_secret_checksum'] %>' }
+<%- end -%>
+
+sub DB_STAGING_SERVER { <%= (@dbdefs['db_staging_server'] && 1) || 0 %> }
+
+sub DB_READ_ONLY { <%= (@dbdefs['db_read_only'] && 1) || 0 %> }
+
+sub DB_STAGING_SERVER_SANITIZED { <%= (@dbdefs['db_staging_server_sanitized'] && 1) || 0 %> }
+
+sub DB_STAGING_TESTING_FEATURES { 0 }
+
+<% if @dbdefs['db_staging_server_description'] -%>
+sub DB_STAGING_SERVER_DESCRIPTION { <%= @dbdefs['db_staging_server_description'] %> }
+<%- end -%>
+
+<% if @dbdefs['memcached_namespace'] -%>
+sub MEMCACHED_NAMESPACE { '<%= @dbdefs['memcached_namespace'] %>' }
+<%- end -%>
+
+<% if @dbdefs['memcached_servers'] %>
+sub MEMCACHED_SERVERS {
+  [
+<% @dbdefs['memcached_servers'].each do |server| %>
+     '<%= server %>',
+<% end %>
+  ]
+}
+<% end %>
+
+<% if @dbdefs['datastore_redis_args'] %>
+sub DATASTORE_REDIS_ARGS {
+    my $self = shift;
+    return {
+        prefix => 'MB:',
+        database => 0,
+        test_database => 1,
+        redis_new_args => {
+            server => '<%= @dbdefs['datastore_redis_args']['server'] %>',
+            reconnect => 60,
+            encoding => undef,
+        }
+    };
+};
+<% end %>
+
+<% if @dbdefs['ratelimit_server'] -%>
+    sub RATELIMIT_SERVER { '<%= @dbdefs['ratelimit_server'] %>' }
+<%- end -%>
+
+<% if @dbdefs['session_cookie'] -%>
+    sub SESSION_COOKIE { '<%= @dbdefs['session_cookie'] %>' }
+<%- end -%>
+
+<% if @dbdefs['amazon_associate_tag'] -%>
+    sub AMAZON_ASSOCIATE_TAG { '<%= @dbdefs['amazon_associate_tag'] %>' }
+<%- end -%>
+
+<% if @dbdefs['aws_public'] -%>
+    sub AWS_PUBLIC { '<%= @dbdefs['aws_public'] %>' }
+<%- end -%>
+
+<% if @dbdefs['aws_private'] -%>
+    sub AWS_PRIVATE { '<%= @dbdefs['aws_private'] %>' }
+<%- end -%>
+
+sub CATALYST_DEBUG { <%= (@dbdefs['catalyst_debug'] && 1) || 0 %> }
+
+sub DEVELOPMENT_SERVER { <%= (@dbdefs['development_server'] && 1) || 0 %> }
+
+<% if @dbdefs['email_bugs'] -%>
+    sub EMAIL_BUGS { '<%= @dbdefs['email_bugs'] %>' }
+<%- end -%>
+
+<% if @dbdefs['auto_restart'] %>
+    sub AUTO_RESTART {
+        return {
+            active => 1,
+            check_each => 30,
+            max_bits => 350000000,
+            min_handled_requests => 50
+        }
+    }
+<% end %>
+
+<% if @dbdefs['max_request_time'] %>
+    sub DETERMINE_MAX_REQUEST_TIME {
+        my (undef, $req) = @_;
+        return <%= @dbdefs['max_request_time'] %>;
+    }
+<% end %>
+
+sub SSL_REDIRECTS_ENABLED { <%= (@dbdefs['ssl_redirects_enabled'] && 1) || 0 %> }
+
+<% if @dbdefs['mb_languages'] -%>
+sub MB_LANGUAGES { qw(<%= @dbdefs['mb_languages'] %>) }
+<%- end -%>
+
+<% if @dbdefs['renderer_host'] -%>
+sub RENDERER_HOST { '<%= @dbdefs['renderer_host'] %>' }
+<%- end -%>
+
+<% if @dbdefs['renderer_port'] -%>
+sub RENDERER_PORT { <%= @dbdefs['renderer_port'] %> }
+<%- end -%>
+
+sub RENDERER_X_ACCEL_REDIRECT { <%= (@dbdefs['renderer_x_accel_redirect'] && 1) || 0 %> }
+
+<% if @dbdefs['discourse_server'] -%>
+sub DISCOURSE_SERVER { '<%= @dbdefs['discourse_server'] %>' }
+<%- end -%>
+
+<% if @dbdefs['discourse_api_key'] -%>
+sub DISCOURSE_API_KEY { '<%= @dbdefs['discourse_api_key'] %>' }
+<%- end -%>
+
+<% if @dbdefs['discourse_api_username'] -%>
+sub DISCOURSE_API_USERNAME { '<%= @dbdefs['discourse_api_username'] %>' }
+<%- end -%>
+
+<% if @dbdefs['discourse_sso_secret'] -%>
+sub DISCOURSE_SSO_SECRET { '<%= @dbdefs['discourse_sso_secret'].gsub("'", %q(\\\')) %>' }
+<%- end -%>
+
+1;

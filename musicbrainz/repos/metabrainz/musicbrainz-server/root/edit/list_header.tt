@@ -1,0 +1,37 @@
+<table class="search-help">
+    <tr>
+        <th>
+            [%- l('Quick links:') -%]
+        </th>
+        <td>
+            [%- IF !search -%]
+                <a href="[% c.uri_for_action('/edit/search') %]">[% l('Search for edits') %]</a>
+                |
+            [% END %]
+            [%- IF refine_url_args -%]
+                [%- refine_url_args.form_only = 'yes' -%]
+                <a href="[% c.uri_for('/search/edits', refine_url_args) %]">[% l('Refine this search') %]</a>
+                |
+            [%- END -%]
+            <a href="[% c.uri_for('/edit/open') %]">[% l('Open edits') %]</a>
+            |
+            <a href="[% c.uri_for_action('/edit/subscribed') %]">[% l('Subscribed entities') %]</a>
+            |
+            <a href="[% c.uri_for_action('/edit/subscribed_editors') %]">[% l('Subscribed editors') %]</a>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            [%- l('Help:') -%]
+        </th>
+        <td>
+            <a href="[% doc_link('Introduction_to_Voting') %]">[% l('Voting FAQ') %]</a>
+            |
+            <a href="[% doc_link('Editing_FAQ') %]">[% l('Editing FAQ') %]</a>
+            |
+            <a href="[% doc_link('Style') %]">[% l('Style guidelines') %]</a>
+            |
+            <a href="[% doc_link('How_Editing_Works') %]">[% l('How editing works') %]</a>
+        </td>
+    </tr>
+</table>

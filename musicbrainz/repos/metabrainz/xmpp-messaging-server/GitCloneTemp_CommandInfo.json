@@ -1,0 +1,10 @@
+{
+    "commandText": "git clone --progress --verbose https://github.com/metabrainz/xmpp-messaging-server undefined\\meta--08-29-2020--WCSV35PA6dQUi1bDtfaXT/xmpp-messaging-server",
+    "repo": "https://github.com/metabrainz/xmpp-messaging-server",
+    "targetPath": "undefined\\meta--08-29-2020--WCSV35PA6dQUi1bDtfaXT/xmpp-messaging-server",
+    "startTime": "2020-08-29T07:49:53.706Z",
+    "endTime": "2020-08-29T07:49:54.218Z",
+    "childProcessPid": 11886,
+    "executionErrors": [],
+    "commandLogFilePath": "/Users/brian/dev_space/GitHub-data-datomic/data-io--data-sources/musicbrainz/musicbrainz-importer/repos/workingdir/--metabrainz--xmpp-messaging-server--11886"
+}

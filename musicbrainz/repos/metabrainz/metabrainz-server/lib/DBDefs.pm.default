@@ -1,0 +1,72 @@
+package DBDefs;
+
+use strict;
+use warnings;
+
+use MusicBrainz::Server::DatabaseConnectionFactory;
+MusicBrainz::Server::DatabaseConnectionFactory->register_databases(
+    # How to connect when we need read-write access to the database
+    METABRAINZ => {
+        database    => "metabrainz",
+        schema      => "public",
+        username    => "musicbrainz",
+    },
+    SYSTEM => {
+        database    => "template1",
+        username    => "postgres",
+    }
+);
+
+sub ADMIN_PASSWORD { "changeme" }
+
+sub DB_READ_ONLY { 0 }
+
+sub MB_LANGUAGES {qw()}
+
+sub MINIFY_SCRIPTS {
+    use Javascript::Closure qw( minify :CONSTANTS );
+    return sub {
+        my %args = @_;
+        warn minify(%args, output_info => ERRORS);
+        minify(%args);
+    }
+}
+
+sub MINIFY_STYLES { use CSS::Minifier; return \&CSS::Minifier::minify }
+
+# The server root, i.e. the parent directory of admin, bin, lib, root, etc.
+sub MB_SERVER_ROOT    { "/home/metabrainz/metabrainz-server/" }
+# The data import directory (used by some reports)
+sub DATA_IMPORT_DIR    { "/home/metabrainz/data-import" }
+# Where static files are located
+sub STATIC_FILES_DIR { MB_SERVER_ROOT . '/root/static' }
+sub STATIC_PREFIX    { '/static' }
+
+sub WIKITRANS_SERVER     { "wiki.musicbrainz.org" }
+sub WIKITRANS_NAMESPACE  { "MetaBrainz:" }
+sub WIKITRANS_INDEX_FILE { MB_SERVER_ROOT() . "/root/static/wikidocs/index.txt" }
+sub WIKITRANS_INDEX_URL  { "http://musicbrainz.org/static/wikidocs/index.txt" }
+
+sub WEB_SERVER         { "www.metabrainz.example.com" }
+sub GOOGLE_ANALYTICS_CODE { "" }
+
+use MusicBrainz::Server::Replication ':replication_type';
+sub REPLICATION_TYPE { RT_STANDALONE }
+
+sub CATALYST_DEBUG { 1 }
+
+sub PAYPAL_PRIMARY_EMAIL { 'paypal@metabrainz.org' }
+sub PAYPAL_BUSINESS { 'payment@metabrainz.org' }
+
+sub MAX_REQUEST_TIME { 30 }
+
+# From WePay's application page, after creating an API application
+sub WEPAY_ACCESS_TOKEN { '' }
+# This should just be the number in the URL when you're logged in as the merchant
+sub WEPAY_ACCOUNT_ID { '' }
+# Use WePay's staging server
+sub WEPAY_USE_STAGING { 1 }
+
+sub MEMCACHED_SERVERS { return ['127.0.0.1:11211'] }
+
+1;

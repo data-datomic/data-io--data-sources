@@ -1,0 +1,62 @@
+#!/bin/bash
+
+echo "`date` : $0 starting"
+
+run_and_show_errors() {
+	OUTPUT=`"$@" 2>&1`
+	RC=$?
+	if [ $RC != 0 ]
+	then
+		echo "`date` : FAIL '$@' (rc=$RC)"
+		echo "$OUTPUT"
+		return 1
+	else
+		echo "`date` : PASS '$@'"
+		return 0
+	fi
+}
+
+run_and_show_errors make
+
+echo "$OUTPUT" > log/build-`date +'%Y%m%d-%H%M%S'`.log
+
+find log -type f -mtime +100 -delete
+
+run_and_show_errors fix-perms
+
+PUSH_TO="dora roobarb"
+
+for h in $PUSH_TO
+do
+	run_and_show_errors push-to-server $h.localdomain sync ; eval "${h}_rc=$?"
+done
+
+for h in $PUSH_TO
+do
+	if eval "[ \$${h}_rc = 0 ]" ; then run_and_show_errors push-to-server $h.localdomain rotate ; eval "${h}_rc=$?" ; fi
+done
+
+#if ! sudo /usr/sbin/invoke-rc.d tomcat6 restart >/dev/null 2>&1
+#then
+#	echo "`date` : FAIL tomcat6 restart"
+#	echo "However I can't show you stdout/stderr due to the fact that tomcat6 doesn't daemonize cleanly"
+#	echo "Please check the logs"
+#else
+#	echo "`date` : PASS tomcat6 restart"
+#fi
+
+for h in $PUSH_TO
+do
+	if eval "[ \$${h}_rc = 0 ]" ; then
+		run_and_show_errors push-to-server $h.localdomain restart
+		r=$?
+		eval "${h}_rc=$r"
+		if [ "$r" != 0 ] ; then
+			echo "However I can't show you stdout/stderr due to the fact that tomcat6 doesn't daemonize cleanly"
+		fi
+	fi
+done
+
+echo "`date` : $0 completed"
+
+# eof

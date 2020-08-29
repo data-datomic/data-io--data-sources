@@ -1,0 +1,72 @@
+{% extends 'layout' %}
+{% set active = "index" %}
+{% block body %}
+<div class="row">
+    <div class="span1"></div>
+    <div class="span10">
+        <ul class="nav nav-pills" style="float: right;">
+           <li><a href="/">Home</a></li>
+           <li><a href="/search">Search</a></li>
+           <li><a href="/facet">Faceted</a></li>
+           <li class="active"><a href="/filtered-facet">Filtered</a></li>
+        </ul>
+        <div style="float: clear;"></div>
+        <h1>{{ title }}</h1>
+        <div style="padding-bottom: 20px"></div>
+
+        <div class="alert alert-warning" id="status-message" style="display:none; margin-top: 20px">.</div>
+
+       <form role="form" class="form-inline" action="/filtered-facet">
+          <label class="sr-only" for="field">Field</label>
+          <select class="form-control" name="field">
+             {% for f in fields %}
+                 <option {% if field == f %}selected{% endif %}>{{ f }}</option>
+             {% endfor %}
+          </select>
+          <label class="sr-only" for="query">Query</label>
+          <input class="form-control" id="query" type="text" name="query" style="width: 75%" value="{{ query }}">
+          <button type="submit" class="btn btn-primary">Search</button>
+       </form>
+       {% if url and 0 %}
+           <div><pre>{{ url }}</pre></div>
+       {% endif %}
+       {% if summary %}
+           <b>{{ summary }}</b>
+       {% endif %}
+       {% for group in groups %}
+            <table class="table table-striped table-bordered table-condensed">
+            <thead>
+                <tr>
+                   {% for header in group.headers %}
+                       <th style="width: {{ header.width }}%">{{ header.text }}</th>
+                   {% endfor %}
+                </tr>
+            </thead>
+            {% for doc in group.docs %}
+                <tr>
+                    {% for field in doc %}
+                       <td>{{ field }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+            </table>
+       {% endfor %}
+    </div>
+    <div class="span1"></div>
+</div>
+<script type="text/javascript" src="/static/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() 
+{
+    {% if error %}
+         set_message("{{ error }}");
+    {% endif %}
+});
+function set_message(txt)
+{
+    $("#status-message").text(txt);
+    $("#status-message").css('display', 'block');
+    $("#status-message").show();
+}
+</script>
+{% endblock %}

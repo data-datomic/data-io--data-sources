@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import cover_art, review_credit with context %}
+
+{% block content %}
+<div id="homepage">
+
+  <div id="header" class="row">
+    <div class="col-md-8">
+      <img src="{{ get_static_path('images/logo_big.svg') }}" id="big-logo" />
+      <h2>{{ _('Welcome to CritiqueBrainz!') }}</h2>
+      <p>
+        {{ _('CritiqueBrainz is a repository for Creative Commons licensed music reviews.
+        Here you can read what other people have written about an album or event and write your own review!') }}
+      </p>
+      <p>
+        {{ _('CritiqueBrainz is based on data from MusicBrainz - open music encyclopedia.
+        <br/>Everyone - including you - can participate and contribute.') }}
+      </p>
+    </div>
+    <div class="col-md-4">
+      <div id="stats" class="panel panel-default">
+        <div class="panel-heading"><strong>{{ _('Statistics') }}</strong></div>
+        <div class="panel-body">
+           <table class="table table-collapsed">
+            <thead>
+              <tr>
+                <th>{{ _('Description') }}</th>
+                <th>{{ _('Number') }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ _('Number of Reviews') }}</td>
+                <td>{{ _('%(review_count)s', review_count=reviews_total) }}</td>
+              </tr>
+              <tr>
+                <td>{{ _('Number of Users') }}</td>
+                <td>{{ _('%(user_count)s', user_count=users_total) }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div id="popular-reviews">
+    <h3 style="margin-bottom:-5px;margin-top:0px;">{{ _('Popular reviews') }}</h3>
+    {% if not popular_reviews %}
+      <p class="lead" style="text-align: center;">{{ _('No reviews found') }}</p>
+    {% else %}
+      <div id="popular-list" class="row">
+        {% for review in popular_reviews %}
+          <div class="col-md-6 review">
+            <div class="cover-art-container pull-left">
+              <a href="{{ url_for('review.entity', id=review.id) }}">
+                {{ cover_art(review.entity_id, review.entity_type, overlay_type=True) }}
+              </a>
+            </div>
+            {% set entity = review.entity_id | entity_details(type=review.entity_type) %}
+            <div class="album">{% include 'entity_review.html' %}</div>
+            <div class="reviewer">
+              <p>{{ review_credit(review, user_picture_size=16) }}</p>
+            </div>
+            <div class="preview">{{ review.preview[:250] }}{% if review.preview|length > 250 %}...{% endif %}</div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+
+  <hr />
+
+  <div id="recent-reviews">
+    <h4>{{ _('Recent reviews') }}</h4>
+    {% if not recent_reviews %}
+      <p class="lead" style="text-align: center;">{{ _('No reviews found') }}</p>
+    {% else %}
+      <div id="recent-list" class="row">
+        {% for review in recent_reviews %}
+          <div class="col-md-4 review">
+            <div class="cover-art-container pull-left">
+              <a href="{{ url_for('review.entity', id=review.id) }}">
+                {{ cover_art(review.entity_id, review.entity_type, overlay_type=True) }}
+              </a>
+            </div>
+            {% set entity = review.entity_id | entity_details(type=review.entity_type) %}
+            <div class="album">{% include 'entity_review.html' %}</div>
+            <div class="reviewer">
+              <p>{{ review_credit(review, user_picture_size=16) }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <p class="text-right"><br /><a href="{{ url_for('review.browse') }}"><b><em>{{ _('View all reviews...') }}</em></b></a></p>
+    {% endif %}
+  </div>
+
+</div>
+{% endblock %}

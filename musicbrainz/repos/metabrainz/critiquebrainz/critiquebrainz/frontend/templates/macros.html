@@ -1,0 +1,199 @@
+{% macro print_message(message, category) %}
+  {% if category == "error" %}
+    {% set alert_class="alert-danger" %}
+  {% elif category == "warning" %}
+    {% set alert_class="alert-warning" %}
+  {% elif category == "success" %}
+    {% set alert_class="alert-success" %}
+  {% else %}
+    {% set alert_class="alert-info" %}
+  {% endif %}
+
+  <div class="alert {{ alert_class }}">{{ message }}</div>
+{% endmacro %}
+
+{% macro scope_desc(scope) %}
+  {% if scope == "user" %}
+    <strong class="text-danger">
+      <abbr title="{{ _('Modify profile info and delete your profile.') }}">{{ _('Profile data') }}</abbr>
+    </strong>
+  {% elif scope == "review" %}
+    <abbr title="{{ _('Create and modify your reviews.') }}">{{ _('Reviews') }}</abbr>
+  {% elif scope == "client" %}
+    <abbr title="{{ _('Modify your applications (create, edit, delete).') }}">{{ _('Applications') }}</abbr>
+  {% elif scope == "authorization" %}
+    <strong class="text-danger">
+      <abbr title="{{ _('Manage access to your profile for other apps (can allow complete access to your profile and remove existing access authorizations).') }}">{{ _('Authorization') }}</abbr>
+    </strong>
+  {% elif scope == "vote" %}
+    <abbr title="{{ _('Submit and delete your votes.') }}">{{ _('Review votes') }}</abbr>
+  {% endif %}
+{% endmacro %}
+
+{% macro cover_art(entity_id, entity_type, attributes='', overlay_type=False, source_credit=False, size=250, release_group_page=False) %}
+  {# Note: when passing in `attributes`, don't quote attribute values; they will be added automatically #}
+  {% if entity_type == 'event' %}
+    <img src="{{ get_static_path('images/placeholder_place.svg') }}" {{ attributes }} />
+    {% if overlay_type %}
+      <span class="entity-type event">
+        {{ _('Event') }}
+      </span>
+    {% endif %}
+  {% elif entity_type == 'place'  %}
+    <img src="{{ get_static_path('images/placeholder_place.svg') }}" {{ attributes }} />
+    {% if overlay_type %}
+      <span class="entity-type place">
+        {{ _('Place') }}
+      </span>
+    {% endif %}
+  {% elif entity_type == 'work'  %}
+    <img src="{{ get_static_path('images/placeholder_place.svg') }}" {{ attributes }} />
+    {% if overlay_type %}
+      <span class="entity-type work">
+        {{ _('Work') }}
+      </span>
+    {% endif %}
+  {% elif entity_type == 'artist'  %}
+    <img src="{{ get_static_path('images/placeholder_place.svg') }}" {{ attributes }} />
+    {% if overlay_type %}
+      <span class="entity-type artist">
+        {{ _('Artist') }}
+      </span>
+    {% endif %}
+  {% elif entity_type == 'label'  %}
+    <img src="{{ get_static_path('images/placeholder_disc.svg') }}" {{ attributes }} />
+    {% if overlay_type %}
+      <span class="entity-type label">
+        {{ _('Label') }}
+      </span>
+    {% endif %}
+  {% else %} {# release-group #}
+    <img {{ attributes }} />
+    {% if overlay_type %}
+      <span class="entity-type release-group">
+        {{ _('Release Group') }}
+      </span>
+    {% endif %}
+    <div id="mb-call-to-act" class="spotify-player" style="display:none;">
+      <span class="text-muted">
+        {{ _('We don\'t have cover art for this release group.') }}
+      </span>
+      <div style="text-align:center;font-weight:bold;">
+        <a style="font-size:16px"; href='https://musicbrainz.org/doc/How_to_Add_Cover_Art' rel='nofollow'>
+          {{ _('See how to add cover art!') }}
+        </a>
+      </div>
+    </div>
+    <script>
+      $('img').last()
+        .on('error', function () {
+          $(this).attr('src', '{{ get_static_path('images/placeholder_disc.svg') }}');
+          if ('{{ release_group_page }}' == 'True')
+            $("#mb-call-to-act").css('display','block');
+          else
+            $("#mb-call-to-cat").css('display','none');
+        })
+        .attr('src', 'https://coverartarchive.org/release-group/{{ entity_id }}/front-{{ size * 2 }}');
+    </script>
+  {% endif %}
+{% endmacro %}
+
+{% macro review_credit(review, user_picture_size) %}
+  {% set user_string = '<img class="avatar" src="%s&s=%d" /> '|safe % (review.user.avatar, user_picture_size)
+              + '<a href="%s">%s</a>'|safe % (url_for('user.reviews', user_id=review.user.id), review.user.display_name) %}
+  {{ _('Review by %(user)s', user=user_string) }}
+{% endmacro %}
+
+{% macro spotify_player(release_group_id, spotify_mappings, show_add_message=False) -%}
+  <div class="spotify-player" style="display:block">
+    {% if spotify_mappings %}
+      <iframe src="https://embed.spotify.com/?uri={{ spotify_mappings[0] }}&theme=white" width="100%" height="80" frameborder="0" allowtransparency="true"></iframe>
+      <em>
+        <small>
+          <a class="text-muted" href="{{ url_for('mapping.spotify_list', release_group_id=release_group_id) }}">
+            {{ _('View Spotify mapping information') }}
+          </a>
+        </small>
+      </em>
+    {% elif show_add_message %}
+      <span class="text-muted">
+        {{ _('We don\'t have a mapping between this release group and Spotify. Please help us find the right album.') }}
+      </span>
+      <div style="text-align:center;font-weight:bold;">
+        <a style="font-size:16px;" href="{{ url_for('mapping.spotify_add', release_group_id=release_group_id) }}" rel="nofollow">
+          {{ _('Match this!') }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+{%- endmacro %}
+
+{% macro show_external_reviews(reviews) %}
+  {% if reviews %}
+    {% for review in reviews %}
+      <li class="clearfix">
+        <a href="{{ review.url.url }}">{{ review.url.url }}</a>
+      </li>
+    {% endfor %}
+  {% endif %}
+{% endmacro %}
+
+{% macro show_tags(tags) %}
+  {% if tags %}
+    {% for tag in tags %}
+    <a href="https://musicbrainz.org/tag/{{ tag }}">{{ tag }}</a>
+      {%- if not loop.last -%}
+        ,
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    <p class="text-muted">{{ _('(none)') }}</p>
+  {% endif %}
+{% endmacro %}
+
+{% macro soundcloud_player(soundcloud_url) %}
+  <div class=soundcloud-player">
+    {% if soundcloud_url %}
+      <iframe style="margin-top: 10px;margin-left: -5px;" width="100%" height="120" allowtransparency="true" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url={{soundcloud_url}}&auto_play=false"></iframe>
+    {% endif %}
+  </div>
+{% endmacro %}
+
+{% macro show_embedded_player(soundcloud_url, spotify_release_group_id, spotify_mappings, spotify_show_add_message=False) %}
+  {% if soundcloud_url %}
+      {{ soundcloud_player(soundcloud_url) }}
+  {% else %}
+      {{ spotify_player(spotify_release_group_id, spotify_mappings, spotify_show_add_message) }}
+  {% endif %}
+{% endmacro %}
+
+{% macro show_avg_rating(rating, count, show_glyphicon=True) %}
+  {% if show_glyphicon %}
+    <i class="glyphicon glyphicon-star"></i>
+  {% endif %}
+  <span style="font-size: 16px;">{{ rating }}</span><em class="text-muted">/5 {{ _('based on %(number)s ratings', number=count) }}</em>
+{% endmacro %}
+
+{% macro comment_credit(comment, user_picture_size) %}
+  {% set user_string = '<img class="avatar" src="%s&s=%d" /> '|safe % (comment.user.avatar, user_picture_size)
+              + '<a href="%s">%s</a>'|safe % (url_for('user.reviews', user_id=comment.user.id), comment.user.display_name) %}
+  {{ _('%(user)s', user=user_string) }}
+{% endmacro %}
+
+
+{% macro entity_rate_form(entity_type, entity_type_readable) %}
+  {% if current_user.is_authenticated %}
+    <h4 style="margin-bottom:0;">{{ _('Rate this {}:'.format(entity_type_readable)) }}</h4>
+    <br/>
+    <form id="rating-form" method="POST" class="form-horizontal" role="form" action="{{ url_for('rate.rate') }}">
+      {{ rating_form.hidden_tag() }}
+      <div class="form-group">
+        <div class="col-sm-12">
+          <div id="ratestars" style="margin: 0; padding: 0;">{{ rating_form.rating(class="rating", id="rating") }}</div>
+        </div>
+      </div>
+    </form>
+  {% else %}
+    {{ _('<h4><a href="%(link)s">Sign in</a> to rate!</h4>', link=url_for('login.index', next=url_for('{}.entity'.format(entity_type), id=id))) }}
+  {% endif %}
+{% endmacro %}

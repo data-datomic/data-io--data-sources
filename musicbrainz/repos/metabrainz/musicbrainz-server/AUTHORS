@@ -1,0 +1,25 @@
+Credits
+=======
+
+Many people have contributed to the MusicBrainz server over the years - more
+than we can accurately keep track of here! Fortunately, these days git is
+tracking that for us instead. You can explore the list of contributors at
+
+https://www.openhub.net/p/musicbrainz-server/contributors
+
+
+Third-party code and data
+=========================
+
+Various icons and other images are included in the MusicBrainz source tree,
+their attribution and copyright details can be found in the following file:
+
+      root/static/images/attribution.txt
+
+
+Several javascript libraries are included in the MusicBrainz source tree,
+their attribution and copyright details can be found in the following file:
+
+      root/static/lib/libraries.txt
+
+

@@ -1,0 +1,10 @@
+{
+    "commandText": "git clone --progress --verbose https://github.com/metabrainz/3scale-vcl undefined\\meta--08-29-2020--WCSV35PA6dQUi1bDtfaXT/3scale-vcl",
+    "repo": "https://github.com/metabrainz/3scale-vcl",
+    "targetPath": "undefined\\meta--08-29-2020--WCSV35PA6dQUi1bDtfaXT/3scale-vcl",
+    "startTime": "2020-08-29T07:43:11.529Z",
+    "endTime": "2020-08-29T07:43:11.937Z",
+    "childProcessPid": 10581,
+    "executionErrors": [],
+    "commandLogFilePath": "/Users/brian/dev_space/GitHub-data-datomic/data-io--data-sources/musicbrainz/musicbrainz-importer/repos/workingdir/--metabrainz--3scale-vcl--10581"
+}

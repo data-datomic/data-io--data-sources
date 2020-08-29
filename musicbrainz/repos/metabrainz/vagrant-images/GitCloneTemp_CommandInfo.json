@@ -1,0 +1,10 @@
+{
+    "commandText": "git clone --progress --verbose https://github.com/metabrainz/vagrant-images undefined\\meta--08-29-2020--WCSV35PA6dQUi1bDtfaXT/vagrant-images",
+    "repo": "https://github.com/metabrainz/vagrant-images",
+    "targetPath": "undefined\\meta--08-29-2020--WCSV35PA6dQUi1bDtfaXT/vagrant-images",
+    "startTime": "2020-08-29T07:49:52.601Z",
+    "endTime": "2020-08-29T07:49:53.145Z",
+    "childProcessPid": 11867,
+    "executionErrors": [],
+    "commandLogFilePath": "/Users/brian/dev_space/GitHub-data-datomic/data-io--data-sources/musicbrainz/musicbrainz-importer/repos/workingdir/--metabrainz--vagrant-images--11867"
+}

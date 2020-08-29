@@ -1,0 +1,10 @@
+{
+    "commandText": "git clone --progress --verbose https://github.com/metabrainz/docker-postgres undefined\\meta--08-29-2020--WCSV35PA6dQUi1bDtfaXT/docker-postgres",
+    "repo": "https://github.com/metabrainz/docker-postgres",
+    "targetPath": "undefined\\meta--08-29-2020--WCSV35PA6dQUi1bDtfaXT/docker-postgres",
+    "startTime": "2020-08-29T07:44:10.153Z",
+    "endTime": "2020-08-29T07:44:10.694Z",
+    "childProcessPid": 10961,
+    "executionErrors": [],
+    "commandLogFilePath": "/Users/brian/dev_space/GitHub-data-datomic/data-io--data-sources/musicbrainz/musicbrainz-importer/repos/workingdir/--metabrainz--docker-postgres--10961"
+}

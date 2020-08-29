@@ -1,0 +1,81 @@
+[%- WRAPPER 'layout.tt' title=l('Make a Donation with PayPal') %]
+<h1>[% l('Make a Donation with PayPal') %]</h1>
+  <p>
+    [% l('To make a PayPal donation, please verify the amount below. If you
+          wish to credit this donation to a particular MusicBrainz user,
+          please fill in the user name as well.') %]
+  </p>
+
+  <p>
+    [% l('The personal information provided to the MetaBrainz Foundation during
+          the donation process will not be shared with anyone. For more
+          information, please take a look at our {doc|privacy policy}.',
+          { doc => doc_link('Privacy_Policy') }) %]
+  </p>
+
+
+  <p><strong>
+    [% l('You must enter your MusicBrainz user name below to have
+          Picard/MusicBrainz stop nagging you.') %]
+  </strong></p>
+
+  <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+    <input type="hidden" name="business" value="donations&#x0040;metabrainz.org" />
+    <input type="hidden" name="no_shipping" value="2" />
+    <input type="hidden" name="return" value="[% c.uri_for_action('/donate/complete') %]" />
+    <input type="hidden" name="cancel_return"
+           value="[% c.uri_for_action('/donate/cancelled') %]" />
+    <input type="hidden" name="currency_code" value="USD" />
+
+    [%- IF recur -%]
+      <input type="hidden" name="cmd" value="_xclick-subscriptions" />
+      <input type="hidden" name="item_name"
+             value="[% l('Recurring donation to MetaBrainz Foundation') %]" />
+      <input type="hidden" NAME="t3" VALUE="M">
+      <input type="hidden" NAME="p3" VALUE="1">
+      <input type="hidden" name="src" value="1">
+      <input type="hidden" name="sra" value="1">
+    [%- ELSE -%]
+      <input type="hidden" name="cmd" value="_xclick" />
+      <input type="hidden" name="item_name"
+             value="[% l('Donation to MetaBrainz Foundation') %]" />
+    [%- END -%]
+
+    <div class="row">
+      <label for="amount">[% l('Amount:') %]</label>
+      <input type="text" id="amount"
+             name="[% recur ? 'a3' : 'amount' %]"
+             value="[% amount || '10' %]" size="10"> USD
+      [% IF recur %]<strong>[% l('per month') %]</strong>[% END %]
+    </div>
+
+    <div class="row">
+      <label for="editor">User name:</label>
+      <input type="text" id="editor" name="custom" size="20" />
+      [% l('(required to stop being nagged)') %]
+    </div>
+
+    <div class="row no-label">
+      <input type="hidden" name="on0" value="contact" />
+      <input type="checkbox" id="os0" name="os0" value="yes" />
+      <label class="inline" for="os0">
+        [% l('You may email me about future fundraising events (this will be very seldom)') %]
+      </label>
+    </div>
+
+    <div class="row no-label">
+      <input type="hidden" name="on1" value="anonymous" />
+      <input type="checkbox" id="os1" name="os1" value="yes" />
+      <label class="inline" for="os1">
+        [% l('I would like this donation to be anonymous (don\'t
+              list my name on the finances page)') %]
+      </label>
+    </div>
+
+    <div class="row no-label">
+      <input type="image" src="[% c.uri_for('/static/images/paypal.gif') %]"
+             style="border: 0" name="submit" alt="[% l('Donate with PayPal') %]"
+             title="[% l('Donate!') %]" />
+    </div>
+  </form>
+[% END %]

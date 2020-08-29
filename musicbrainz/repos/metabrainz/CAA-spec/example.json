@@ -1,0 +1,31 @@
+{
+	"images" : [
+		{
+			"types" : [ "Other" ],
+			"front" : true,
+			"back" : false,
+			"comment" : "",
+			"image" : "http://coverartarchive.org/...jpg",
+			"thumbnails" : {
+				"small" : "http://coverartarchive.org/...-250.jpg",
+				"large" : "http://coverartarchive.org/...-500.jpg"
+			},
+			"approved" : true,
+			"edit" : "http://musicbrainz.org/edit/123"
+		},
+		{
+			"types" : [ "Other" ],
+			"front" : false,
+			"back" : false,
+			"comment" : "autographed by ModBot",
+			"image" : "http://coverartarchive.org/...jpg",
+			"thumbnails" : {
+				"small" : "http://coverartarchive.org/...-250.jpg",
+				"large" : "http://coverartarchive.org/...-500.jpg"
+			},
+			"approved" : true,
+			"edit" : "http://musicbrainz.org/edit/123"
+		}
+	],
+	"release" : "http://musicbrainz.org/release/2ba4396d-c0be-4a56-b4ea-0438306eb3be"
+}

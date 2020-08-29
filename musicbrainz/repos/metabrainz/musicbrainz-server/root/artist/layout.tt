@@ -1,0 +1,10 @@
+[%~ WRAPPER "layout.tt" title=title ? artist.name _ " - ${title}" : artist.name ~%]
+    <div id="content">
+        [%~ React.embed(c, 'artist/ArtistHeader', { artist => artist, page => page }) ~%]
+        [%~ content ~%]
+    </div>
+
+    [%~ IF !full_width ~%]
+        [%~ React.embed(c, 'layout/components/sidebar/ArtistSidebar', {artist => artist}) ~%]
+    [%~ END ~%]
+[%~ END ~%]

@@ -1,0 +1,36 @@
+{
+  "name": "critiquebrainz",
+  "description": "package.json for keeping track of nodejs dependencies for critiquebrainz",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/metabrainz/critiquebrainz.git"
+  },
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack --watch --mode development",
+    "pre-dev": "webpack --mode development"
+  },
+  "dependencies": {
+    "bootstrap": "4.3.1",
+    "bootstrap-rating-input": "0.4.0",
+    "jquery": "3.5.1",
+    "popper.js": "^1.14.1",
+    "leaflet": "1.1.0",
+    "path": "0.12.7",
+    "simplemde": "^1.11.2"
+  },
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.1",
+    "less": "^2.7.2",
+    "less-loader": "^4.1.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.12",
+    "webpack-manifest-plugin": "^2.0.4"
+  }
+}

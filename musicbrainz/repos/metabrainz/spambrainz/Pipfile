@@ -1,0 +1,32 @@
+[[source]]
+
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+
+[packages]
+
+flask = ">=1.0.0"
+flask-sqlalchemy = "*"
+sqlalchemy-utils = "*"
+passlib = "*"
+flask-restful = "*"
+flask-script = "*"
+flask-debugtoolbar = "*"
+celery = "*"
+"psycopg2-binary" = "*"
+brainzutils = {git = "https://github.com/metabrainz/brainzutils-python.git", editable = true}
+pytest-cov = "*"
+
+
+[dev-packages]
+
+flask-testing = "*"
+pytest = "*"
+pytest-env = "*"
+
+
+[requires]
+
+python_version = "3.6"

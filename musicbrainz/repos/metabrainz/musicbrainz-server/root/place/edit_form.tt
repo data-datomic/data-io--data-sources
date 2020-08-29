@@ -1,0 +1,59 @@
+[% script_manifest('edit.js') %]
+
+<p>[%- l('For more information, check the {doc_doc|documentation}.', {doc_doc => doc_link('Place')}) -%]</p>
+
+<form action="[% c.req.uri %]" method="post" class="edit-place">
+    [%- USE r = FormRenderer(form) -%]
+
+    <div class="half-width">
+      <fieldset>
+        <legend>[% l('Place Details') %]</legend>
+        [%- form_row_name_with_guesscase(r) -%]
+        [%- duplicate_entities_section() -%]
+        [%- form_row_text_long(r, 'comment', add_colon(l('Disambiguation'))) -%]
+        [%- disambiguation_error() -%]
+        [%- form_row_select(r, 'type_id', l('Type:')) -%]
+        [%- form_row_text_long(r, 'address', l('Address:')) -%]
+        [% WRAPPER form_row %]
+          [% area_field = form.field('area.name') %]
+          <label for="id-edit-place.area.name">[% l('Area:') %]</label>
+          <span class="area autocomplete">
+            [% React.embed(c, 'static/scripts/common/components/SearchIcon') %]
+            [% r.hidden(form.field('area').field('gid'), class => 'gid') %]
+            [% r.hidden('area_id', class => 'id') %]
+            [% r.text(area_field, class => 'name') %]
+          </span>
+          [% field_errors(r.form, 'area.name') %]
+        [% END %]
+        [%- form_row_text_long(r, 'coordinates', l('Coordinates')) -%]
+        <ul class="errors coordinates-errors" style="display:none"><li>[% l('These coordinates could not be parsed.') %]</li></ul>
+      </fieldset>
+
+      [% date_range_fieldset(r, 'place', l('This place has ended.')) %]
+
+      [% PROCESS 'forms/relationship-editor.tt' %]
+
+      <fieldset>
+        <legend>[% l('External Links') %]</legend>
+        [% external_links_editor() %]
+      </fieldset>
+
+      [% INCLUDE 'forms/edit-note.tt' %]
+
+      [% enter_edit() %]
+  </div>
+
+  <div class="documentation">
+    [%- area_bubble() -%]
+
+    <div class="bubble" id="coordinates-bubble">
+        <p>[% l('Enter coordinates manually or click the map to get coordinates from the marker. If you’re too far out, clicking will zoom instead.') %]</p>
+        <div id="largemap"></div>
+        [% script_manifest('place/map.js', { 'data-args' => map_data_args }) %]
+    </div>
+  </div>
+
+</form>
+
+[%- guesscase_options() -%]
+[% script_manifest('place.js') %]

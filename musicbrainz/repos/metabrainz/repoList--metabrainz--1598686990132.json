@@ -1,0 +1,1005 @@
+{
+    "organizationName": "metabrainz",
+    "generationTime": "2020-08-29T07:43:10.140Z",
+    "repositories": [
+        {
+            "url": "https://github.com/metabrainz/.github",
+            "id": "MDEwOlJlcG9zaXRvcnkyNTk2MjAxNDU=",
+            "createdAt": "2020-04-28T11:40:41Z",
+            "description": "Default community health files for @MetaBrainz GitHub repositories",
+            "diskUsage": 5,
+            "name": ".github",
+            "pushedAt": "2020-06-04T09:08:58Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/3scale-vcl",
+            "id": "MDEwOlJlcG9zaXRvcnk2MjQyOTgz",
+            "createdAt": "2012-10-16T11:02:52Z",
+            "description": "A draft Varnish configuration to talk to 3scale",
+            "diskUsage": 104,
+            "name": "3scale-vcl",
+            "pushedAt": "2012-10-16T11:03:53Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/CAA-indexer",
+            "id": "MDEwOlJlcG9zaXRvcnkzNTE1ODEw",
+            "createdAt": "2012-02-22T15:29:11Z",
+            "description": "A bot that watches MusicBrainz for changes and updates Cover Art Archive indexes",
+            "diskUsage": 234,
+            "name": "CAA-indexer",
+            "pushedAt": "2020-08-14T17:49:37Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/CAA-spec",
+            "id": "MDEwOlJlcG9zaXRvcnkzMjAwOTUz",
+            "createdAt": "2012-01-17T16:29:11Z",
+            "description": "The specification for how the Cover Art Archive works",
+            "diskUsage": 205,
+            "name": "CAA-spec",
+            "pushedAt": "2012-03-19T12:06:37Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/CoverArtArchive",
+            "id": "MDEwOlJlcG9zaXRvcnk0MTQwNDU0",
+            "createdAt": "2012-04-25T19:23:12Z",
+            "description": "Perl bindings to www.coverartarchive.org",
+            "diskUsage": 135,
+            "name": "CoverArtArchive",
+            "pushedAt": "2012-05-11T13:41:23Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/MBS-211-spec",
+            "id": "MDEwOlJlcG9zaXRvcnkzOTc1NTIy",
+            "createdAt": "2012-04-09T20:15:26Z",
+            "description": "Specification for the musicbrainz editable webservice",
+            "diskUsage": 92,
+            "name": "MBS-211-spec",
+            "pushedAt": "2012-04-12T21:18:19Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/MusicBrainz-R2RML",
+            "id": "MDEwOlJlcG9zaXRvcnkxMDY2NDExNg==",
+            "createdAt": "2013-06-13T10:44:13Z",
+            "description": "R2RML mappings for the MusicBrainz schema",
+            "diskUsage": 185,
+            "name": "MusicBrainz-R2RML",
+            "pushedAt": "2019-04-02T15:08:51Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/acousticbrainz-android",
+            "id": "MDEwOlJlcG9zaXRvcnkyNzY2Mjc3Njc=",
+            "createdAt": "2020-07-02T11:24:30Z",
+            "description": null,
+            "diskUsage": 94038,
+            "name": "acousticbrainz-android",
+            "pushedAt": "2020-07-06T11:34:34Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/acousticbrainz-dataset-runner",
+            "id": "MDEwOlJlcG9zaXRvcnk1Nzg4MDYzNQ==",
+            "createdAt": "2016-05-02T10:05:07Z",
+            "description": null,
+            "diskUsage": 10,
+            "name": "acousticbrainz-dataset-runner",
+            "pushedAt": "2016-08-13T06:06:43Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/acousticbrainz-server",
+            "id": "MDEwOlJlcG9zaXRvcnkyNDg5MzczOA==",
+            "createdAt": "2014-10-07T14:22:44Z",
+            "description": "The server components for the AcousticBrainz project",
+            "diskUsage": 3319,
+            "name": "acousticbrainz-server",
+            "pushedAt": "2020-08-28T18:08:07Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/artist-artist-relations",
+            "id": "MDEwOlJlcG9zaXRvcnkxODk0MTU2NDg=",
+            "createdAt": "2019-05-30T13:07:19Z",
+            "description": "A simple python script to calculate artist relations based on various artist albums in MusicBrainz.",
+            "diskUsage": 35,
+            "name": "artist-artist-relations",
+            "pushedAt": "2020-05-15T11:29:27Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/base-image",
+            "id": "MDEwOlJlcG9zaXRvcnk3MDcyMDU2NA==",
+            "createdAt": "2016-10-12T16:45:09Z",
+            "description": "Docker base images for various docker images used by MetaBrainz",
+            "diskUsage": 6,
+            "name": "base-image",
+            "pushedAt": "2017-09-15T09:03:57Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/bm",
+            "id": "MDEwOlJlcG9zaXRvcnkzOTg3NTk2",
+            "createdAt": "2012-04-10T22:03:25Z",
+            "description": "A quick python url benchmark script",
+            "diskUsage": 88,
+            "name": "bm",
+            "pushedAt": "2012-04-10T22:05:46Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/brainzbot-bot",
+            "id": "MDEwOlJlcG9zaXRvcnkxMTI5NDgwOTI=",
+            "createdAt": "2017-12-03T17:26:07Z",
+            "description": "The IRC bot for BotBot.me",
+            "diskUsage": 4732,
+            "name": "brainzbot-bot",
+            "pushedAt": "2020-05-17T20:00:09Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/brainzbot-core",
+            "id": "MDEwOlJlcG9zaXRvcnk0MzQ0MDI4MA==",
+            "createdAt": "2015-09-30T15:13:54Z",
+            "description": "Web interface and core repository for Metabrainz' BrainzBot",
+            "diskUsage": 2193,
+            "name": "brainzbot-core",
+            "pushedAt": "2020-05-19T01:19:46Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/brainzbot-plugins",
+            "id": "MDEwOlJlcG9zaXRvcnk3Njg3MDc2OQ==",
+            "createdAt": "2016-12-19T14:53:31Z",
+            "description": "Plugins for BrainzBot.",
+            "diskUsage": 112,
+            "name": "brainzbot-plugins",
+            "pushedAt": "2020-05-17T20:06:12Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/brainzutils-python",
+            "id": "MDEwOlJlcG9zaXRvcnk1NzQyMDQxNg==",
+            "createdAt": "2016-04-30T00:26:47Z",
+            "description": "Python utilities for MetaBrainz projects",
+            "diskUsage": 196,
+            "name": "brainzutils-python",
+            "pushedAt": "2020-05-06T17:31:18Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/caa-admin",
+            "id": "MDEwOlJlcG9zaXRvcnkxMjgxNDAyOQ==",
+            "createdAt": "2013-09-13T16:22:50Z",
+            "description": "An administration companion for CAA-indexer",
+            "diskUsage": 24,
+            "name": "caa-admin",
+            "pushedAt": "2016-12-15T06:04:07Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/changed-mbid-feed",
+            "id": "MDEwOlJlcG9zaXRvcnk3MTIxMjYw",
+            "createdAt": "2012-12-11T23:28:47Z",
+            "description": "A data feed of all the MBIDs that have changed in the last hour",
+            "diskUsage": 220,
+            "name": "changed-mbid-feed",
+            "pushedAt": "2013-07-05T11:30:59Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/chef-cookbooks",
+            "id": "MDEwOlJlcG9zaXRvcnk2NDExMTYz",
+            "createdAt": "2012-10-26T22:12:16Z",
+            "description": "Various Chef cookbooks for provisioning MusicBrainz",
+            "diskUsage": 375,
+            "name": "chef-cookbooks",
+            "pushedAt": "2016-05-16T00:38:32Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/chef-logster",
+            "id": "MDEwOlJlcG9zaXRvcnkxMjQwMzI0Nw==",
+            "createdAt": "2013-08-27T10:26:01Z",
+            "description": "Chef cookbook for logster",
+            "diskUsage": 10,
+            "name": "chef-logster",
+            "pushedAt": "2015-11-24T14:43:10Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/coverart_redirect",
+            "id": "MDEwOlJlcG9zaXRvcnkzMjY4ODg1",
+            "createdAt": "2012-01-25T21:44:53Z",
+            "description": "URL redirect service for the coverartarchive.org",
+            "diskUsage": 290,
+            "name": "coverart_redirect",
+            "pushedAt": "2019-10-15T09:45:03Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/critiquebrainz",
+            "id": "MDEwOlJlcG9zaXRvcnkxNjY1MDA5OQ==",
+            "createdAt": "2014-02-08T18:41:37Z",
+            "description": "Repository for Creative Commons licensed reviews",
+            "diskUsage": 5538,
+            "name": "critiquebrainz",
+            "pushedAt": "2020-08-26T15:06:28Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/data-set-hoster",
+            "id": "MDEwOlJlcG9zaXRvcnkyNjgzNzk4ODE=",
+            "createdAt": "2020-05-31T23:09:57Z",
+            "description": "Fill out a simple python object, host the results!",
+            "diskUsage": 258,
+            "name": "data-set-hoster",
+            "pushedAt": "2020-08-21T12:58:57Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/dbmirror",
+            "id": "MDEwOlJlcG9zaXRvcnk0MjYzMjI1",
+            "createdAt": "2012-05-08T17:15:22Z",
+            "description": null,
+            "diskUsage": 32,
+            "name": "dbmirror",
+            "pushedAt": "2019-12-12T00:20:00Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/dbmirror2",
+            "id": "MDEwOlJlcG9zaXRvcnk5NzI2NTQ5Mw==",
+            "createdAt": "2017-07-14T19:14:03Z",
+            "description": null,
+            "diskUsage": 0,
+            "name": "dbmirror2",
+            "pushedAt": "2017-07-14T19:14:04Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/design-system",
+            "id": "MDEwOlJlcG9zaXRvcnkxMjA5ODI4OTY=",
+            "createdAt": "2018-02-10T04:09:02Z",
+            "description": null,
+            "diskUsage": 1360,
+            "name": "design-system",
+            "pushedAt": "2020-07-30T13:46:47Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/discourse-abbrify-words",
+            "id": "MDEwOlJlcG9zaXRvcnkxMzQ3MzAxNDY=",
+            "createdAt": "2018-05-24T14:52:06Z",
+            "description": "theme to auto abbrify urls in discourse",
+            "diskUsage": 16,
+            "name": "discourse-abbrify-words",
+            "pushedAt": "2019-11-13T16:33:24Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/discourse-musicbrainz-auth",
+            "id": "MDEwOlJlcG9zaXRvcnk0OTM0Mjk0NA==",
+            "createdAt": "2016-01-09T21:55:33Z",
+            "description": null,
+            "diskUsage": 2,
+            "name": "discourse-musicbrainz-auth",
+            "pushedAt": "2016-01-17T14:49:16Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/djcaa",
+            "id": "MDEwOlJlcG9zaXRvcnk0MzM4MDgw",
+            "createdAt": "2012-05-15T16:39:15Z",
+            "description": "A Cover Art Archive administration tool",
+            "diskUsage": 136,
+            "name": "djcaa",
+            "pushedAt": "2012-05-15T17:18:26Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/docker-angelfish",
+            "id": "MDEwOlJlcG9zaXRvcnk4NjM1MzI2MA==",
+            "createdAt": "2017-03-27T15:37:39Z",
+            "description": null,
+            "diskUsage": 2,
+            "name": "docker-angelfish",
+            "pushedAt": "2017-03-27T15:39:22Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/docker-anon-ftp",
+            "id": "MDEwOlJlcG9zaXRvcnk3MjM4MjQ1Mg==",
+            "createdAt": "2016-10-30T23:41:57Z",
+            "description": null,
+            "diskUsage": 3,
+            "name": "docker-anon-ftp",
+            "pushedAt": "2016-10-31T15:58:30Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/docker-consul-template-base",
+            "id": "MDEwOlJlcG9zaXRvcnk3MDcyNDc3Nw==",
+            "createdAt": "2016-10-12T17:36:07Z",
+            "description": "Base image for MetaBrainz containers using consul-template",
+            "diskUsage": 7,
+            "name": "docker-consul-template-base",
+            "pushedAt": "2018-03-03T23:08:18Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/docker-exim",
+            "id": "MDEwOlJlcG9zaXRvcnk4MTA3NTU5Mw==",
+            "createdAt": "2017-02-06T10:27:15Z",
+            "description": "Exim docker image",
+            "diskUsage": 3,
+            "name": "docker-exim",
+            "pushedAt": "2017-02-07T10:43:54Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/docker-helpers",
+            "id": "MDEwOlJlcG9zaXRvcnk2NzAzMzYzMA==",
+            "createdAt": "2016-08-31T12:03:23Z",
+            "description": "Various scripts related to docker",
+            "diskUsage": 18,
+            "name": "docker-helpers",
+            "pushedAt": "2020-03-03T22:40:01Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/docker-irccat",
+            "id": "MDEwOlJlcG9zaXRvcnkxNzM2MzQxMjg=",
+            "createdAt": "2019-03-03T21:49:14Z",
+            "description": "IRCCat with consul-template used to relay *Brainz git notifications",
+            "diskUsage": 4,
+            "name": "docker-irccat",
+            "pushedAt": "2019-03-04T14:14:25Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/docker-node",
+            "id": "MDEwOlJlcG9zaXRvcnkxNzkzNjUyODI=",
+            "createdAt": "2019-04-03T20:28:21Z",
+            "description": null,
+            "diskUsage": 13,
+            "name": "docker-node",
+            "pushedAt": "2019-04-04T21:11:42Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/docker-openjdk8-solr7",
+            "id": "MDEwOlJlcG9zaXRvcnkxOTI5MzczMzE=",
+            "createdAt": "2019-06-20T14:43:23Z",
+            "description": "A Docker build for Apache Solr 7 based on OpenJDK 8 and Alpine Linux",
+            "diskUsage": 620,
+            "name": "docker-openjdk8-solr7",
+            "pushedAt": "2019-06-20T21:18:15Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/docker-openresty",
+            "id": "MDEwOlJlcG9zaXRvcnk2OTc5MTAzNw==",
+            "createdAt": "2016-10-02T10:19:54Z",
+            "description": "Openresty + luarocks + lua autossl",
+            "diskUsage": 23,
+            "name": "docker-openresty",
+            "pushedAt": "2020-05-31T10:39:27Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/docker-piwik",
+            "id": "MDEwOlJlcG9zaXRvcnk4MjE4NjM5Nw==",
+            "createdAt": "2017-02-16T13:59:11Z",
+            "description": null,
+            "diskUsage": 79,
+            "name": "docker-piwik",
+            "pushedAt": "2017-02-20T07:05:00Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/docker-postgres",
+            "id": "MDEwOlJlcG9zaXRvcnk2Nzk1MDI5MA==",
+            "createdAt": "2016-09-11T19:37:17Z",
+            "description": null,
+            "diskUsage": 78,
+            "name": "docker-postgres",
+            "pushedAt": "2020-06-03T17:27:15Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/docker-python",
+            "id": "MDEwOlJlcG9zaXRvcnk3NDYyMDAzMw==",
+            "createdAt": "2016-11-23T22:50:38Z",
+            "description": "Docker base image that comes with Python out of the box",
+            "diskUsage": 25,
+            "name": "docker-python",
+            "pushedAt": "2019-12-28T17:38:40Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/docker-redis",
+            "id": "MDEwOlJlcG9zaXRvcnk2Nzk1NjA1MA==",
+            "createdAt": "2016-09-11T21:44:50Z",
+            "description": "MetaBrainz redis cluster",
+            "diskUsage": 0,
+            "name": "docker-redis",
+            "pushedAt": "2016-10-15T00:13:06Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/docker-rsyncd",
+            "id": "MDEwOlJlcG9zaXRvcnk3MjQzNDY5Nw==",
+            "createdAt": "2016-10-31T12:34:45Z",
+            "description": null,
+            "diskUsage": 3,
+            "name": "docker-rsyncd",
+            "pushedAt": "2016-10-31T12:46:30Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/docker-sshd",
+            "id": "MDEwOlJlcG9zaXRvcnk3MzE1OTQyNQ==",
+            "createdAt": "2016-11-08T07:13:53Z",
+            "description": "SSH brainz",
+            "diskUsage": 4,
+            "name": "docker-sshd",
+            "pushedAt": "2016-11-08T13:42:47Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/dump-scripts",
+            "id": "MDEwOlJlcG9zaXRvcnkxMjU1NjE2NDg=",
+            "createdAt": "2018-03-16T19:34:47Z",
+            "description": "A collection of scripts to manage data dumps for LB, AB, CB etc.",
+            "diskUsage": 8,
+            "name": "dump-scripts",
+            "pushedAt": "2018-03-16T19:34:48Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/geordi",
+            "id": "MDEwOlJlcG9zaXRvcnk2NDgzNTMw",
+            "createdAt": "2012-11-01T02:00:20Z",
+            "description": "MusicBrainz label feed ingestion tools",
+            "diskUsage": 2899,
+            "name": "geordi",
+            "pushedAt": "2015-01-16T13:49:55Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/guidelines",
+            "id": "MDEwOlJlcG9zaXRvcnk2NDE4ODkxMg==",
+            "createdAt": "2016-07-26T04:06:42Z",
+            "description": "Guidelines for contributing to MetaBrainz projects",
+            "diskUsage": 19,
+            "name": "guidelines",
+            "pushedAt": "2020-05-04T16:20:15Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/hadoop-cluster-docker",
+            "id": "MDEwOlJlcG9zaXRvcnkxNTU4NzI5NTk=",
+            "createdAt": "2018-11-02T13:54:07Z",
+            "description": "HDFS filesystem inside docker",
+            "diskUsage": 218,
+            "name": "hadoop-cluster-docker",
+            "pushedAt": "2020-01-29T06:18:03Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/ipset-blacklist",
+            "id": "MDEwOlJlcG9zaXRvcnk3MzQ4MDU0MQ==",
+            "createdAt": "2016-11-11T13:38:11Z",
+            "description": "A script to ban large numbers of IP addresses published in blacklists.",
+            "diskUsage": 59,
+            "name": "ipset-blacklist",
+            "pushedAt": "2016-11-11T17:44:37Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/jenkins",
+            "id": "MDEwOlJlcG9zaXRvcnk3MjMxNjU2Mg==",
+            "createdAt": "2016-10-30T00:29:03Z",
+            "description": "Jenkins container for testing MetaBrainz projects",
+            "diskUsage": 5,
+            "name": "jenkins",
+            "pushedAt": "2020-06-08T01:48:25Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/libcoverart",
+            "id": "MDEwOlJlcG9zaXRvcnkzOTg4NzE3",
+            "createdAt": "2012-04-11T00:40:56Z",
+            "description": "C/C++ library for accessing the MusicBrainz Cover Art Archive",
+            "diskUsage": 378,
+            "name": "libcoverart",
+            "pushedAt": "2018-05-09T19:40:01Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/libdiscid",
+            "id": "MDEwOlJlcG9zaXRvcnk3Mzk0Mzgy",
+            "createdAt": "2013-01-01T09:24:05Z",
+            "description": "C library for creating MusicBrainz DiscIDs from audio CDs",
+            "diskUsage": 672,
+            "name": "libdiscid",
+            "pushedAt": "2020-02-17T23:27:21Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/libmusicbrainz",
+            "id": "MDEwOlJlcG9zaXRvcnkzOTgzMzkz",
+            "createdAt": "2012-04-10T14:52:10Z",
+            "description": "MusicBrainz Client Library",
+            "diskUsage": 6923,
+            "name": "libmusicbrainz",
+            "pushedAt": "2018-04-13T16:46:58Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/listenbrainz-labs",
+            "id": "MDEwOlJlcG9zaXRvcnkxMjcxNDIxNzU=",
+            "createdAt": "2018-03-28T13:11:07Z",
+            "description": "A collection tools/scripts to explore the ListenBrainz data using Apache Spark.",
+            "diskUsage": 367,
+            "name": "listenbrainz-labs",
+            "pushedAt": "2020-01-19T14:12:33Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/listenbrainz-server",
+            "id": "MDEwOlJlcG9zaXRvcnk0MTk2MDAxMw==",
+            "createdAt": "2015-09-05T12:30:49Z",
+            "description": "Server for the ListenBrainz project",
+            "diskUsage": 7148,
+            "name": "listenbrainz-server",
+            "pushedAt": "2020-08-28T18:56:31Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/lobes",
+            "id": "MDEwOlJlcG9zaXRvcnkzMjgyMDMwOQ==",
+            "createdAt": "2015-03-24T19:31:30Z",
+            "description": "Lobes is a Bootstrap 3+ theme developed by {Monkey.Do} for MusicBrainz",
+            "diskUsage": 486,
+            "name": "lobes",
+            "pushedAt": "2019-11-01T12:32:32Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/locustfiles",
+            "id": "MDEwOlJlcG9zaXRvcnk3MjM5MDI3NQ==",
+            "createdAt": "2016-10-31T02:16:50Z",
+            "description": "Locust configuration files for load testing MetaBrainz projects",
+            "diskUsage": 3,
+            "name": "locustfiles",
+            "pushedAt": "2016-10-31T03:26:27Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/logster",
+            "id": "MDEwOlJlcG9zaXRvcnkxMjQwMzY4Mg==",
+            "createdAt": "2013-08-27T10:53:36Z",
+            "description": "Logster parsers that MusicBrainz uses",
+            "diskUsage": 5,
+            "name": "logster",
+            "pushedAt": "2016-01-15T16:17:59Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/mb-rngpy",
+            "id": "MDEwOlJlcG9zaXRvcnkyMTgxNzg1MA==",
+            "createdAt": "2014-07-14T11:51:50Z",
+            "description": "Python bindings for the MusicBrainz XML Metadata RELAX NG schema",
+            "diskUsage": 216,
+            "name": "mb-rngpy",
+            "pushedAt": "2020-02-21T16:15:24Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/mb-solr",
+            "id": "MDEwOlJlcG9zaXRvcnkyMjM0MDUxMg==",
+            "createdAt": "2014-07-28T11:38:24Z",
+            "description": null,
+            "diskUsage": 298,
+            "name": "mb-solr",
+            "pushedAt": "2020-04-20T11:43:10Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/mb2wikidatabot",
+            "id": "MDEwOlJlcG9zaXRvcnk5NTk3OTgw",
+            "createdAt": "2013-04-22T12:01:37Z",
+            "description": "A bot for importing data from MusicBrainz into Wikidata",
+            "diskUsage": 113,
+            "name": "mb2wikidatabot",
+            "pushedAt": "2020-06-02T09:28:59Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/mbs_logs_parsers",
+            "id": "MDEwOlJlcG9zaXRvcnk5MzEzNDkyMg==",
+            "createdAt": "2017-06-02T06:36:05Z",
+            "description": "Generate tops from mbs nginx logs",
+            "diskUsage": 10,
+            "name": "mbs_logs_parsers",
+            "pushedAt": "2019-09-13T07:59:01Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/mbspotify",
+            "id": "MDEwOlJlcG9zaXRvcnkxOTczNzc4OA==",
+            "createdAt": "2014-05-13T12:19:50Z",
+            "description": "MusicBrainz Spotify integration hack for SF Music Hack Day 2014",
+            "diskUsage": 96,
+            "name": "mbspotify",
+            "pushedAt": "2019-03-02T11:16:29Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/mbsssss",
+            "id": "MDEwOlJlcG9zaXRvcnkxNzc3ODg2MQ==",
+            "createdAt": "2014-03-15T15:46:47Z",
+            "description": "MusicBrainz simple Solr search server schema",
+            "diskUsage": 1417,
+            "name": "mbsssss",
+            "pushedAt": "2019-06-17T12:40:48Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/mbstats",
+            "id": "MDEwOlJlcG9zaXRvcnk3Mzk1MDM0MA==",
+            "createdAt": "2016-11-16T18:47:50Z",
+            "description": "Work in progress",
+            "diskUsage": 42272,
+            "name": "mbstats",
+            "pushedAt": "2019-10-02T12:49:05Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/messybrainz-labs",
+            "id": "MDEwOlJlcG9zaXRvcnkxOTY1ODM0MDk=",
+            "createdAt": "2019-07-12T13:23:55Z",
+            "description": "Scripts and other nonsense in an attempt to make the MessyBrainz data useful.",
+            "diskUsage": 192,
+            "name": "messybrainz-labs",
+            "pushedAt": "2020-08-06T08:31:34Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/messybrainz-server",
+            "id": "MDEwOlJlcG9zaXRvcnk0MTk1NzQ5NQ==",
+            "createdAt": "2015-09-05T10:44:33Z",
+            "description": "The MessyBrainz project",
+            "diskUsage": 863,
+            "name": "messybrainz-server",
+            "pushedAt": "2020-05-01T16:29:10Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/metabrainz-howto-guides",
+            "id": "MDEwOlJlcG9zaXRvcnkxODAwOTQ3ODM=",
+            "createdAt": "2019-04-08T07:34:05Z",
+            "description": "Documentation that captures common conventions and best practices of the foundation.",
+            "diskUsage": 17,
+            "name": "metabrainz-howto-guides",
+            "pushedAt": "2019-06-12T10:40:05Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/metabrainz-logos",
+            "id": "MDEwOlJlcG9zaXRvcnkzNTc3MjE4MA==",
+            "createdAt": "2015-05-17T15:51:09Z",
+            "description": "All of the logos, concept drawings and iterations of our logo redesign.",
+            "diskUsage": 26155,
+            "name": "metabrainz-logos",
+            "pushedAt": "2019-12-09T17:57:35Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/metabrainz-server",
+            "id": "MDEwOlJlcG9zaXRvcnk0MDU3NzUz",
+            "createdAt": "2012-04-17T22:08:09Z",
+            "description": "The official metabrainz-server codebase",
+            "diskUsage": 8853,
+            "name": "metabrainz-server",
+            "pushedAt": "2017-11-11T07:07:58Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/metabrainz.org",
+            "id": "MDEwOlJlcG9zaXRvcnkyNDQ4NDMyMw==",
+            "createdAt": "2014-09-26T03:09:13Z",
+            "description": "Website for the MetaBrainz Foundation",
+            "diskUsage": 20932,
+            "name": "metabrainz.org",
+            "pushedAt": "2020-07-03T15:17:36Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/miscellaneous",
+            "id": "MDEwOlJlcG9zaXRvcnk0NTgxNTEw",
+            "createdAt": "2012-06-07T05:25:47Z",
+            "description": null,
+            "diskUsage": 108,
+            "name": "miscellaneous",
+            "pushedAt": "2012-06-29T00:27:41Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/mlhd-import",
+            "id": "MDEwOlJlcG9zaXRvcnkxMTAzNjI5NjA=",
+            "createdAt": "2017-11-11T16:55:12Z",
+            "description": "Scripts to parse and import the Music Listening History Dataset",
+            "diskUsage": 16,
+            "name": "mlhd-import",
+            "pushedAt": "2017-11-16T15:05:45Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/mmd-schema",
+            "id": "MDEwOlJlcG9zaXRvcnk5MDgyMTA4",
+            "createdAt": "2013-03-28T17:12:30Z",
+            "description": "The MusicBrainz XML Metadata (MMD) Schema",
+            "diskUsage": 899,
+            "name": "mmd-schema",
+            "pushedAt": "2020-02-13T02:14:11Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/modbot",
+            "id": "MDEwOlJlcG9zaXRvcnk2NTA4Mjc3",
+            "createdAt": "2012-11-02T15:37:38Z",
+            "description": "ModBot inspects the open edit queue and attempts to merge/reject edits appropriately",
+            "diskUsage": 124,
+            "name": "modbot",
+            "pushedAt": "2013-01-27T12:11:38Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/musicbrainz-android",
+            "id": "MDEwOlJlcG9zaXRvcnkxNjY0MzkwMDA=",
+            "createdAt": "2019-01-18T16:33:54Z",
+            "description": "The official android app for MusicBrainz",
+            "diskUsage": 24810,
+            "name": "musicbrainz-android",
+            "pushedAt": "2020-08-29T06:44:00Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/musicbrainz-data",
+            "id": "MDEwOlJlcG9zaXRvcnk2MTcyOTA3",
+            "createdAt": "2012-10-11T11:38:05Z",
+            "description": "Data access layer for the NES version of the MusicBrainz database.",
+            "diskUsage": 648,
+            "name": "musicbrainz-data",
+            "pushedAt": "2013-09-06T15:56:57Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/musicbrainz-data-service",
+            "id": "MDEwOlJlcG9zaXRvcnk2MjcyNTA4",
+            "createdAt": "2012-10-18T03:29:23Z",
+            "description": "A JSON/HTTP server for exposing the musicbrainz-data library",
+            "diskUsage": 636,
+            "name": "musicbrainz-data-service",
+            "pushedAt": "2013-03-04T16:28:54Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/musicbrainz-docker",
+            "id": "MDEwOlJlcG9zaXRvcnkyMDgyNDQyMQ==",
+            "createdAt": "2014-06-14T03:44:19Z",
+            "description": "musicbrainz slave server with search and replication",
+            "diskUsage": 46472,
+            "name": "musicbrainz-docker",
+            "pushedAt": "2020-08-24T21:31:54Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/musicbrainz-email",
+            "id": "MDEwOlJlcG9zaXRvcnk5MzMyNzE4",
+            "createdAt": "2013-04-09T22:08:36Z",
+            "description": "A daemon that sends emails, along with templates and scripts to enqueue emails",
+            "diskUsage": 81,
+            "name": "musicbrainz-email",
+            "pushedAt": "2015-12-05T08:04:24Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/musicbrainz-logs",
+            "id": "MDEwOlJlcG9zaXRvcnkxNTkwNTAzNA==",
+            "createdAt": "2014-01-14T14:53:12Z",
+            "description": "The new, splunk-free, log analysis system.",
+            "diskUsage": 280,
+            "name": "musicbrainz-logs",
+            "pushedAt": "2014-01-30T21:31:21Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/musicbrainz-logs-cookbooks",
+            "id": "MDEwOlJlcG9zaXRvcnkxNTkwNTQwOA==",
+            "createdAt": "2014-01-14T15:06:09Z",
+            "description": "Cookbooks for the new musicbrainz-logs project.",
+            "diskUsage": 164,
+            "name": "musicbrainz-logs-cookbooks",
+            "pushedAt": "2014-01-17T15:16:22Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/musicbrainz-server",
+            "id": "MDEwOlJlcG9zaXRvcnk2OTc1MjA=",
+            "createdAt": "2010-06-01T16:30:04Z",
+            "description": "The official musicbrainz-server codebase",
+            "diskUsage": 124489,
+            "name": "musicbrainz-server",
+            "pushedAt": "2020-08-28T18:42:20Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/musicbrainz-server-log-analysis",
+            "id": "MDEwOlJlcG9zaXRvcnk0NTUwOTg2",
+            "createdAt": "2012-06-04T18:53:36Z",
+            "description": "A repository for my Google Summer of Code project",
+            "diskUsage": 209,
+            "name": "musicbrainz-server-log-analysis",
+            "pushedAt": "2012-09-28T17:47:15Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/musicbrainz-survey",
+            "id": "MDEwOlJlcG9zaXRvcnkxMDQ5MDM0OTk=",
+            "createdAt": "2017-09-26T15:30:40Z",
+            "description": "Tools, results and data related to MusicBrainz user surveys",
+            "diskUsage": 20,
+            "name": "musicbrainz-survey",
+            "pushedAt": "2017-09-30T13:07:17Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/musicbrainz-vm",
+            "id": "MDEwOlJlcG9zaXRvcnk2MjQwNDE0OA==",
+            "createdAt": "2016-07-01T15:57:45Z",
+            "description": "Scripts for creating the MusicBrainz VM with Vagrant and Docker.",
+            "diskUsage": 63,
+            "name": "musicbrainz-vm",
+            "pushedAt": "2018-08-14T09:30:24Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/newhost-replication-fix",
+            "id": "MDEwOlJlcG9zaXRvcnk3MzcyMzcxMw==",
+            "createdAt": "2016-11-14T16:18:28Z",
+            "description": "Scripts to fix the lost replication packet in the NewHost move",
+            "diskUsage": 65,
+            "name": "newhost-replication-fix",
+            "pushedAt": "2016-11-18T07:22:31Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/nginx-upstream-manager",
+            "id": "MDEwOlJlcG9zaXRvcnkxMTE5OTYzNQ==",
+            "createdAt": "2013-07-05T13:00:11Z",
+            "description": "nginx upstream manager",
+            "diskUsage": 129,
+            "name": "nginx-upstream-manager",
+            "pushedAt": "2013-09-10T10:30:58Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/notification-server",
+            "id": "MDEwOlJlcG9zaXRvcnk1MjAyMTA0OA==",
+            "createdAt": "2016-02-18T16:23:22Z",
+            "description": null,
+            "diskUsage": 2,
+            "name": "notification-server",
+            "pushedAt": "2016-02-18T19:22:10Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/picard",
+            "id": "MDEwOlJlcG9zaXRvcnkyMjE4Njc5",
+            "createdAt": "2011-08-16T22:30:23Z",
+            "description": "MusicBrainz Picard",
+            "diskUsage": 35927,
+            "name": "picard",
+            "pushedAt": "2020-08-28T06:48:16Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/picard-plugin-tools",
+            "id": "MDEwOlJlcG9zaXRvcnk5Mzk5NTI0OQ==",
+            "createdAt": "2017-06-11T09:44:38Z",
+            "description": "Tools to manage picard plugins",
+            "diskUsage": 10,
+            "name": "picard-plugin-tools",
+            "pushedAt": "2017-08-29T13:29:59Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/picard-plugins",
+            "id": "MDEwOlJlcG9zaXRvcnkyMTU3OTAwNw==",
+            "createdAt": "2014-07-07T17:02:53Z",
+            "description": "Picard plugins: use 1.0 branch for Picard < 2.0 (python 2/Qt4) and 2.0 branch for Picard >= 2.0 (python 3/Qt5)",
+            "diskUsage": 1942,
+            "name": "picard-plugins",
+            "pushedAt": "2020-08-18T08:20:38Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/picard-website",
+            "id": "MDEwOlJlcG9zaXRvcnkyMDIxOTQ3Ng==",
+            "createdAt": "2014-05-27T12:38:25Z",
+            "description": "Website for MusicBrainz Picard",
+            "diskUsage": 9705,
+            "name": "picard-website",
+            "pushedAt": "2020-08-27T05:29:32Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/postgresql-musicbrainz-collate",
+            "id": "MDEwOlJlcG9zaXRvcnk2Mzk2OTY0",
+            "createdAt": "2012-10-26T01:00:40Z",
+            "description": "MusicBrainz collation routines for PostgreSQL",
+            "diskUsage": 38,
+            "name": "postgresql-musicbrainz-collate",
+            "pushedAt": "2020-01-27T20:23:19Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/postgresql-musicbrainz-unaccent",
+            "id": "MDEwOlJlcG9zaXRvcnk2Mzk3MDA0",
+            "createdAt": "2012-10-26T01:05:07Z",
+            "description": "MusicBrainz unaccenting routines for PostgreSQL",
+            "diskUsage": 39,
+            "name": "postgresql-musicbrainz-unaccent",
+            "pushedAt": "2017-01-10T02:46:32Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/python-quickbooks",
+            "id": "MDEwOlJlcG9zaXRvcnkxNDExNDA4NzE=",
+            "createdAt": "2018-07-16T13:15:08Z",
+            "description": "A Python library for accessing the Quickbooks API.",
+            "diskUsage": 559,
+            "name": "python-quickbooks",
+            "pushedAt": "2018-07-17T12:19:26Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/ratelimit-server",
+            "id": "MDEwOlJlcG9zaXRvcnk2MjQyNDEz",
+            "createdAt": "2012-10-16T10:08:56Z",
+            "description": "ratelimit server",
+            "diskUsage": 57,
+            "name": "ratelimit-server",
+            "pushedAt": "2016-05-20T07:41:42Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/search-index-builder",
+            "id": "MDEwOlJlcG9zaXRvcnk2MjQyNDE3",
+            "createdAt": "2012-10-16T10:09:12Z",
+            "description": "Search Server scripts",
+            "diskUsage": 104,
+            "name": "search-index-builder",
+            "pushedAt": "2012-10-16T10:59:37Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/search-indexer",
+            "id": "MDEwOlJlcG9zaXRvcnkyNDYzODg4Mw==",
+            "createdAt": "2014-09-30T13:23:16Z",
+            "description": "Old search indexer code that creates indexes and pushes them to the old search servers based on Lucene 4.",
+            "diskUsage": 59,
+            "name": "search-indexer",
+            "pushedAt": "2020-07-11T13:26:22Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/search-server",
+            "id": "MDEwOlJlcG9zaXRvcnk2ODkwOTg3Nw==",
+            "createdAt": "2016-09-22T10:17:42Z",
+            "description": "Old MusicBrainz server server code based on Lucene 4",
+            "diskUsage": 2182,
+            "name": "search-server",
+            "pushedAt": "2020-07-11T13:28:22Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/sir",
+            "id": "MDEwOlJlcG9zaXRvcnkxOTM2OTY4MA==",
+            "createdAt": "2014-05-02T08:17:53Z",
+            "description": "Transfer data from a MusicBrainz database to a Solr server",
+            "diskUsage": 822,
+            "name": "sir",
+            "pushedAt": "2020-06-16T12:56:19Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/spambrainz",
+            "id": "MDEwOlJlcG9zaXRvcnkxMzIzOTU1MDE=",
+            "createdAt": "2018-05-07T02:18:21Z",
+            "description": "Spam detection for MusicBrainz",
+            "diskUsage": 4734,
+            "name": "spambrainz",
+            "pushedAt": "2020-01-16T10:40:41Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/spambrainz_ml",
+            "id": "MDEwOlJlcG9zaXRvcnkxNDM3NjU2NzU=",
+            "createdAt": "2018-08-06T18:12:39Z",
+            "description": "Models for metabrainz/spambrainz",
+            "diskUsage": 110,
+            "name": "spambrainz_ml",
+            "pushedAt": "2020-07-25T06:34:29Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/sys-tools",
+            "id": "MDEwOlJlcG9zaXRvcnk1MTgxNzU3",
+            "createdAt": "2012-07-25T16:43:27Z",
+            "description": "random collection of system administration tools for use with MusicBrainz",
+            "diskUsage": 148,
+            "name": "sys-tools",
+            "pushedAt": "2012-10-16T13:17:43Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/telegraf-docker",
+            "id": "MDEwOlJlcG9zaXRvcnk3MzQwMjA0Nw==",
+            "createdAt": "2016-11-10T16:50:27Z",
+            "description": null,
+            "diskUsage": 6,
+            "name": "telegraf-docker",
+            "pushedAt": "2018-01-31T14:32:27Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/tomcat-service",
+            "id": "MDEwOlJlcG9zaXRvcnkzMTYwNjcwOA==",
+            "createdAt": "2015-03-03T15:53:38Z",
+            "description": "daemontools package for starting tomcat",
+            "diskUsage": 148,
+            "name": "tomcat-service",
+            "pushedAt": "2015-03-05T23:01:12Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/troi-recommendation-playground",
+            "id": "MDEwOlJlcG9zaXRvcnkyNjI2NTgwOTY=",
+            "createdAt": "2020-05-09T21:00:29Z",
+            "description": "A recommendation engine playground that should hopefully make playing with music recommendations easy.",
+            "diskUsage": 104,
+            "name": "troi-recommendation-playground",
+            "pushedAt": "2020-08-18T19:37:12Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/vagrant-images",
+            "id": "MDEwOlJlcG9zaXRvcnk2NDIyNzEy",
+            "createdAt": "2012-10-27T23:50:21Z",
+            "description": "Various ways to set up virtual machines managed by Vagrant/Chef",
+            "diskUsage": 281,
+            "name": "vagrant-images",
+            "pushedAt": "2015-08-04T13:14:23Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/web-service-v3-design",
+            "id": "MDEwOlJlcG9zaXRvcnk1ODU3NzY2",
+            "createdAt": "2012-09-18T14:40:37Z",
+            "description": "A collaborative specification for the third version of the MusicBrainz web service",
+            "diskUsage": 174,
+            "name": "web-service-v3-design",
+            "pushedAt": "2012-09-27T11:02:20Z"
+        },
+        {
+            "url": "https://github.com/metabrainz/xmpp-messaging-server",
+            "id": "MDEwOlJlcG9zaXRvcnk0ODI2MjE2MQ==",
+            "createdAt": "2015-12-19T00:07:53Z",
+            "description": "Prototype of communications server and client for MetaBrainz projects",
+            "diskUsage": 36,
+            "name": "xmpp-messaging-server",
+            "pushedAt": "2016-01-04T18:27:57Z"
+        }
+    ]
+}

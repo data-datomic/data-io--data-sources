@@ -1,0 +1,282 @@
+#+TODO: TODO(t) SCHEMA(m) | DONE(d)
+
+* Search Index Fields
+** Annotation [4/4]
+
+The [[Annotation][annotation]] index contains the following fields you
+can search:
+
+*** DONE text
+*** DONE type
+*** DONE name
+*** DONE entity
+
+** Area [14/14]
+
+The area index contains the following fields you can search:
+
+*** DONE aid
+*** DONE alias
+*** DONE area
+*** DONE begin
+*** DONE comment
+*** DONE end
+*** DONE ended
+*** DONE sortname -- areas don't have one
+*** DONE iso
+*** DONE iso1
+*** DONE iso2
+*** DONE iso3
+*** DONE type
+*** DONE tag
+
+Area search terms with no fields specified search the area and sortname
+fields.
+** Artist [17/17]
+
+The artist index contains the following fields you can search:
+
+*** DONE area
+*** DONE beginarea
+*** DONE endarea
+*** DONE arid
+*** DONE artist
+*** DONE artistaccent
+*** DONE alias
+*** DONE begin
+*** DONE comment
+*** DONE country
+*** DONE end
+*** DONE ended
+*** DONE gender
+*** DONE ipi
+*** DONE isni
+*** DONE sortname
+*** DONE tag
+*** DONE type
+
+Artist search terms with no fields specified search the /artist/,
+/sortname/ and /alias/ fields.
+** CDStubs [6/6]
+
+The [[CD Stub][CD Stub]] index contains the following fields you can
+search:
+
+*** DONE artist
+*** DONE title
+*** DONE barcode
+*** DONE comment
+*** DONE tracks
+*** DONE discid
+
+** Label [14/14]
+
+The label index contains the following fields you can search:
+
+*** DONE alias
+*** DONE area
+*** DONE begin
+*** DONE code
+*** DONE comment
+*** DONE country
+*** DONE end
+*** DONE ended
+*** DONE ipi
+*** DONE isni
+*** DONE label
+*** DONE labelaccent
+*** DONE laid
+*** DONE type
+*** DONE tag
+
+Label search terms with no fields specified search the label, sortname
+and alias fields.
+** Place [13/13]
+
+The place index contains the following fields you can search:
+
+*** DONE pid
+*** DONE address
+*** DONE alias
+*** DONE area
+*** DONE begin
+*** DONE comment
+*** DONE end
+*** DONE ended
+*** DONE lat
+*** DONE long
+*** DONE place
+*** DONE sortname -- places don't actually have one
+*** DONE type
+
+Place search terms with no fields specified search the place, alias,
+address and area fields.
+** Recording [30/30]
+
+Recording searches can contain you can search:
+
+*** DONE arid
+*** DONE artist
+*** DONE artistname
+*** DONE creditname
+*** DONE comment
+*** DONE country
+*** DONE date
+*** DONE dur
+*** DONE format
+*** DONE isrc
+*** DONE number
+*** DONE position
+*** DONE primarytype
+*** TODO puid -- deprecated
+*** DONE qdur
+*** DONE recording
+*** DONE recordingaccent
+*** DONE reid
+*** DONE release
+*** DONE rgid
+*** DONE rid
+*** DONE secondarytype
+*** DONE status
+*** DONE tid
+*** DONE tnum
+*** DONE tracks
+*** DONE tracksrelease
+*** DONE tag
+*** DONE type
+*** DONE video
+
+Recording search terms with no fields search the /recording/ field only
+** Release Group [16/16]
+
+The release group index contains the following fields you can search:
+
+*** DONE arid
+*** DONE artist
+*** DONE artistname
+*** DONE comment
+*** DONE creditname
+*** DONE primarytype
+*** DONE rgid
+*** DONE releasegroup
+*** DONE releasegroupaccent
+*** DONE releases
+*** DONE release
+*** DONE reid
+*** DONE secondarytype
+*** DONE status
+*** DONE tag
+*** DONE type
+
+Release group search terms with no fields search the releasegroup field
+only.
+** Release [30/31]
+
+The release index contains these fields you can search:
+
+*** DONE arid
+*** DONE artist
+*** DONE artistname
+*** DONE asin
+*** DONE barcode
+*** DONE catno
+*** DONE comment
+*** DONE country
+*** DONE creditname
+*** DONE date
+*** DONE discids
+*** TODO discidsmedium
+*** DONE format
+*** DONE laid
+*** DONE label
+*** DONE lang
+*** DONE mediums
+*** DONE primarytype
+*** TODO puid -- deprecated
+*** SCHEMA quality
+*** DONE reid
+*** DONE release
+*** DONE releaseaccent
+*** DONE rgid
+*** DONE script
+*** DONE secondarytype
+*** DONE status
+*** DONE tag
+*** DONE tracks
+*** DONE tracksmedium
+*** DONE type
+
+Release search terms with no fields search the /release/ field only.
+** Tag [1/1]
+
+The Tag index contains these fields you can search:
+
+*** DONE tag
+
+** Work [11/11]
+
+The work index contains these fields you can search:
+
+*** DONE alias
+*** DONE arid
+*** DONE artist
+*** DONE comment
+*** DONE iswc
+*** DONE language
+*** DONE tag
+*** DONE type
+*** DONE wid
+*** DONE work
+*** DONE workaccent
+
+Work search terms with no fields specified search the work and alias
+fields.
+
+** Editor [2/2]
+
+*** DONE bio
+*** DONE editor
+
+** Event [14/14]
+
+*** DONE aid
+*** DONE alias
+*** DONE area
+*** DONE arid
+*** DONE artist
+*** DONE begin
+*** DONE comment
+*** DONE eid
+*** DONE end
+*** DONE event
+*** DONE pid
+*** DONE place
+*** DONE tag
+*** DONE type
+
+** FreeDB [0/6] -- deprecated
+
+*** TODO artist
+*** TODO cat
+*** TODO discid
+*** TODO title
+*** TODO tracks
+*** TODO year
+
+** Series [7/7]
+
+*** DONE alias
+*** DONE comment
+*** DONE orderingattribute
+*** DONE series
+*** DONE sid
+*** DONE tag
+*** DONE type
+
+** URL [2/5]
+
+*** TODO relationtype
+*** TODO targetid
+*** TODO targettype
+*** DONE uid
+*** DONE url

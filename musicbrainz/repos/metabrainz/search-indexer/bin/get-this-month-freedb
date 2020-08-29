@@ -1,0 +1,34 @@
+#!/bin/sh
+
+set -e
+
+SEARCH_HOME=/home/search
+SEARCH_FREEDB_URL=http://ftp.freedb.org/pub/freedb
+
+# At current file sizes, this --limit-rate means a download time of about 8 hours
+SEARCH_FREEDB_WGET_OPTS="--limit-rate=30000 --continue"
+
+SEARCH_CONFIG="$HOME/mb_search_server.conf"
+[ -e "$SEARCH_CONFIG" ] && . "$SEARCH_CONFIG"
+
+FREEDB_DATA_DIR="$SEARCH_HOME/freedb-data"
+[ ! -e "$FREEDB_DATA_DIR" ] && mkdir -p $FREEDB_DATA_DIR
+cd $FREEDB_DATA_DIR
+
+FILE=freedb-complete-`date +'%Y%m'`01.tar.bz2
+URL="$SEARCH_FREEDB_URL/$FILE"
+
+if [ ! -f "$FILE" ]
+then
+	FREEDB_DATA_TMPDIR="$FREEDB_DATA_DIR/tmp"
+	[ ! -e  "$FREEDB_DATA_TMPDIR" ] && mkdir -p "$FREEDB_DATA_TMPDIR"
+	wget $SEARCH_FREEDB_WGET_OPTS -O "$FREEDB_DATA_TMPDIR/$FILE" $URL && mv -v "$FREEDB_DATA_TMPDIR/$FILE" ./
+fi
+
+LATEST=`ls -1tr freedb-complete-[0-9]*.tar.bz2 | tail -1`
+rm -f freedb-complete-latest.tar.bz2
+ln -s $LATEST freedb-complete-latest.tar.bz2
+
+find . -name 'freedb-complete-*.tar.bz2' -type f -mtime +40 -delete
+
+# eof

@@ -1,0 +1,31 @@
+name:                caa-admin
+version:             1.0.0
+homepage:            http://github.com/metabrainz/caa-admin
+license:             GPL-3
+license-file:        LICENSE
+author:              Oliver Charles
+maintainer:          oliver@musicbrainz.org
+build-type:          Simple
+cabal-version:       >=1.8
+
+executable caa-admin
+  main-is: Main.hs
+  build-depends:
+    acid-state >= 0.11.3,
+    amqp >= 0.5 && < 0.7,
+    base >=4.5 && < 5,
+    blaze-html >= 0.6,
+    blaze-markup >= 0.5,
+    configurator >= 0.2,
+    containers >= 0.4.2.1,
+    lens >= 3.9,
+    mtl >= 2.1,
+    network >= 2.6,
+    safecopy >= 0.8,
+    snap >= 0.13,
+    snaplet-acid-state >= 0.2,
+    text >= 0.11,
+    time >= 1.4,
+    transformers >= 0.3
+  ghc-options: -Wall -fwarn-tabs -funbox-strict-fields -O2
+               -fno-warn-unused-do-bind -Werror

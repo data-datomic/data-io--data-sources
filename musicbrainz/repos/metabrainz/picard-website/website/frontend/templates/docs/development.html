@@ -1,0 +1,44 @@
+{% extends 'docs/base.html' %}
+{% set git_doc = "development.html" %}
+{% set doc_title = _("Developing") %}
+{% block content %}
+<div id="docs" class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <p>
+        The source code of Picard is maintained in Git and you can get it with all its history using:
+      </p>
+
+      <pre>git clone <a href="git://github.com/musicbrainz/picard.git" rel="nofollow">git://github.com/musicbrainz/picard.git</a></pre>
+
+      <p>
+        or you can fork or clone the
+        <a href="https://github.com/musicbrainz/picard" rel="nofollow">repository from GitHub</a> in the normal
+        GitHub way. Pull requests and discussion on GitHub is generally preferred and all such requests will
+        be considered.
+      </p>
+
+      <p>
+        If you are interested in providing development assistance, contact us by joining the
+        <code>#metabrainz</code> IRC channel on <code>irc.freenode.net</code>.
+        To help by reporting bugs or finding a list of available tickets to work on, please have a look at the
+        <a href="{{ url_for('docs.show_troubleshooting') }}">{{ _("Troubleshooting") }}</a> page.
+      </p>
+
+      <p>
+        If you want to install Picard from source on Windows, there is
+        <a href="/docs/build-windows/">Building Picard for Windows</a>.
+      </p>
+
+      <p>
+        For macOS there is <a href="/docs/build-osx/">Building Picard on macOS</a>.
+      </p>
+
+      <h1 id="License">License</h1>
+      <p>
+        Picard is licensed under the <a href="https://www.gnu.org/copyleft/gpl.html" rel="nofollow">GPL 2.0 or later</a>.
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}

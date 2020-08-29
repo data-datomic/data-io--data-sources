@@ -1,0 +1,80 @@
+{
+  "20": {
+    "slave": ["20140310-dates.sql", "20140212-ordering-columns.sql", "20140208-drop-script_language.sql", "20140407-link-cardinality.sql", "20140311-remove-area-sortnames.sql", "20140313-remove-label-sortnames.sql", "20140214-add-instruments.sql", "20140215-add-instruments-documentation.sql", "20140318-series.sql", "20140418-series-instrument-functions.sql", "20140429-area-view.sql"],
+    "standalone": ["20140308-ordering-columns-fk.sql", "20140312-dates-trigger.sql", "20140217-instrument-triggers.sql", "20140318-series-fks.sql"]
+  },
+
+  "21": {
+    "slave": ["20140606-events.sql", "20141008-instrument-indexes.sql", "20141014-mbs-7784-data-tracks.sql", "20140806-collection-types.sql", "20140906-event-collections.sql", "20141014-mbs-7551-tags.sql", "20141031-unused-url.sql"],
+    "standalone": ["20140606-events-fks.sql", "20140906-event-collections-fks.sql", "20141021-collection-types-fks.sql", "20141014-mbs-7551-tags-fks.sql"]
+  },
+
+  "22": {
+    "slave": ["20150209-extend-aliases-to-more-entities.sql",
+              "20150307-other-entities-collections.sql",
+              "20150317-medium-name-not-null.sql",
+              "20150331-relationship-credits.sql",
+              "20150429-tag-upvote.sql",
+              "20150403-drop-empty-functions.sql"],
+    "slave_only": ["20150415-mbs-8349.sql"],
+    "standalone": ["20150209-extend-aliases-to-more-entities-standalone.sql",
+                   "20150307-other-entities-collections-fks.sql",
+                   "20150317-drop-event-name-constraint.sql",
+                   "20150331-relationship-credits-standalone.sql"]
+  },
+
+  "23": {
+    "slave": ["20160516-mbs-8838.sql",
+              "20160516-mbs-8720.sql",
+              "20141226-geodesic-index.sql",
+              "20160429-mbs-8656.sql",
+              "20151223-edit-note-index.sql",
+              "20160310-mbs-4501-alternative-tracklists.sql",
+              "20160516-mbs-8656.sql",
+              "20160507-mbs-8727.sql",
+              "20160512-mbs-8719.sql",
+              "20160512-edit-data.sql",
+              "20160514-mbs-8287-a.sql",
+              "20160514-mbs-8287-b.sql",
+              "20160515-recluster.sql",
+              "20160516-mbs-8804.sql"],
+    "slave_only": ["20160507-mbs-8669.sql"],
+    "standalone": ["20160516-mbs-8720-standalone.sql",
+                   "20160310-mbs-4501-alternative-tracklists-fks.sql",
+                   "20160512-edit-data-fk.sql",
+                   "20160514-mbs-8287-a-fks.sql",
+                   "20160514-mbs-8287-b-fks.sql"],
+    "extensions": ["20141226-geodesic-extension.sql"]
+  },
+
+  "24": {
+    "slave": ["20160602-mbs-8963.sql",
+              "20170507-mbs-8951.sql",
+              "20170327-mbs-9271.sql",
+              "20170401-mbs-8393-entity-attributes.sql",
+              "20170329-mbs-5452.sql",
+              "20170503-mbs-9329-event-meta.sql"],
+    "standalone": ["20170327-mbs-9271-standalone.sql",
+                   "20170401-mbs-8393-entity-attributes-fks.sql",
+                   "20170329-mbs-5452-fks.sql",
+                   "20170503-mbs-9329-event-meta-standalone.sql"]
+  },
+
+  "25": {
+    "slave": ["20180503-mbs-9708-drop-area-containment-view.sql",
+              "20190317-mbs-9941-mbs-10062.sql",
+              "20190422-mbs-7480.sql",
+              "20190422-mbs-9973-collection-added-date.sql",
+              "20190422-mbs-9428-collection-collaborators.sql",
+              "20190422-mbs-5818-collection-position.sql",
+              "20190422-mbs-1658-collection-text.sql",
+              "20190423-mbs-10052-eaa.sql",
+              "20190423-mbs-5387.sql"],
+    "standalone": ["20170604-mbs-9365.sql",
+                   "20170909-mbs-9462-missing-event-triggers.sql",
+                   "20180331-mbs-9664-non-loop-checks.sql",
+                   "20190317-mbs-9941-mbs-10062-fks.sql",
+                   "20190422-mbs-9428-collection-collaborators-fks.sql",
+                   "20190423-mbs-10052-eaa-standalone.sql"]
+  }
+}

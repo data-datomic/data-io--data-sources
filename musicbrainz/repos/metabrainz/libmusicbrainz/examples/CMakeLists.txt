@@ -1,0 +1,33 @@
+INCLUDE_DIRECTORIES(
+	${CMAKE_CURRENT_SOURCE_DIR}/../include
+	${CMAKE_CURRENT_BINARY_DIR}/../include
+	${LIBXML2_INCLUDE_DIR}
+)
+
+ADD_EXECUTABLE(cdlookup cdlookup.cc)
+ADD_EXECUTABLE(cdlookup_c cdlookup_c.c)
+ADD_EXECUTABLE(search search.cc)
+ADD_EXECUTABLE(search_c search_c.c)
+ADD_EXECUTABLE(collections collections.cc)
+
+TARGET_LINK_LIBRARIES(cdlookup musicbrainz5cc)
+TARGET_LINK_LIBRARIES(cdlookup_c musicbrainz5)
+TARGET_LINK_LIBRARIES(search musicbrainz5cc)
+TARGET_LINK_LIBRARIES(search_c musicbrainz5)
+TARGET_LINK_LIBRARIES(cdlookup musicbrainz5cc)
+TARGET_LINK_LIBRARIES(collections musicbrainz5)
+
+IF(CMAKE_COMPILER_IS_GNUCXX)
+		SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic-errors")
+		IF(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/../.git)
+			SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
+		ENDIF(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/../.git)
+ENDIF(CMAKE_COMPILER_IS_GNUCXX)
+
+IF(CMAKE_COMPILER_IS_GNUCC)
+		SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -pedantic-errors")
+		IF(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/../.git)
+			SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Werror")
+		ENDIF(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/../.git)
+ENDIF(CMAKE_COMPILER_IS_GNUCC)
+

@@ -1,0 +1,2 @@
+# This used to be in search's crontab, but it has moved here so we can raise the ulimits
+32 * * * *	root	ulimit -n 20000 ; exec su -l -c 'build.cron' search

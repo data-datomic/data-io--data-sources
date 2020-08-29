@@ -1,0 +1,43 @@
+{% macro print_message(message, category) %}
+  {% if category == "error" %}
+    {% set alert_class="alert-danger" %}
+  {% elif category == "warning" %}
+    {% set alert_class="alert-warning" %}
+  {% elif category == "success" %}
+    {% set alert_class="alert-success" %}
+  {% else %} {# info & default #}
+    {% set alert_class="alert-info" %}
+  {% endif %}
+
+  <div class="alert {{ alert_class }}">{{ message }}</div>
+{% endmacro %}
+
+{% macro pager(links, prev_page, current_page, last_page, next_page) %}
+  <nav>
+    <ul class="pagination">
+      <li class="{{'disabled' if current_page == 1}}">
+      {% if current_page == 1 %}
+        <span aria-hidden="true">&laquo;</span>
+      {% else %}
+        <a href="{{prev_page}}" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      {% endif %}
+      </li>
+      {% for number, link in links %}
+        <li class="{{'active' if current_page == number }}">
+          <a href="{{link}}">{{number}}</a>
+        </li>
+      {% endfor %}
+      <li class="{{'disabled' if current_page == last_page}}">
+      {% if current_page == last_page %}
+        <span aria-hidden="true">&raquo;</span>
+      {% else %}
+        <a href="{{next_page}}" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      {% endif %}
+      </li>
+    </ul>
+  </nav>
+{% endmacro %}

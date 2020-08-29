@@ -1,0 +1,17 @@
+.breadcrumb-item.active span.active {
+    font-weight: $font-weight-bold;
+}
+
+.modal-content {
+    border-top: 0.25rem $orange solid;
+}
+
+.navbar-nav {
+  .nav-link {
+    &:hover, &:focus, &[aria-expanded="true"] {
+      background-color: $orange;
+      color: $white;
+    }
+    font-weight: $font-weight-bold;
+  }
+}

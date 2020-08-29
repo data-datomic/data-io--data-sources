@@ -1,0 +1,10 @@
+{
+    "commandText": "git clone --progress --verbose https://github.com/metabrainz/jenkins undefined\\meta--08-29-2020--WCSV35PA6dQUi1bDtfaXT/jenkins",
+    "repo": "https://github.com/metabrainz/jenkins",
+    "targetPath": "undefined\\meta--08-29-2020--WCSV35PA6dQUi1bDtfaXT/jenkins",
+    "startTime": "2020-08-29T07:44:15.636Z",
+    "endTime": "2020-08-29T07:44:16.118Z",
+    "childProcessPid": 11037,
+    "executionErrors": [],
+    "commandLogFilePath": "/Users/brian/dev_space/GitHub-data-datomic/data-io--data-sources/musicbrainz/musicbrainz-importer/repos/workingdir/--metabrainz--jenkins--11037"
+}

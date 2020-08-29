@@ -1,0 +1,129 @@
+#docs
+{
+    h1
+    {
+        margin: 40px 0px 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #EEE;
+    }
+
+    h3
+    {
+        margin: 40px 0px 10px;
+    }
+
+    ul.options
+    {
+        margin-top: 15px;
+
+        & > li
+        {
+            margin-bottom: 10px;
+        }
+    }
+
+    ol.guide
+    {
+        margin-top: 15px;
+
+        & > li
+        {
+            margin-bottom: 15px;
+
+            img.img-thumbnail
+            {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+#sidebar
+{
+
+    list-style: none outside none;
+
+    a {
+        display: block;
+        padding: 4px 15px;
+        font-size: 14px;
+        color: #999;
+
+        &:hover, &:focus, &:active {
+            color: #771B85;
+            text-decoration: none;
+            background-color: transparent;
+            padding-left: 14px;
+            border-left: 1px solid #771B85;
+        }
+    }
+
+    .nav
+    {
+        ul
+        {
+            display: none;
+        }
+
+        .active
+        {
+            ul
+            {
+                display: block;
+                padding-left: 13px;
+                padding-bottom: 10px;
+            }
+        }
+
+        & > .active, & > .active:hover, & > .active:focus
+        {
+            & > a
+            {
+                color: #771B85;
+                text-decoration: none;
+                background-color: transparent;
+                padding-left: 13px;
+                border-left: 2px solid #771B85;
+            }
+        }
+    }
+
+    .affix
+    {
+        position: fixed;
+        top: 15px;
+    }
+}
+
+
+#scripting_technical_variables, #scripting_functions
+{
+    ul
+    {
+        list-style-type: none;
+
+        li.added
+        {
+            font-style: italic;
+            font-size: 90%;
+        }
+
+        li.note
+        {
+            background-color: #ffeeee;
+            margin-top: 10px;
+        }
+    }
+
+    h3
+    {
+        font-family: @font-family-monospace;
+        margin-top: 16px;
+        font-size: 110%;
+        color: darkred;
+        background-color: transparent;
+        white-space: nowrap;
+        border-radius: @border-radius-base;
+    }
+}

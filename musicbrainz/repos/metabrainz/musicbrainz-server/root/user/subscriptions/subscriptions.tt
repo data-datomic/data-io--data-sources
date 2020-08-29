@@ -1,0 +1,3 @@
+[% WRAPPER "user/subscriptions/layout.tt" %]
+    [% INCLUDE 'user/subscriptions/table.tt' %]
+[% END %]

@@ -1,0 +1,26 @@
+#!/bin/sh
+set -e
+
+case "$SSH_ORIGINAL_COMMAND" in
+	"rsync --server -vlogDtpre.iLsf --bwlimit=9000 --delete --link-dest /home/search/data/cur/ . /home/search/data/new/")
+		exec $SSH_ORIGINAL_COMMAND
+		;;
+	"rotate")
+		cd data
+		[ -d new ]
+		rm -rf old
+		mv cur old
+		mv new cur
+		;;
+	"restart")
+		# Grrr unclean daemonising
+		exec sudo /usr/sbin/invoke-rc.d tomcat6 restart </dev/null >/dev/null 2>&1
+		;;
+	*)
+		echo "Unrecognised command for $0" >&2
+		echo "The command was: $SSH_ORIGINAL_COMMAND" >&2
+		exit 1
+		;;
+esac
+
+# eof

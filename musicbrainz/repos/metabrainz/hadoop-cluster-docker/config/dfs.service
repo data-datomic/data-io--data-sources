@@ -1,0 +1,12 @@
+#!/bin/bash
+
+. /usr/local/hadoop/etc/hadoop/hadoop-env.sh
+
+if [[ "$NODE_TYPE" == *"master"* ]];
+then
+    echo "start HDFS namenode"
+    exec hdfs namenode
+else
+    echo "start HDFS datanode"
+    exec hdfs datanode
+fi

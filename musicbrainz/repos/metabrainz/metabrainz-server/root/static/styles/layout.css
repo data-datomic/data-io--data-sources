@@ -1,0 +1,388 @@
+body {
+    padding: 0 10px;
+    margin: 0;
+    background-color: #E7E7E7;
+    color: #000;
+    font-family: 'Bitstream Vera Sans', Verdana, Arial, sans-serif;
+    font-size: 12px;
+    min-width: 935px;
+    margin: auto;
+}
+
+a { color:#002BBA; text-decoration: none; }
+/* a:visited { color:#632D9B; } */
+a:hover { color:#2E9E2D; text-decoration: underline; }
+a:active, a:focus { outline-style: none; }
+
+a.icon:hover { text-decoration: none; }
+
+a>img { border: 0; }
+
+/* TODO:
+** When we start using relative links for internal links, add:
+** a[href^="http://"], a[href^="https://"], */
+a.external {
+    background: url('../images/icons/external.png') no-repeat right;
+    padding-right: 13px;
+}
+
+a.internal {
+    background: none;
+    padding-right: 0;
+}
+
+p {
+    margin: 1em 0;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 150%;
+}
+
+h1 a { color: #000 !important; }
+
+h2,
+fieldset legend {
+    margin-top: 1em;
+    margin-bottom: 0;
+    font-size: 120%;
+    color: #2E9E2D;
+    font-weight: bold;
+}
+
+h3 {
+    margin-top: 1em;
+    margin-bottom: 0;
+    font-size: 100%;
+    font-weight: bold;
+}
+
+ul {
+    margin-left: 0;
+    padding-left: 40px;
+    list-style-image: url('../images/icons/bullet.gif');
+    list-style-type: square;
+}
+
+ol {
+    margin-left: 0;
+    padding-left: 40px;
+}
+
+ul ul, ul ol,
+ol ol, ol ul {
+    padding-left: 20px;
+}
+
+/* See http://www.longren.org/2006/09/27/wrapping-text-inside-pre-tags/ */
+pre code {
+    overflow-x: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap !important;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    /* width: 99%; */
+    word-wrap: break-word;
+}
+
+/*
+** Header
+*/
+#header {
+    width: 100%;
+}
+
+#header-logo {
+    background: #534AD3 url('/static/images/metabrainz_header_logo.png') no-repeat top left;
+    height: 58px;
+    color: #FFF;
+}
+
+#header-logo a.logo {
+    display: block;
+    height: 58px;
+    width: 935px;
+}
+
+#header-logo a.logo strong {
+    position: absolute;
+    left: -10000px;
+}
+
+#header-menu {
+    background: #ABD150;
+    position: relative;
+    font-size: 95%;
+    font-weight: bold;
+    z-index: 9;
+    border-radius: 0 0 5px 5px;
+}
+
+#header-menu div {
+    padding: 0 1em;
+    overflow: hidden;
+}
+
+#header-menu ul {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    list-style-type: none;
+    list-style-image: none;
+}
+
+#header-menu ul.r { float: right; }
+
+#header-menu li {
+    float: left;
+    list-style-type: none;
+    list-style-image: none;
+}
+
+#header-menu ul a {
+    color: #333;
+    display: block;
+    padding: 0.4em 0.5em;
+    height: 100%;
+    text-decoration: none;
+}
+
+#header-menu ul li:hover a,
+#header-menu ul li:hover li a:hover,
+#header-menu ul a:hover {
+    background-color: #2E9E2D;
+    color: #FFF;
+}
+
+#header-menu ul li li a {
+    height: auto;
+}
+
+#header-menu ul li:hover li a {
+    background-color: #D4D4D4;
+    color: #000;
+}
+
+#header-menu li ul {
+    position: absolute;
+    left: -10000px;
+    z-index: 9;
+}
+
+#header-menu li ul li {
+    text-align: left;
+    float: none;
+    font-weight: normal;
+    margin: 0;
+    background-color: #D4D4D4;
+}
+
+#header-menu .separator {
+    border-top: 1px dotted;
+}
+
+/*
+** Main content
+*/
+#page {
+    margin-top: 1em;
+    padding: 1em 1em 1em 1em;
+    padding: 16px;
+    background: #fff;
+    overflow: visible;
+    position: relative;
+    border-radius: 5px;
+}
+
+/*
+** Footer
+*/
+#footer {
+    height: 1em;
+    margin: 1em 0;
+    padding: 0 1em;
+    font-size: 90%;
+    color: #444444;
+}
+
+#footer a { color: #002BBA; }
+#footer a:hover { color: #FC6714; }
+
+#footer p {
+    display: inline-block;
+    margin: 0;
+}
+
+#footer p.left {
+    float: left;
+    margin: 0;
+}
+
+#footer p.right {
+    float: right;
+}
+
+/*
+** Misc
+*/
+.clear { clear: both; }
+
+.c, table.tbl .c { text-align: center; }
+
+.noborder { border: none !important; }
+
+.nowrap { white-space: nowrap; } /* Used to keep "action links" on one line, e.g. [ Update | Remove ] */
+
+.tooltip { border-bottom: 1px dotted; } /* Useful when adding title attributes to elements */
+
+/* The release information table */
+table.tbl {
+    margin-top: 1em;
+    border-collapse: collapse;
+    width: 100%;
+    border-top: solid 1px #999999;
+    border-bottom: solid 1px #999999;
+}
+
+table.tbl th {
+    font-size: 95%;
+    background: url('../images/layout/table-header.gif') repeat-x 0 50%;
+    padding: 0.2em 0.4em;
+    text-align: left;
+    border-bottom: solid 1px #999999;
+    border-left: solid 1px #CCCCCC;
+}
+
+table.tbl thead tr .header {
+    cursor: pointer;
+}
+
+table.tbl thead tr .header .arrow {
+    background: url('../images/layout/bg.gif') no-repeat center right;
+    display: inline-block;
+    height: 9px;
+    width: 21px;
+}
+
+table.tbl thead tr .headerSortUp .arrow {
+    background-image: url('../images/layout/asc.gif');
+}
+
+table.tbl thead tr .headerSortDown .arrow {
+    background-image: url('../images/layout/desc.gif');
+}
+
+table.tbl tr.subh td,
+table.tbl tr.subh th {
+    font-size: 95%;
+    background: url('../images/layout/table-header-2.gif') repeat-x 0 50%;
+    font-weight: bold;
+    border-top: solid 1px #999999;
+    border-bottom: solid 1px #999999;
+}
+
+table.tbl tbody th {
+    border-right: 1px solid #999999;
+    background: none;
+}
+
+table.tbl tbody th:last-child { border-right: 0; }
+
+table.tbl th a {
+    color: #000;
+}
+
+table.tbl th:first-child {
+    border-left: none;
+}
+
+table.tbl td {
+    padding: 0.2em 0.4em;
+}
+
+table.tbl tr.ev td,
+table.tbl tr.ev th {
+    padding: 0.2em 0.4em;
+    background: #F2F2F2;
+}
+
+table.tbl .pos { width: 1em; white-space: nowrap; }
+table.tbl th { word-break: keep-all; white-space: nowrap; }
+
+table.tbl dl {
+    margin: 0;
+}
+
+/* Paginator */
+.pageselector a, .pageselector span {
+    font-size: 90%;
+    padding: 0.05em 0.4em;
+}
+
+.pageselector a {
+    border: solid 1px #000;
+    text-decoration: none;
+    background-color: #FFF;
+    color: #000;
+}
+
+.pageselector a:hover {
+    background-color: #534AD3;
+    color: #FFF;
+}
+
+.pageselector a.sel {
+    background-color: #534AD3;
+    color: #FFF;
+    font-weight: bold;
+}
+
+.pageselector span {
+    border: solid 1px #999999;
+    background-color: #EEEEEE;
+    color: #999999;
+}
+
+.pageselector em {
+    font-style: normal;
+    margin-left: 0.5em;
+}
+
+.pageselector + .tbl {
+    margin-top: 0px !important;
+}
+
+.pageselector-results {
+    margin-bottom: 0;
+}
+
+#header-menu li:hover ul { left: auto; }
+
+/*
+** Forms
+*/
+form div.row {
+    clear: left;
+    margin: 6px 0;
+}
+
+form div.row label,
+form div.row div.label {
+    float: left;
+    text-align: right;
+    width: 132px;
+    margin-right: 12px;
+}
+
+label.inline {
+    float: none !important;
+    width: auto !important;
+}
+
+form div.no-label,
+form p.no-label,
+form ul.errors {
+    margin-left: 144px;
+}

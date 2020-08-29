@@ -1,0 +1,10 @@
+{
+    "commandText": "git clone --progress --verbose https://github.com/metabrainz/spambrainz_ml undefined\\meta--08-29-2020--WCSV35PA6dQUi1bDtfaXT/spambrainz_ml",
+    "repo": "https://github.com/metabrainz/spambrainz_ml",
+    "targetPath": "undefined\\meta--08-29-2020--WCSV35PA6dQUi1bDtfaXT/spambrainz_ml",
+    "startTime": "2020-08-29T07:49:49.780Z",
+    "endTime": "2020-08-29T07:49:50.386Z",
+    "childProcessPid": 11824,
+    "executionErrors": [],
+    "commandLogFilePath": "/Users/brian/dev_space/GitHub-data-datomic/data-io--data-sources/musicbrainz/musicbrainz-importer/repos/workingdir/--metabrainz--spambrainz_ml--11824"
+}

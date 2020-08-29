@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {%- block head -%}
+      <title>{% block fulltitle %}{% block title %}{% endblock %} - geordi{% endblock %}</title>
+    {%- endblock -%}
+    {%- if config.DEBUG -%}
+      <link rel="stylesheet/less" type="text/css" href="{{ url_for('static', filename='styles/geordi.less') }}" />
+      <script src="{{ url_for('static', filename='scripts/lib/less.js') }}"></script>
+    {%- else -%}
+      <link rel="stylesheet" href="{{ url_for('static', filename='build/styles/geordi.css') }}">
+    {%- endif -%}
+    {%- block css %}{% endblock -%}
+  </head>
+  <body>
+    {%- include "navbar.html" -%}
+    <div id="content" class="container-fluid">
+      <div class="clearfix">
+        {%- with messages = get_flashed_messages() -%}
+          {%- if messages -%}
+            <ul class="flashes">
+              {%- for message in messages -%}
+                <li>{{ message }}</li>
+              {%- endfor -%}
+            </ul>
+          {%- endif -%}
+        {%- endwith -%}
+        <h1 id="h1title">{% block h1title %}{{ self.title() }}{% endblock %}</h1>
+      </div>
+      {% block content %}{% endblock %}
+    </div>
+    {%- block hiddencontent -%}{%- endblock -%}
+    {%- block js %}
+    <script src="{{ url_for('static', filename='scripts/lib/require.js') }}"></script>
+    <script>
+      require.config({ baseUrl: "/static/{% if not config.DEBUG %}build/{% endif %}scripts" });
+      require(["common"]);
+    </script>
+    {% endblock -%}
+  </body>
+</html>

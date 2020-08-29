@@ -1,0 +1,466 @@
+<script type="text/html" id="template.track-parser">
+  [%# the track-parser-dialog is a simplified version of the add-disc-dialog. %]
+  <p>[% l('Enter a tracklist below:') %]</p>
+
+  <textarea class="tracklist" data-bind="value: toBeParsed"></textarea>
+
+  <!-- ko if: error -->
+    <p>[% l('Unable to parse the tracklist you entered.') %]</p>
+  <!-- /ko -->
+
+  <h3 class="track-parser-options">[% l('Options') %]</h3>
+
+  <table class="track-parser-options" data-bind="with: $root.trackParser.options">
+    <tr>
+      <td>
+        <label>
+          <input type="checkbox" name="lines-have-numbers" data-bind="checked: hasTrackNumbers" />
+          [%= l('Lines start with a track number') %]
+        </label>
+      </td>
+      <td>
+        <label>
+          <input type="checkbox" name="use-numbers" data-bind="checked: useTrackNumbers, enable: hasTrackNumbers" />
+          [%= l('Use track numbers') %]
+        </label>
+      </td>
+    </tr>
+    <tr>
+      <td style="padding-left: 2em">
+        <label>
+          <input type="checkbox" name="enable-vinyl-numbers" data-bind="checked: hasVinylNumbers, enable: hasTrackNumbers" />
+          [%= l('Enable vinyl track numbers') %]
+        </label>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
+        <label>
+          <input type="checkbox" name="lines-have-artists" data-bind="checked: hasTrackArtists" />
+          [%= l('Lines contain track artists') %]
+        </label>
+      </td>
+      <td>
+        <label>
+          <input type="checkbox" name="use-artists" data-bind="checked: useTrackArtists, enable: hasTrackArtists" />
+          [%= l('Use track artists') %]
+        </label>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label>
+        <input type="checkbox" name="use-custom-delimiter" data-bind="checked: useCustomDelimiter" />
+          [%= l('Use custom artist delimiter') %]
+        </label>
+       </td>
+       <td>
+        <label>
+          <input type="checkbox" name="use-titles" data-bind="checked: useTrackNames" />
+          [%= l('Use track titles') %]
+        </label>
+      </td>
+    </tr>
+    <tr>
+      <td style="padding-left: 2em">
+        <label data-bind="visible: useCustomDelimiter">
+          [%= add_colon(l('Custom delimiter')) %]
+          <input type="text" name="custom-delimiter" data-bind="value: customDelimiter, valueUpdate: 'input'" />
+          (<a href="#" data-bind="click: $root.trackParser.toggleDelimiterHelp">[% l('help') %]</a>)
+          <p class="error" data-bind="text: $root.trackParser.customDelimiterError"></p>
+          <p data-bind="visible: $root.trackParser.delimiterHelpVisible" style="max-width: 25em">
+            <i>[% l('Enter the delimiter that separates the track name from the artist name
+                     (valid {url|regular expressions} are accepted).',
+                     { url => 'https://developer.mozilla.org/docs/Web/JavaScript/Guide/Regular_Expressions' }) %]</i>
+          </p>
+        </label>
+      </td>
+      <td>
+        <label>
+          <input type="checkbox" name="use-lengths" data-bind="checked: useTrackLengths" />
+          [%= l('Use track lengths') %]
+        </label>
+      </td>
+    </tr>
+  </table>
+</script>
+
+<script type="text/html" id="template.medium-search">
+  <table>
+    <tr>
+      <td><label for="import-release">[% l('Release:') %]</label></td>
+      <td><input id="import-release" type="text" data-bind="value: releaseName, valueUpdate: 'afterkeydown'" data-keydown="keydownEvent" /></td>
+      <td rowspan="2"></td>
+    </tr>
+    <tr>
+      <td><label for="import-artist">[% l('Artist:') %]</label></td>
+      <td><input id="import-artist" type="text" data-bind="value: artistName, valueUpdate: 'afterkeydown'" data-keydown="keydownEvent" /></td>
+    </tr>
+    <tr>
+      <td><label for="import-track-count">[% l('Track count:') %]</label></td>
+      <td><input id="import-track-count" type="number" data-bind="value: trackCount, valueUpdate: 'afterkeydown'" data-keydown="keydownEvent" /></td>
+      <td class="buttons">
+        <button type="button" data-click="buttonClicked" data-bind="enable: releaseName() || artistName() || trackCount() || searching(), text: searching() ? '[% l('Cancel') | js %]' : '[% l('Search') | js %]'"></button>
+      </td>
+    </tr>
+  </table>
+
+  <!-- ko if: searchResults() && searchResults().length > 0 -->
+  <p>[% l('Select a medium from the search results below and then click "Add Medium".') %]</p>
+  <p>[% l('The tracklist for the medium (including the track/recording associations, but not other data such as medium format) will be loaded as a medium on this release.') %]</p>
+  <!-- /ko -->
+
+  <!-- ko if: totalPages() > 1 -->
+  <div style="text-align: center">
+    <a href="#" data-click="previousPage">«</a>
+    <!-- ko text: pageText() --><!-- /ko -->
+    <a href="#" data-click="nextPage">»</a>
+  </div>
+  <!-- /ko -->
+
+  <!-- ko if: searching -->
+    <p class="loading-message">[% l('Searching...') %]</p>
+  <!-- /ko -->
+
+  <!-- ko if: !searching() && searchResults() && searchResults().length === 0 -->
+    <p>[% l('No results') %]</p>
+  <!-- /ko -->
+
+  <!-- ko if: error -->
+    <p>[% l('An error occurred: ') %] <span data-bind="text: error"></span></p>
+  <!-- /ko -->
+
+  <!-- ko foreach: { data: searchResults, if: searchResults } -->
+    <div class="search-result">
+      <a class="icon" href="#" data-click="toggle">
+        <span class="ui-icon" data-bind="css: { 'ui-icon-triangle-1-e': !expanded(), 'ui-icon-triangle-1-s': expanded() }">
+          [%~ l("Expand") ~%]
+        </span>
+        <span data-bind="html: link()"></span>
+      </a>
+    </div>
+
+    <!-- ko if: expanded() && loaded() -->
+    <table class="medium tbl">
+      <thead>
+        <tr>
+          <th class="position">[% l('#') %]</th>
+          <th class="title">[% l('Title') %]</th>
+          <th class="artist">[% l('Artist') %]</th>
+          <th class="length">[% l('Length') %]</th>
+        </tr>
+      </thead>
+      <tbody data-bind="foreach: tracks">
+        <tr class="track">
+          <td class="position" style="text-align: right;" data-bind="text: position"></td>
+          <td class="title"><bdi data-bind="text: name"></bdi></td>
+          <td class="artist" data-bind="text: artist"></td>
+          <td class="length" data-bind="text: formattedLength"></td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- /ko -->
+
+    <!-- ko if: expanded() && loading() -->
+      <p class="loading-message">
+        [%~ l('Now loading tracklist...') ~%]
+      </p>
+    <!-- /ko -->
+
+    <!-- ko if: error -->
+      <p class="error" data-bind="text: error"></p>
+    <!-- /ko -->
+  <!-- /ko -->
+</script>
+
+<script type="text/html" id="template.track-row">
+  <tr class="track" data-bind="attr: { id: elementID }">
+    <td class="reorder">
+      <!-- ko if: position() == 0 -->
+        [% pregap_track_icon %]
+      <!-- /ko -->
+      <!-- ko if: position() > 0 -->
+        <button type="button" class="icon track-down" title="[% l('Move track down') %]"
+          data-bind="disableBecauseDiscIDs: !isDataTrack()"
+          data-click="moveTrackDown">
+        </button>
+        <button type="button" class="icon track-up" title="[% l('Move track up') %]"
+          data-bind="disableBecauseDiscIDs: !isDataTrack() || (previous() && !previous().isDataTrack())"
+          data-click="moveTrackUp">
+        </button>
+      <!-- /ko -->
+    </td>
+
+    <td class="position">
+      <input class="pos" type="text" data-bind="value: number" />
+    </td>
+
+    <td class="title">
+      <input type="text" class="track-name" data-bind="value: name, valueUpdate: 'input'" />
+    </td>
+
+    <td class="artist autocomplete" data-bind="artistCreditEditor: $data">
+    </td>
+
+    <td class="length">
+      <input type="text" class="track-length" size="5" data-bind="value: formattedLength, disableBecauseDiscIDs: position() > 0 && !isDataTrack(), css: { error: position() == 0 && medium.hasInvalidPregapLength() }" placeholder="?:??" />
+    </td>
+
+    <td class="icon">
+      <button type="button" class="icon guesscase-title" title="[% l('Guess case track') %]" data-click="guessCaseTrackName"></button>
+      <button type="button" class="icon guessfeat" title="[% l('Guess feat. artists') %]" data-click="guessTrackFeatArtists"></button>
+      <!-- ko ifnot: medium.hasToc() -->
+      <button type="button" class="icon remove-item remove-track" title="[% l('Remove track') %]" data-click="removeTrack"></button>
+      <!-- /ko -->
+    </td>
+  </tr>
+</script>
+
+<div id="track-parser-dialog" style="display: none;" data-bind="with: $root.trackParserDialog, delegatedHandler: 'click'">
+  <!-- ko template: "template.track-parser" --><!-- /ko -->
+
+  <div class="buttons">
+    <button type="button" class="negative" id="close-track-parser" data-bind="click: close">[% l('Close') %]</button>
+    <button type="button" id="parse-tracks" style="float: right" data-bind="click: parse">[% l('Parse Tracks') %]</button>
+  </div>
+</div>
+
+<div id="add-disc-dialog" style="display: none;" data-bind="with: $root.addDiscDialog, delegatedHandler: ['click', 'keydown']">
+  <p>[% l('To create a new tracklist, use an existing medium or import a disc from a CD stub, select the appropriate tab.') %]</p>
+
+  <ul>
+    <li><a href="#add-disc-parser">[% l('Manual entry') %]</a></li>
+    <li><a href="#add-disc-medium">[% l('Existing medium') %]</a></li>
+    <li><a href="#add-disc-cdstub">[% l('CD stub import') %]</a></li>
+  </ul>
+
+  <div id="add-disc-parser">
+    <!-- ko template: { name: "template.track-parser", data: trackParser } --><!-- /ko -->
+  </div>
+
+  <div id="add-disc-medium">
+    <p>[% l('Use the following fields to search for an existing medium.') %]</p>
+    <!-- ko template: { name: "template.medium-search", data: mediumSearch } --><!-- /ko -->
+  </div>
+
+  <div id="add-disc-cdstub">
+    <p>[% l('Use the following fields to search for a CD stub.') %]</p>
+    <!-- ko template: { name: "template.medium-search", data: cdstubSearch } --><!-- /ko -->
+  </div>
+
+  <div class="buttons">
+    <button type="button" class="negative" id="close-add-medium" data-click="close">[% l('Close') %]</button>
+    <button type="button" style="float: right" class="positive" data-click="addDisc" data-bind="enable: currentTab().result()">[% l('Add Medium') %]</button>
+  </div>
+</div>
+
+<div data-bind="with: rootField.release">
+  <p class="error field-error" data-bind="showErrorRightAway: needsMediums">
+    [%~ l('Add a medium by clicking “Add Medium” below, or tick the box confirming the tracklist is unknown.') ~%]
+  </p>
+
+  <!-- ko if: !mediums().length -->
+    <p>
+      <label>
+        <input type="checkbox" data-bind="checked: hasUnknownTracklist" />
+        [% l('The tracklist for this release is currently unknown.') %]
+      </label>
+    </p>
+  <!-- /ko -->
+
+  <!-- ko if: !needsMediums() && mediums().length === loadedMediums().length &&
+              _(mediums()).invokeMap("toc").filter().size() < _($data.seededTocs).values().size() -->
+    <div class="warning">
+      <p>
+        [%~ l('You’ve seeded some Disc IDs that aren’t matched to any medium. If this is wrong, use the “Attach Disc ID” options below.') ~%]
+      </p>
+    </div>
+  <!-- /ko -->
+
+  <!-- ko loop: { items: mediums, id: 'uniqueID' } -->
+  <fieldset class="advanced-disc">
+    <legend data-bind="text: formattedName()"></legend>
+
+    <table class="advanced-format">
+      <tr>
+        <td class="icon">
+          <button type="button" class="icon collapse-disc" data-click="toggleMedium" data-bind="css: { 'expand-disc': collapsed, 'collapse-disc': !collapsed() }, attr: { title: collapsed() ? '[% l('Expand Disc') %]' : '[% l('Collapse Disc') %]' }"></button>
+        </td>
+
+        <td class="format">
+          <label data-bind="attr: { for: 'disc-format-' + uniqueID }">[% l('Format:') %]</label>
+          <select data-bind="value: formatID, attr: { id: 'disc-format-' + uniqueID }">
+            <option value="" selected="selected">—</option>
+            [%- FOR format=formats %]
+            <option value="[% format.value %]">[% format.label %]</option>
+            [%- END %]
+          </select>
+          <label>
+            <input id="format-unknown" type="checkbox" data-bind="checked: formatUnknownToUser, enable: formatID() == ''" />
+            [% l('I don’t know') %]
+          </label>
+          (<a href="[% c.uri_for('/doc/Release/Format') %]" target="_blank">[% l('help') %]</a>)
+          <!-- ko if: release.mediums().length > 1 || name() -->
+            <label data-bind="attr: { for: 'disc-title-' + uniqueID }">[% l('Disc title:') %]</label>
+            <input type="text" data-bind="value: name, attr: { id: 'disc-title-' + uniqueID }" />
+            <button type="button" class="icon guesscase-title" title="[% l('Guess case disc title') %]" data-click="guessCaseMediumName"></button>
+          <!-- /ko -->
+          <p class="error field-error" style="padding-left: 1em" data-bind="showErrorWhenTabIsSwitched: needsFormat">
+            [%~ l('A format is required. If you don’t know it, tick the “I don’t know” checkbox next to the format dropdown.') %]
+          </p>
+          <p class="error field-error" style="padding-left: 1em" data-bind="showErrorRightAway: hasTooEarlyFormat">
+            [%~ l('This medium is set to a format that did not exist on the selected release date.') %]
+          </p>
+        </td>
+
+        <td class="align-right icon" >
+          <button type="button" class="icon disc-down" title="[% l('Move disc down') %]" data-click="moveMediumDown"></button>
+          <button type="button" class="icon disc-up" title="[% l('Move disc up') %]" data-click="moveMediumUp"></button>
+          <button type="button" class="icon remove-item" title="[% l('Remove disc') %]" style="margin-left: 16px" data-click="removeMedium"></button>
+        </td>
+      </tr>
+
+      [%- table_row_error(
+           2, 'showErrorRightAway: hasInvalidFormat',
+           l('This medium has a disc ID, pregap track, or data track, so you can only change the format to one that can have disc IDs.')
+         )
+       %]
+    </table>
+
+    <!-- ko if: loading -->
+      <div class="tracklist-loading">
+        <span class="loading-message">[% l('Now loading tracklist...') %]</span>
+      </div>
+    <!-- /ko -->
+
+    <!-- ko if: hasVariousArtistTracks -->
+      <div class="various-artists warning">
+        [%- warning_icon %]
+        <p>
+          <strong>[% l('Warning:') | html_entity %]</strong>
+          [% l('You’ve used the {valink|Various Artists} special purpose artist on some tracks below. {valink|Various Artists} should very rarely be used on tracks; please make sure the artists have been entered correctly.', { valink => va_doc_link }) %]
+        </p>
+        <label>
+          <input id="confirm-va" type="checkbox" data-bind="checked: confirmedVariousArtists" />
+          [% l('I confirm this is an intentional use of Various Artists on tracks.') %]
+        </label>
+        <p class="error field-error" style="padding-left: 1em" data-bind="showErrorWhenTabIsSwitched: hasUnconfirmedVariousArtists">
+          [%~ l('If you’re sure the use of Various Artists is correct, confirm it above. Otherwise, please fix the data.') %]
+        </p>
+      </div>
+    <!-- /ko -->
+
+    <div data-bind="visible: loaded() && !collapsed()">
+      <p class="error field-error" style="padding: 1em" data-bind="showErrorWhenTabIsSwitched: needsTracks">
+        [%~ l('A tracklist is required.') ~%]
+      </p>
+
+      <p class="error field-error" style="padding: 1em" data-bind="showErrorWhenTabIsSwitched: needsTrackInfo">
+        [%~ l('You must enter a title and select an artist for every track.') ~%]
+      </p>
+
+      <p class="error field-error" style="padding: 1em" data-bind="showErrorWhenTabIsSwitched: hasInvalidPregapLength">
+        [% l('None of the attached disc IDs can fit a pregap track of the given length.') %]
+      </p>
+
+      <table class="medium tbl">
+        <thead>
+          <tr>
+            <th class="reorder"></th>
+            <th class="position">[% l('#') %]</th>
+            <th class="title">[% l('Title') %]</th>
+            <th class="artist">[% l('Artist') %]</th>
+            <th class="length">[% l('Length') %]</th>
+            <th class="icons"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- ko loop: { items: audioTracks, id: 'uniqueID' } -->
+            <!-- ko template: "template.track-row" --><!-- /ko -->
+          <!-- /ko -->
+          <!-- ko if: hasDataTracks -->
+            <tr class="subh">
+              <td colspan="7">
+                [% data_track_icon %]
+                [% l('Data Tracks') %]
+              </td>
+            </tr>
+            <!-- ko loop: { items: dataTracks, id: 'uniqueID' } -->
+              <!-- ko template: "template.track-row" --><!-- /ko -->
+            <!-- /ko -->
+          <!-- /ko -->
+        </tbody>
+      </table>
+
+      <!-- ko ifnot: _.isEmpty($parent.seededTocs) -->
+      <div id="discid-attachment">
+        [% add_colon(l('Attach Disc ID')) %]
+        <select data-bind="options: _.values($parent.seededTocs).sort(),
+                           optionsText: $root.utils.calculateDiscID,
+                           optionsCaption: '',
+                           value: toc"></select>
+        <!-- ko with: toc -->
+          <a target="_blank" data-bind="attr: { href: '/cdtoc/' + $root.utils.calculateDiscID($data) }">[% l('link') %]</a>
+        <!-- /ko -->
+      </div>
+      <!-- /ko -->
+
+      <div id="tracklist-tools">
+        <!-- ko if: canHaveDiscID() -->
+          <p style="margin-top: 0;">
+            <label>
+              <input class="has-pregap" type="checkbox" data-bind="checked: hasPregap" />
+              [% l('This disc has a hidden pregap track before track 1') %]
+              (<a href="#" data-bind="click: togglePregapTrackHelp">[% l('help') %]</a>)
+            </label>
+            <div class="ar-descr" data-bind="visible: showPregapTrackHelp">
+              <p>
+                [% l('Some discs contain a hidden track in the pregap section that precedes track 1. Use this to add (or remove) the special pregap track section.') %]
+              </p>
+              <p>
+                [% l('Keep in mind that unselecting this will delete the track if the medium has a disc ID! If you unselect it by mistake, please readd the pregap track before submitting.') %]
+              </p>
+            </div>
+          </p>
+          <p style="margin-top: 0;">
+            <label>
+              <input class="has-data-tracks" type="checkbox" data-bind="checked: hasDataTracks" />
+              [% l('This disc contains data tracks at the end') %]
+              (<a href="#" data-bind="click: toggleDataTracksHelp">[% l('help') %]</a>)
+            </label>
+            <div class="ar-descr" data-bind="visible: showDataTracksHelp">
+              <p>
+                [% l('Some discs contain one or more data tracks after all audio tracks. Use this to add (or remove) the special data tracks section. You should only add data tracks that contain audio or video ({info|more info})', { info => { href => doc_link('Data_Track'), target => '_blank' } }) %]
+              </p>
+              <p>
+                [% l('Keep in mind that unselecting this will delete the tracks if the medium has a disc ID! If you unselect it by mistake, please readd the data tracks before submitting.') %]
+              </p>
+            </div>
+          </p>
+        <!-- /ko -->
+
+        <div class="buttons">
+          <button type="button" class="open-track-parser" data-click="openTrackParser">[% l('Track Parser') %]</button>
+          <button type="button" class="reset-track-numbers" data-click="resetTrackNumbers">[%- l('Reset track numbers') -%]</button>
+          <button type="button" data-click="swapTitlesWithArtists">[%- l('Swap track titles with artist credits') -%]</button>
+          <button type="button" data-click="guessMediumCase">[%- l('Guess case') -%]</button>
+          <button type="button" data-click="guessMediumFeatArtists">[%- l('Guess feat. artists from track titles') -%]</button>
+        </div>
+
+        <div class="icon add-tracks" data-bind="if: !hasToc() || hasDataTracks()">
+          [% l('Add {num} track(s)', num => '<input type="number" maxlength="2" placeholder="1" data-bind="value: addTrackCount" />') %]
+          <button type="button" class="icon add-item" title="[% l('Add track(s)') %]" data-click="addNewTracks"></button>
+        </div>
+      </div>
+    </div>
+
+  </fieldset>
+  <!-- /ko -->
+
+  <!-- ko ifnot: _.isEmpty(mediums()) -->
+    <div data-bind="guessCase: _.bind($root.guessCaseMediaNames, $data)">
+      [% guesscase(show_icon=1) %]
+    </div>
+  <!-- /ko -->
+</div>

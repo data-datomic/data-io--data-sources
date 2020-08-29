@@ -1,0 +1,10 @@
+{
+    "commandText": "git clone --progress --verbose https://github.com/metabrainz/web-service-v3-design undefined\\meta--08-29-2020--WCSV35PA6dQUi1bDtfaXT/web-service-v3-design",
+    "repo": "https://github.com/metabrainz/web-service-v3-design",
+    "targetPath": "undefined\\meta--08-29-2020--WCSV35PA6dQUi1bDtfaXT/web-service-v3-design",
+    "startTime": "2020-08-29T07:49:53.145Z",
+    "endTime": "2020-08-29T07:49:53.705Z",
+    "childProcessPid": 11872,
+    "executionErrors": [],
+    "commandLogFilePath": "/Users/brian/dev_space/GitHub-data-datomic/data-io--data-sources/musicbrainz/musicbrainz-importer/repos/workingdir/--metabrainz--web-service-v3-design--11872"
+}
